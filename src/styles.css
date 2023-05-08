@@ -1,0 +1,112 @@
+.container {
+  background-color: #17191d;
+  color: white;
+  padding: 10px;
+
+  font-family: 'Roboto Mono', monospace;
+}
+
+.containerList {
+  width: 1000px;
+}
+
+.title {
+  background-color: transparent;
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  display: flex;
+}
+
+.item {
+  border: 1px solid #545454;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  width: 100px;
+  margin: 10px 0;
+}
+
+.item:hover {
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.item::before {
+  content: '';
+  background-color: #eb3795;
+  width: 6px;
+  height: 6px;
+}
+
+.listUl {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.listItem {
+  display: flex;
+}
+
+.div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #393939;
+}
+
+.headTitle {
+  color: #b3b3b3;
+}
+
+.auctionList {
+  list-style-type: disc;
+  font-weight: bold;
+  color: #b3b3b3;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.divLink {
+  width: 600px;
+  padding: 13px 25px;
+  border: 1px solid #393939;
+  cursor: pointer;
+  /* background-color: #eb3795; */
+}
+
+/* fvfvfvfv */
+
+.homeContainer {
+  background-color: #717171;
+  width: 900px;
+}
+
+.homeUL {
+  padding: 0;
+}
+
+.homeCategories {
+  justify-content: space-around;
+  display: flex;
+}
+
+
