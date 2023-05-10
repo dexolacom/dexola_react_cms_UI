@@ -1,3 +1,5 @@
-export default function Cases() {
-  return <h2>Cases</h2>;
-}
+const About = () => {
+  return <div>Cases page</div>;
+};
+
+export default About;

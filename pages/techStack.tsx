@@ -1,3 +1,9 @@
-export default function TechStack() {
-  return <h2>Tech Stack</h2>;
+const TechStack = () => {
+  return (
+    <div>
+      TechStack page
+    </div>
+  );
 }
+
+export default TechStack;

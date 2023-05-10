@@ -1,3 +1,5 @@
-export default function Partnership() {
-  return <h2>Partnership</h2>;
-}
+const Partnership = () => {
+  return <div>Partnership page</div>;
+};
+
+export default Partnership;

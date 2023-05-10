@@ -1,3 +1,5 @@
-export default function Services() {
-  return <h2>Services</h2>;
-}
+const Services = () => {
+  return <div>Services page</div>;
+};
+
+export default Services;
