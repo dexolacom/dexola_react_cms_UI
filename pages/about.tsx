@@ -1,16 +1,14 @@
 'use client';
-import { Title } from './styles';
+
 import styled from 'styled-components';
 
-export const Title1 = styled.h1`
+const DIV = styled.div`
   font-family: var(--font-roboto), sans-serif;
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
+  color: red;
 `;
 
 const About = () => {
-  return <Title>about NEW</Title>;
+  return <DIV>About page new</DIV>;
 };
 
 export default About;

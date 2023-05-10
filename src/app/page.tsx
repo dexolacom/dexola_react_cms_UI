@@ -1,16 +1,28 @@
-import About from "../../pages/about";
-import Cases from "../../pages/cases";
-import Footer from "../../pages/footer";
-import Header from "../../pages/header";
-import Partnership from "../../pages/partnership";
-import Services from "../../pages/services";
-import TechStack from "../../pages/techStack";
-import RootLayout from "./layout";
-import styles from "./page.module.css";
+import Image from 'next/image';
+import About from '../../pages/about';
+import Cases from '../../pages/cases';
+import Footer from '../../pages/footer';
+import Header from '../../pages/header';
+import Partnership from '../../pages/partnership';
+import Services from '../../pages/services';
+import TechStack from '../../pages/techStack';
+import RootLayout from './layout';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
     <RootLayout>
+      <div style={{ backgroundColor: 'gray' }}>
+        <Image
+          src="/logo-white.svg"
+          alt="Logo"
+          // className={styles.vercelLogo}
+          width={100}
+          height={24}
+          priority
+        />
+      </div>
+
       <Header />
       <h2>Root component Type in APP.js react</h2>
       <About />
