@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 background-color: #aaa;
 width: 100vw; 
 height: 100vh;
@@ -10,6 +13,10 @@ background-size: cover;
 
 export const Logo = styled.div`
 padding: 34px 0 0 32px;
+`
+
+export const Description = styled.div`
+  padding-left: 124px;
 `
 
 export const HeaderTitle = styled.p`
@@ -32,4 +39,19 @@ export const Blank = styled.span`
       from { opacity: 1; }
       to { opacity: 0; }
   }
+`
+export const OurAddress = styled.p`
+  padding-bottom: 28px;
+  padding-left: 124px;
+
+font-family: var(--font-roboto-mono);
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 28px;
+/* identical to box height, or 175% */
+
+letter-spacing: -0.01em;
+
+color: #000000;
 `

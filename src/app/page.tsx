@@ -1,3 +1,4 @@
+import ContactButton from '../../components/ContactUs/ContactUs';
 import About from '../../pages/about';
 import Cases from '../../pages/cases';
 import Footer from '../../pages/footer';
@@ -11,6 +12,7 @@ import RootLayout from './layout';
 export default function Home() {
   return (
     <RootLayout>
+      <ContactButton />
       <Header />
       <h2>Root component Type in APP.js react</h2>
       <About />
