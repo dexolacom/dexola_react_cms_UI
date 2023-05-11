@@ -1,5 +1,6 @@
 'use client';
 
+// import Image from 'next/image';
 import {
   BlockWrapper,
   ContentBox,
@@ -7,6 +8,8 @@ import {
   Sidebar,
   Title,
 } from '../styles';
+import { ImagesWrapper, ImagesColumn } from './styles';
+import ServiceCard from '../../components/ServiceCard/ServiceCard';
 
 const Services = () => {
   return (
@@ -27,6 +30,28 @@ const Services = () => {
           experience with real-life projects in certain domains, our extensive
           internal research ensures that we are well-versed in these fields.
         </ContentText>
+        <ImagesWrapper>
+          <ImagesColumn>
+            <ServiceCard
+              imgPath={'/img_1_1_3.png'}
+              title={'Smart Contracts Development'}
+            />
+            <ServiceCard
+              imgPath={'/img_3_1_3.png'}
+              title={'Analytics and Crypto Trading Tools'}
+            />
+          </ImagesColumn>
+          <ImagesColumn>
+            <ServiceCard
+              imgPath={'/img_2_1_3.png'}
+              title={'Smart Contract Audits'}
+            />
+            <ServiceCard
+              imgPath={'/img_4_1_3.png'}
+              title={'Web3 White Label Solutions'}
+            />
+          </ImagesColumn>
+        </ImagesWrapper>
       </ContentBox>
     </BlockWrapper>
   );
