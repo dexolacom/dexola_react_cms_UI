@@ -1,9 +1,18 @@
 import styled from 'styled-components';
 
-export const BlockWrapper = styled.div`
+export const FlexRowBlock = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  `
+
+export const FlexColumnBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  `
+
+export const BlockWrapper = styled(FlexRowBlock)`
   background-color: #aaa;
   width: 100vw; 
    /* height: 100vh; */
@@ -30,10 +39,7 @@ export const Title = styled.p`
   color: #FFFFFF;
   `
 
-export const ContentBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+export const ContentBox = styled(FlexColumnBlock)`
   width: calc(100vw - 420px); 
   height: fit-content;;
   padding: 92px 114px 92px 135px;

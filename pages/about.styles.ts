@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FlexRowBlock } from './styles';
 
 export const AboutSubtitle = styled.p`
   margin-bottom: 12px;
@@ -12,10 +13,7 @@ export const AboutSubtitle = styled.p`
   color: #FFFFFF;
 `
 
-export const AdvertWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+export const AdvertWrapper = styled(FlexRowBlock)`
   flex-wrap: wrap; 
   padding: 32px 0;
 `
