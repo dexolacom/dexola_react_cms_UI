@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ImageItem, ServiceDescription } from './styles';
+import { ImageItem, ServiceDescription, ImageItemHover } from './styles';
 
 const ServiceCard = ({
   imgPath,
@@ -13,7 +13,9 @@ const ServiceCard = ({
   return (
     <ImageItem>
       <Image src={imgPath} alt="Service1" width={275} height={275} priority />
-      <ServiceDescription>{title}</ServiceDescription>
+      <ImageItemHover>
+        <ServiceDescription>{title}</ServiceDescription>
+      </ImageItemHover>
     </ImageItem>
   );
 };

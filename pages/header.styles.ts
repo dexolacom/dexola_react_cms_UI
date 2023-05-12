@@ -44,7 +44,7 @@ export const HeaderTitle = styled.p`
   color: #17191D;
 `
 
-export const SubTitle = styled.p`
+export const SubTitle = styled.div`
   display: flex;
   justify-content: space-between;
   width: 430px;
@@ -88,7 +88,6 @@ export const OurAddress = styled.p`
   font-size: 16px;
   line-height: 28px;
   /* identical to box height, or 175% */
-
   letter-spacing: -0.01em;
   color: #000000;
 `

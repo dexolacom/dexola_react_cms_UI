@@ -10,6 +10,7 @@ import {
 } from '../styles';
 import { ImagesWrapper, ImagesColumn } from './styles';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
+import CardHover from '../../components/ServiceCard/CardHover';
 
 const Services = () => {
   return (
@@ -40,6 +41,9 @@ const Services = () => {
               imgPath={'/img_3_1_3.png'}
               title={'Analytics and Crypto Trading Tools'}
             />
+            {/* --- TEMP! */}
+            <CardHover title={'Smart Contracts Development'} color={'blue'} />
+            {/* --- /TEMP! */}
           </ImagesColumn>
           <ImagesColumn>
             <ServiceCard
