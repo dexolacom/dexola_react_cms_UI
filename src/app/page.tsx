@@ -14,11 +14,11 @@ export default function Home() {
       <Header />
       <h2>Root component Type in APP.js react</h2>
       <About />
-      <Cases />
       <Partnership />
       <Services />
       <TechStack />
       <h2 className={styles.main}>test load fonts Kanit</h2>
+      <Cases />
       <Footer />
     </RootLayout>
   );
