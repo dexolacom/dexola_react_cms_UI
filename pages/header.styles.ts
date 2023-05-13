@@ -1,21 +1,16 @@
 import styled from 'styled-components';
+import { FlexColumnBlock, FlexRowBlock } from '../components/PageContainer/styles';
 
-export const HeaderWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #aaa;
+export const HeaderWrapper = styled(FlexColumnBlock)`
+justify-content: space-between;
   width: 100vw; 
   height: 100vh;
   background-image: url(Dexola_BG_1.png);
   background-size: cover;
 `
-export const TopBox = styled.div`
+export const TopBox = styled(FlexRowBlock)`
   position: fixed; 
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   padding: 34px 32px 0 32px;
 `
@@ -44,9 +39,7 @@ export const HeaderTitle = styled.p`
   color: #17191D;
 `
 
-export const SubTitle = styled.div`
-  display: flex;
-  justify-content: space-between;
+export const SubTitle = styled(FlexRowBlock)`
   width: 430px;
   width: 370px;
   font-family: var(--font-roboto-mono);

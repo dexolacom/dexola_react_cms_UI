@@ -1,40 +1,36 @@
 import styled from 'styled-components';
+import { FlexColumnBlock } from '../PageContainer/styles';
 
-export const ImageItem = styled.div`
-position: relative;
-overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+export const ImageItem = styled(FlexColumnBlock)`
+  position: relative;
   width: 275px;
   height: 355px;
   margin-bottom: 24px;
   background: #272A2E;
-`
-export const ImageItemHover = styled.div`
-position: absolute;
-top: 275px;
-width: 275px;
-height: 355px;
-margin-bottom: 24px;
-background: #272A2E;
+  overflow: hidden;
 
-&:hover {
-top: 75px;
-}
+  &:hover .infoHover {
+    top: 0px; 
+    padding-top: 32px;
+    
+    & ul {
+      opacity: 1;
+    }
+  }
 `
 // --- for CardHover ---
-export const CardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+export const CardWrapper = styled(FlexColumnBlock)`
+  position: absolute;
+  top: 275px;
   width: 275px;
   height: 355px;
   padding: 32px 40px 8px 24px;
+  padding: 17px 40px 8px 24px;
   background: #272A2E;
+  transition: top 0.3s linear 0s, padding-top 0.03s linear 0s;
 
   & ul {
-    padding-left: 16px;
+    padding: 0 0 0 16px;
     font-family: var(--font-roboto-mono);
     font-style: normal;
     font-weight: 400;
@@ -43,6 +39,7 @@ export const CardWrapper = styled.div`
     /* identical to box height, or 171% */
     letter-spacing: 0.02em;
     color: #C0C0C0;
+    opacity: 0;
   }
 
   & li {

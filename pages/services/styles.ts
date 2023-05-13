@@ -1,16 +1,12 @@
 import styled from 'styled-components';
+import { FlexColumnBlock, FlexRowBlock } from '../../components/PageContainer/styles';
 
-export const ImagesWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+export const ImagesWrapper = styled(FlexRowBlock)`
   justify-content: center;
   padding-top: 24px;
   /* width: 100vw; */
 `
 
-export const ImagesColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+export const ImagesColumn = styled(FlexColumnBlock)`
   margin-right: 32px;
 `
