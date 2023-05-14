@@ -1,14 +1,23 @@
+"use client";
+// import Link from "next/image";
+// import { useRouter } from "next/router";
+// import { useRouter } from 'next/navigation'
+
 import { CasesListProps, IAttributesItem } from "../../types";
 import {
   Container,
-  Description,
   ListItem,
   PaltfornName,
   TechnologyContainer,
   TechnologyItem,
+  Description,
+  DivImage,
+  DivImageContainer,
 } from "./styles";
 
-const CasesList = ({ data }: CasesListProps) => {
+const TechnologiList = ({ data }: CasesListProps) => {
+  // const router = useRouter();
+  // console.log('routes', router)
   return (
     <Container>
       {data?.map((el: IAttributesItem) => (
@@ -28,8 +37,11 @@ const CasesList = ({ data }: CasesListProps) => {
           <Description>{el.description}</Description>
         </ListItem>
       ))}
+      <DivImageContainer>
+        <DivImage></DivImage>
+      </DivImageContainer>
     </Container>
   );
 };
 
-export default CasesList;
+export default TechnologiList;

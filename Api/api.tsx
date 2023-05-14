@@ -6,9 +6,9 @@ import { IAttributes, IAttributesItem } from "../types";
 
 const BASE_URL = "http://localhost:1337";
 
-export const getDetails = async () => {
+export const getDetails = async ({ id }: any) => {
   try {
-    const response = await axios.get(`${BASE_URL}/api/details/1`);
+    const response = await axios.get(`${BASE_URL}/api/details/${id}`);
 
     const regex = /!\[.*\]\((.*)\)/;
     const data = [{ ...response.data.data }].map((el) => {

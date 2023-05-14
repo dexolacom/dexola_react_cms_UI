@@ -1,9 +1,27 @@
 "use client";
+
 import styled from "styled-components";
 
 interface IProps {
   marker: string;
 }
+
+export const DivImageContainer = styled.div`
+  position: absolute;
+  background-repeat: no-repeat;
+  bottom: 10px;
+  right: 10px;
+`;
+
+export const DivImage = styled.div`
+  background-image: url(cassesArrowA.png);
+  background-size: cover;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in-out;
+`;
 
 export const Container = styled.ul`
   font-family: var(--font-roboto), sans-serif;
@@ -11,11 +29,20 @@ export const Container = styled.ul`
   background-color: var(--bg-color);
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: flex-end;
   margin: 10px;
+  position: relative;
   &:hover {
     background-color: #212325;
     cursor: pointer;
+    ${DivImage} {
+      background-image: url(cassesArrowB.png);
+      width: 30px;
+      transform: rotateZ(0deg);
+      transition: background-image 0.2s ease-in-out, width 0.2s ease-in-out;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
 `;
 
@@ -59,10 +86,5 @@ export const TechnologyItem = styled.span<IProps>`
     background-color: ${(props) => (props.marker ? props.marker : "")};
     width: 6px;
     height: 6px;
-  }
-
-  &:hover {
-    color: var(--black);
-    background-color: var(--white);
   }
 `;

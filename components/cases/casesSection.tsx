@@ -2,12 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 
-import CasesList from "../technology/technologiList";
-import { getAllPlatform } from "../../services/api";
+import { getAllPlatform } from "../../Api/api";
 
 import { IAttributesItem } from "../../types";
-
 import { Container } from "./styles";
+import TechnologiList from "../Technology/TechnologiList";
 
 const CasesSection = () => {
   const [platform, setPlatform] = useState<[]>([]);
@@ -23,9 +22,9 @@ const CasesSection = () => {
 
   return (
     <Container>
-      {platform.length > 0
-        ? platform.map((item: IAttributesItem) => (
-            <CasesList data={[item]} key={item.id} />
+      {platform?.length > 0
+        ? platform?.map((item: IAttributesItem) => (
+            <TechnologiList data={[item]} key={item.id} />
           ))
         : "Loading ..... "}
     </Container>
