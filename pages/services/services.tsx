@@ -1,14 +1,15 @@
 'use client';
 
-// import Image from 'next/image';
+import Image from 'next/image';
 import {
   BlockWrapper,
   ContentBox,
   ContentText,
+  MainKatinParagraph,
   Sidebar,
   Title,
 } from '../../components/PageContainer/styles';
-import { ImagesWrapper, ImagesColumn } from './styles';
+import { ImagesWrapper, ImagesColumn, LinksBlock, LinkItem } from './styles';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import PageContainer from '../../components/PageContainer/PageWrapper';
 
@@ -53,6 +54,38 @@ const Services = () => {
           />
         </ImagesColumn>
       </ImagesWrapper>
+      <LinksBlock>
+        <LinkItem>
+          <MainKatinParagraph>R&D</MainKatinParagraph>
+          <Image
+            src={'/arrow_rb.svg'}
+            alt="arrow"
+            width={13}
+            height={13}
+            priority
+          />
+        </LinkItem>
+        <LinkItem>
+          <MainKatinParagraph>How we Work</MainKatinParagraph>
+          <Image
+            src={'/arrow_rb.svg'}
+            alt="arrow"
+            width={13}
+            height={13}
+            priority
+          />
+        </LinkItem>
+        <LinkItem>
+          <MainKatinParagraph>Our Process</MainKatinParagraph>
+          <Image
+            src={'/arrow_rb.svg'}
+            alt="arrow"
+            width={13}
+            height={13}
+            priority
+          />
+        </LinkItem>
+      </LinksBlock>
     </PageContainer>
   );
 };

@@ -21,6 +21,10 @@ export const MainRobotoParagraph = styled.p`
   letter-spacing: -0.02em;
   color: #B3B3B3;
   `
+export const MainKatinParagraph = styled(MainRobotoParagraph)`
+  font-family: var(--font-kanit);
+  color: #FFFFFF;
+  `
 // --- - ---
 export const BlockWrapper = styled(FlexRowBlock)`
   background-color: #aaa;

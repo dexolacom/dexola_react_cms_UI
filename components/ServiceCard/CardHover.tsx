@@ -4,6 +4,7 @@
 import { CardWrapper, ServiceDescription } from './styles';
 
 const CardHover = ({ title, color }: { title: string; color: string }) => {
+  // --- !TEMP -
   const textArray = [
     'Custom Security Testing',
     'Wallets and Custodian Solutions',

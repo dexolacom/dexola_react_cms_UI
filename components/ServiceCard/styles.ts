@@ -8,6 +8,7 @@ export const ImageItem = styled(FlexColumnBlock)`
   margin-bottom: 24px;
   background: #272A2E;
   overflow: hidden;
+  cursor: pointer;
 
   &:hover .infoHover {
     top: 0px; 
@@ -17,7 +18,24 @@ export const ImageItem = styled(FlexColumnBlock)`
       opacity: 1;
     }
   }
+
+  &:hover .linkArrow {    
+    transform: rotate(-45deg);
+  }
 `
+
+export const ArrowBlock = styled.div`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 13px;
+  height: 13px;  
+  background-image: url(/arrow_rb.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.2s linear;
+  transform: rotate(0deg); 
+ `
 // --- for CardHover ---
 export const CardWrapper = styled(FlexColumnBlock)`
   position: absolute;

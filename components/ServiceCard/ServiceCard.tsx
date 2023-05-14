@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { ImageItem } from './styles';
+import { ArrowBlock, ImageItem } from './styles';
 import CardHover from './CardHover';
 
 const ServiceCard = ({
@@ -17,6 +17,7 @@ const ServiceCard = ({
     <ImageItem>
       <Image src={imgPath} alt="Service1" width={275} height={275} priority />
       <CardHover title={title} color={color} />
+      <ArrowBlock className="linkArrow"></ArrowBlock>
     </ImageItem>
   );
 };
