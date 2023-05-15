@@ -1,14 +1,9 @@
 import axios from "axios";
 import { IAttributes, IAttributesItem } from "../types";
 
-// /api/platforms
-// /api/details/:id
-
-const BASE_URL = "http://localhost:1337";
-
 export const getDetails = async ({ id }: any) => {
   try {
-    const response = await axios.get(`${BASE_URL}/api/details/${id}`);
+    const response = await axios.get(`${process.env.BASE_URL}/api/details/${id}`);
 
     const regex = /!\[.*\]\((.*)\)/;
     const data = [{ ...response.data.data }].map((el) => {
@@ -29,7 +24,7 @@ export const getDetails = async ({ id }: any) => {
 
 export const getAllPlatform = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/api/platforms`);
+    const response = await axios.get(`${process.env.BASE_URL}/api/platforms`);
 
     const data = response?.data?.data
       ?.map((el: IAttributes) => {

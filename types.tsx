@@ -2,14 +2,7 @@ export interface IAttributes {
   id: number;
   attributes: {
     createdAt: string;
-    data: {
-      technology: {
-        marker: string;
-        name: string;
-      }[];
-      description: string;
-      paltfornName: string;
-    };
+    data: IAttributesItem;
     publishedAt: string;
     updatedAt: string;
   };
