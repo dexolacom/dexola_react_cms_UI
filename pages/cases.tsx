@@ -1,4 +1,4 @@
-import CasesSection from "../components/Cases/CasesSection";
+import CasesSection from '../components/cases/casesSection';
 
 const About = () => {
   return (

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexRowBlock } from './styles';
+import { FlexRowBlock, MainRobotoParagraph } from '../components/PageContainer/styles';
 
 export const AboutSubtitle = styled.p`
   margin-bottom: 12px;
@@ -36,14 +36,6 @@ export const AdvertAmount = styled.p`
   color: #FFFFFF;
 `
 
-export const AdvertText = styled.p`
-  width: 274px;
-  font-family: var(--font-roboto-mono);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  /* identical to box height, or 150% */
-  letter-spacing: -0.02em;
-  color: #B3B3B3;    
+export const AdvertText = styled(MainRobotoParagraph)`
+  width: 274px;   
 `
