@@ -2,12 +2,8 @@
 
 import Image from 'next/image';
 import {
-  BlockWrapper,
-  ContentBox,
   ContentText,
   MainKatinParagraph,
-  Sidebar,
-  Title,
 } from '../../components/PageContainer/styles';
 import { ImagesWrapper, ImagesColumn, LinksBlock, LinkItem } from './styles';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';

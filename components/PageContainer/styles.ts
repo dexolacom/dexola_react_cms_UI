@@ -42,6 +42,7 @@ export const Sidebar = styled.div`
 `
 
 export const Title = styled.p`
+  max-width: 272px;
   font-family: var(--font-kanit);
   font-style: normal;
   font-weight: 300;

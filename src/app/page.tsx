@@ -5,7 +5,7 @@ import Footer from '../../pages/footer';
 import Header from '../../pages/header';
 import Partnership from '../../pages/partnership';
 import Services from '../../pages/services/services';
-import TechStack from '../../pages/techStack';
+import TechStack from '../../pages/techStack/techStack';
 import RootLayout from './layout';
 // import styles from './page.module.css';
 
