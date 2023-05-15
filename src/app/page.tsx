@@ -3,7 +3,7 @@ import About from '../../pages/about';
 import Cases from '../../pages/cases';
 import Footer from '../../pages/footer';
 import Header from '../../pages/header';
-import Partnership from '../../pages/partnership';
+import Partnership from '../../pages/partnership/partnership';
 import Services from '../../pages/services/services';
 import TechStack from '../../pages/techStack/techStack';
 import RootLayout from './layout';
@@ -15,10 +15,10 @@ export default function Home() {
       <ContactButton />
       <Header />
       <About />
-      <Partnership />
       <Services />
-      <TechStack />
       <Cases />
+      <TechStack />
+      <Partnership />
       <Footer />
     </RootLayout>
   );
