@@ -15,11 +15,10 @@ export default function Home() {
       <ContactButton />
       <Header />
       <About />
-      <Cases />
       <Partnership />
       <Services />
       <TechStack />
-      {/* <h2 className={styles.main}>test g G load fonts Kanit</h2> */}
+      <Cases />
       <Footer />
     </RootLayout>
   );

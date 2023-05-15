@@ -1,5 +1,11 @@
+import CasesSection from "../components/Cases/CasesSection";
+
 const About = () => {
-  return <div>Cases page</div>;
+  return (
+    <div>
+      <CasesSection />
+    </div>
+  );
 };
 
 export default About;
