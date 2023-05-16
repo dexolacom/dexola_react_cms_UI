@@ -1,7 +1,6 @@
 "use client";
-// import Link from "next/image";
-// import { useRouter } from "next/router";
-// import { useRouter } from 'next/navigation'
+
+import Link from "next/link";
 
 import { CasesListProps, IAttributesItem } from "../../types";
 import {
@@ -16,26 +15,26 @@ import {
 } from "./styles";
 
 const TechnologiList = ({ data }: CasesListProps) => {
-  // const router = useRouter();
-  // console.log('routes', router)
   return (
     <Container>
       {data?.map((el: IAttributesItem) => (
-        <ListItem key={el.id}>
-          <PaltfornName>{el.paltfornName}</PaltfornName>
+        <Link href={`/platform/${el.id}`} key={el.id}>
+          <ListItem key={el.id}>
+            <PaltfornName>{el.paltfornName}</PaltfornName>
+            {el.technology ? (
+              <TechnologyContainer>
+                {el.technology.map((item, idx) => (
+                  <TechnologyItem marker={item.marker} key={idx}>
+                    {item.name}
+                  </TechnologyItem>
+                ))}
+              </TechnologyContainer>
+            ) : null}
 
-          {el.technology ? (
-            <TechnologyContainer>
-              {el.technology.map((item, idx) => (
-                <TechnologyItem marker={item.marker} key={idx}>
-                  {item.name}
-                </TechnologyItem>
-              ))}
-            </TechnologyContainer>
-          ) : null}
-
-          <Description>{el.description}</Description>
-        </ListItem>
+            <Description>{el.description}</Description>
+          </ListItem>
+          /
+        </Link>
       ))}
       <DivImageContainer>
         <DivImage></DivImage>

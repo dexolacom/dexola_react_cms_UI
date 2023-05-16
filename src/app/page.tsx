@@ -1,6 +1,6 @@
 import ContactButton from "../../components/ContactUs/ContactUs";
+import CasesSection from "../../components/cases/casesSection";
 import About from "../../pages/about";
-import Cases from "../../pages/cases";
 import Footer from "../../pages/footer";
 import Header from "../../pages/header";
 import Partnership from "../../pages/partnership";
@@ -18,7 +18,7 @@ export default function Home() {
       <Partnership />
       <Services />
       <TechStack />
-      <Cases />
+      <CasesSection />
       <Footer />
     </RootLayout>
   );

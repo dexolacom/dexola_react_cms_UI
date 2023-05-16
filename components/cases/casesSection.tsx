@@ -6,7 +6,7 @@ import { getAllPlatform } from "../../Api/api";
 
 import { IAttributesItem } from "../../types";
 import { Container } from "./styles";
-import TechnologiList from "../Technology/technologiList";
+import TechnologiList from "../technology/technologiList";
 
 const CasesSection = () => {
   const [platform, setPlatform] = useState<[]>([]);

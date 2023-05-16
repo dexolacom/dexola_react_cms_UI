@@ -1,6 +1,6 @@
 import axios from "axios";
 import { IAttributes, IAttributesItem } from "../types";
-
+// http://localhost:1337/api/platforms
 export const getDetails = async ({ id }: any) => {
   try {
     const response = await axios.get(`${process.env.BASE_URL}/api/details/${id}`);

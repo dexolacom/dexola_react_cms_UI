@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { ImageItem, ServiceDescription } from './styles';
+import Image from "next/image";
+import { ImageItem, ServiceDescription } from "./styles";
 
 const ServiceCard = ({
   imgPath,
