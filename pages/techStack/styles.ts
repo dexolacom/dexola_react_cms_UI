@@ -3,7 +3,7 @@ import { FlexColumnBlock, FlexRowBlock, MainRobotoParagraph } from '../../compon
 
 export const TechItem = styled(FlexRowBlock)`
   height: auto;
-      padding: 18px 0;
+  padding: 18px 0;
   border-bottom: 1px solid #36383C;
 
   &:last-of-type {
