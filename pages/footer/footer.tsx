@@ -19,7 +19,7 @@ interface IFooterInfo {
   secondColumn: string[];
 }
 
-const TEMP_FOOTER_INFO: IFooterInfo[] | [] = [
+const TEMP_FOOTER_INFO: IFooterInfo[] = [
   {
     title: 'About',
     firstColumn: ['About Dexola'],
@@ -42,16 +42,6 @@ const TEMP_FOOTER_INFO: IFooterInfo[] | [] = [
 ];
 
 const Footer = () => {
-  const insert = () =>
-    TEMP_FOOTER_INFO &&
-    TEMP_FOOTER_INFO.length > 0 &&
-    TEMP_FOOTER_INFO.map((item, idx) => (
-      <FooterRow1 key={`${idx}`} footerInfo={item} />
-    ));
-
-  console.log('first -> ', insert());
-  // insert();
-
   return (
     <>
       <RunningLine />
@@ -72,18 +62,6 @@ const Footer = () => {
               <FooterRow1 key={`${idx}`} footerInfo={item} />
             ))}
         </>
-        <FooterRow>
-          <TechItemColumn>
-            <ColumnTitle>About</ColumnTitle>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>About Dexola</ColumnText>
-            <ArrowBlock className="linkArrow"></ArrowBlock>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Synergy with Trinetix</ColumnText>
-          </TechItemColumn>
-        </FooterRow>
 
         <FooterRow>
           <AddressColumn>
