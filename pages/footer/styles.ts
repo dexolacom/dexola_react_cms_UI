@@ -11,8 +11,16 @@ export const FooterRow = styled(FlexRowBlock)`
 `
 
 export const TechItemColumn = styled(FlexColumnBlock)`
+  position: relative;
+  cursor: pointer;
+
   & > p {
     width: 172px;
+  }
+
+  &:hover .linkArrow {
+      transform: rotate(-45deg);
+    color: #f00;
   }
 `
 
@@ -60,17 +68,17 @@ export const AddressColumn = styled(FlexColumnBlock)`
     color: #B3B3B3;
   }
 `
-/*
+
 export const ArrowBlock = styled.div`
     position: absolute;
-    bottom: 13px;
-    right: -15px;
+    bottom: 15px;
+    right: -12px;
     width: 6px;
     height: 7px;
-    background-image: url(/arrow_rb.svg);
+    background-image: url(/arrow_small.svg);
     background-repeat: no-repeat;
     background-position: right bottom;
     transition: transform 0.2s linear;
     transform: rotate(0deg);
  `
- */
+ /* */

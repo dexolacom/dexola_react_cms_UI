@@ -4,15 +4,54 @@ import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import {
   AddressColumn,
-  // ArrowBlock,
+  ArrowBlock,
   ColumnText,
   ColumnTitle,
   FooterRow,
   TechItemColumn,
 } from './styles';
 import RunningLine from '../../components/RunningLine/RunningLine';
+import FooterRow1 from './FooterRow';
+
+interface IFooterInfo {
+  title: string;
+  firstColumn: string[];
+  secondColumn: string[];
+}
+
+const TEMP_FOOTER_INFO: IFooterInfo[] | [] = [
+  {
+    title: 'About',
+    firstColumn: ['About Dexola'],
+    secondColumn: ['Synergy with Trinetix'],
+  },
+  {
+    title: 'Services',
+    firstColumn: [
+      'Smart Contracts Devel...',
+      'Analytics and Crypto...',
+      'How we Work',
+    ],
+    secondColumn: ['Smart Contract Audit', 'R&D', 'Our Process'],
+  },
+  {
+    title: 'Cases',
+    firstColumn: ['Featured Case 1', 'Featured Case 3'],
+    secondColumn: ['Featured Case 2', 'All Cases'],
+  },
+];
 
 const Footer = () => {
+  const insert = () =>
+    TEMP_FOOTER_INFO &&
+    TEMP_FOOTER_INFO.length > 0 &&
+    TEMP_FOOTER_INFO.map((item, idx) => (
+      <FooterRow1 key={`${idx}`} footerInfo={item} />
+    ));
+
+  console.log('first -> ', insert());
+  // insert();
+
   return (
     <>
       <RunningLine />
@@ -26,46 +65,26 @@ const Footer = () => {
             priority
           />
         </FooterRow>
+        <>
+          {TEMP_FOOTER_INFO &&
+            TEMP_FOOTER_INFO.length > 0 &&
+            TEMP_FOOTER_INFO?.map((item: IFooterInfo, idx) => (
+              <FooterRow1 key={`${idx}`} footerInfo={item} />
+            ))}
+        </>
         <FooterRow>
           <TechItemColumn>
             <ColumnTitle>About</ColumnTitle>
           </TechItemColumn>
           <TechItemColumn>
             <ColumnText>About Dexola</ColumnText>
-            {/* <ArrowBlock className="linkArrow"></ArrowBlock> */}
+            <ArrowBlock className="linkArrow"></ArrowBlock>
           </TechItemColumn>
           <TechItemColumn>
             <ColumnText>Synergy with Trinetix</ColumnText>
           </TechItemColumn>
         </FooterRow>
-        <FooterRow>
-          <TechItemColumn>
-            <ColumnTitle>Services</ColumnTitle>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Smart Contracts Devel...</ColumnText>
-            <ColumnText>Analytics and Crypto...</ColumnText>
-            <ColumnText>How we Work</ColumnText>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Smart Contract Audit</ColumnText>
-            <ColumnText>R&D</ColumnText>
-            <ColumnText>Our Process</ColumnText>
-          </TechItemColumn>
-        </FooterRow>
-        <FooterRow>
-          <TechItemColumn>
-            <ColumnTitle>Cases</ColumnTitle>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Featured Case 1</ColumnText>
-            <ColumnText>Featured Case 3</ColumnText>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Featured Case 2</ColumnText>
-            <ColumnText>All Cases</ColumnText>
-          </TechItemColumn>
-        </FooterRow>
+
         <FooterRow>
           <AddressColumn>
             <ColumnTitle>
