@@ -23,7 +23,7 @@ interface IProps {
 
 export const TypesText = styled(MainRobotoParagraph) <IProps>`
   margin-bottom:  ${(props) => (props.show ? '16px' : "0")};
-height: ${(props) => (props.show ? '100%' : "0")};
+height: ${(props) => (props.show ? '100%' : 0)};
 opacity: ${(props) => (props.show ? 1 : 0)};
-transition: height 1s linear, opacity 0.5s ease-out 0.5s, margin-bottom 1s linear;
+transition: height 0.25s ease-out, opacity 0.2s ease-out, margin-bottom 0.2s ease-out;
 `

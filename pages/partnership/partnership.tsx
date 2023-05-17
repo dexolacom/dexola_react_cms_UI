@@ -12,12 +12,19 @@ import {
 } from './styles';
 
 const Partnership = () => {
-  const [blockId, setBlockId] = useState<string>('');
+  const [blockId, setBlockId] = useState<boolean[]>([false, false, false]);
+
   const clickHandler = (e: React.SyntheticEvent) => {
-    const id = e?.currentTarget?.id;
+    const id = +e?.currentTarget?.id;
     console.log('e.currentTarget -> ', id);
-    setBlockId(id);
+    if (blockId.length > 0) {
+      const newIdArray = blockId.map((el, idx) =>
+        idx === id && !el ? true : false,
+      );
+      setBlockId(newIdArray);
+    }
   };
+  // };
 
   return (
     <PageContainer title={'Partnership'}>
@@ -37,25 +44,33 @@ const Partnership = () => {
         We are eager to partner with the following types of companies:
       </ContentText>
       <TypesItemWrapper>
-        <CompanyTypesItem id={'1'} onClick={e => clickHandler(e)}>
+        <CompanyTypesItem id={'0'} onClick={e => clickHandler(e)}>
           <TypesTitle>Crypto Marketing Agencies</TypesTitle>
           <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
         </CompanyTypesItem>
-        <TypesText show={false}>
+        <TypesText show={blockId[0]}>
           By partnering with Dexola, marketing agencies can offer their clients
           robust and secure blockchain solutions, enhancing the overall
           effectiveness of their marketing campaigns and solidifying their
           position as an all-in-one crypto marketing provider.
         </TypesText>
       </TypesItemWrapper>
-      <CompanyTypesItem>
-        <TypesTitle>Funds and Accelerators</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
-      <CompanyTypesItem>
-        <TypesTitle>Software Development Companies</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
+      <TypesItemWrapper>
+        <CompanyTypesItem id={'1'} onClick={e => clickHandler(e)}>
+          <TypesTitle>Funds and Accelerators</TypesTitle>
+          <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
+        </CompanyTypesItem>
+        <TypesText show={blockId[1]}>Other test text must be here.</TypesText>
+      </TypesItemWrapper>
+      <TypesItemWrapper>
+        <CompanyTypesItem id={'2'} onClick={e => clickHandler(e)}>
+          <TypesTitle>Software Development Companies</TypesTitle>
+          <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
+        </CompanyTypesItem>
+        <TypesText show={blockId[2]}>
+          Other test text #2 must be here.
+        </TypesText>
+      </TypesItemWrapper>
       <CompanyTypesItem>
         <TypesTitle>Companies Providing Crypto Legal Services</TypesTitle>
         <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
