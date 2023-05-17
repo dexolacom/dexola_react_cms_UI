@@ -2,24 +2,12 @@
 
 import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';
-import {
-  AddressColumn,
-  ArrowBlock,
-  ColumnText,
-  ColumnTitle,
-  FooterRow,
-  TechItemColumn,
-} from './styles';
 import RunningLine from '../../components/RunningLine/RunningLine';
 import FooterRow1 from './FooterRow';
+import { IFooterInfo } from '../../interfaces/interfaces';
+import { AddressColumn, ColumnText, ColumnTitle, FooterRow } from './styles';
 
-interface IFooterInfo {
-  title: string;
-  firstColumn: string[];
-  secondColumn: string[];
-}
-
-const TEMP_FOOTER_INFO: IFooterInfo[] | [] = [
+const TEMP_FOOTER_INFO: IFooterInfo[] = [
   {
     title: 'About',
     firstColumn: ['About Dexola'],
@@ -42,16 +30,6 @@ const TEMP_FOOTER_INFO: IFooterInfo[] | [] = [
 ];
 
 const Footer = () => {
-  const insert = () =>
-    TEMP_FOOTER_INFO &&
-    TEMP_FOOTER_INFO.length > 0 &&
-    TEMP_FOOTER_INFO.map((item, idx) => (
-      <FooterRow1 key={`${idx}`} footerInfo={item} />
-    ));
-
-  console.log('first -> ', insert());
-  // insert();
-
   return (
     <>
       <RunningLine />
@@ -65,6 +43,7 @@ const Footer = () => {
             priority
           />
         </FooterRow>
+
         <>
           {TEMP_FOOTER_INFO &&
             TEMP_FOOTER_INFO.length > 0 &&
@@ -72,18 +51,6 @@ const Footer = () => {
               <FooterRow1 key={`${idx}`} footerInfo={item} />
             ))}
         </>
-        <FooterRow>
-          <TechItemColumn>
-            <ColumnTitle>About</ColumnTitle>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>About Dexola</ColumnText>
-            <ArrowBlock className="linkArrow"></ArrowBlock>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Synergy with Trinetix</ColumnText>
-          </TechItemColumn>
-        </FooterRow>
 
         <FooterRow>
           <AddressColumn>

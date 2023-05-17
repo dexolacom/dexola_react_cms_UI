@@ -1,5 +1,6 @@
 'use client';
 
+import { IFooterInfo } from '../../interfaces/interfaces';
 import {
   ArrowBlock,
   ColumnText,
@@ -7,12 +8,6 @@ import {
   FooterRow,
   TechItemColumn,
 } from './styles';
-
-interface IFooterInfo {
-  title: string;
-  firstColumn: string[];
-  secondColumn: string[];
-}
 
 const FooterRow1 = ({ footerInfo }: { footerInfo: IFooterInfo }) => {
   const { title, firstColumn, secondColumn } = footerInfo;
@@ -25,16 +20,21 @@ const FooterRow1 = ({ footerInfo }: { footerInfo: IFooterInfo }) => {
         {firstColumn &&
           firstColumn.length > 0 &&
           firstColumn.map(el => (
-            <>
-              <ColumnText key={el}>{el}</ColumnText>
+            <div key={el}>
+              <ColumnText>{el}</ColumnText>
               <ArrowBlock className="linkArrow"></ArrowBlock>
-            </>
+            </div>
           ))}
       </TechItemColumn>
       <TechItemColumn>
         {secondColumn &&
           secondColumn.length > 0 &&
-          secondColumn.map(el => <ColumnText key={el}>{el}</ColumnText>)}
+          secondColumn.map(el => (
+            <div key={el}>
+              <ColumnText>{el}</ColumnText>
+              <ArrowBlock className="linkArrow"></ArrowBlock>
+            </div>
+          ))}
       </TechItemColumn>
     </FooterRow>
   );

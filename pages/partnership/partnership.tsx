@@ -1,11 +1,24 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import { ContentText } from '../../components/PageContainer/styles';
-import { CompanyTypesItem, TypesTitle } from './styles';
+import {
+  CompanyTypesItem,
+  TypesItemWrapper,
+  TypesText,
+  TypesTitle,
+} from './styles';
 
 const Partnership = () => {
+  const [blockId, setBlockId] = useState<string>('');
+  const clickHandler = (e: React.SyntheticEvent) => {
+    const id = e?.currentTarget?.id;
+    console.log('e.currentTarget -> ', id);
+    setBlockId(id);
+  };
+
   return (
     <PageContainer title={'Partnership'}>
       <ContentText>
@@ -23,10 +36,18 @@ const Partnership = () => {
       <ContentText>
         We are eager to partner with the following types of companies:
       </ContentText>
-      <CompanyTypesItem>
-        <TypesTitle>Crypto Marketing Agencies</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
+      <TypesItemWrapper>
+        <CompanyTypesItem id={'1'} onClick={e => clickHandler(e)}>
+          <TypesTitle>Crypto Marketing Agencies</TypesTitle>
+          <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
+        </CompanyTypesItem>
+        <TypesText show={false}>
+          By partnering with Dexola, marketing agencies can offer their clients
+          robust and secure blockchain solutions, enhancing the overall
+          effectiveness of their marketing campaigns and solidifying their
+          position as an all-in-one crypto marketing provider.
+        </TypesText>
+      </TypesItemWrapper>
       <CompanyTypesItem>
         <TypesTitle>Funds and Accelerators</TypesTitle>
         <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
