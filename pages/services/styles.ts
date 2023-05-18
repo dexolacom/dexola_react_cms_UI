@@ -23,4 +23,12 @@ export const LinkItem = styled(FlexRowBlock)`
   padding-right: 10px;
   border-bottom: 1px solid #36383C;
   cursor: pointer;
+
+  & .linkArrow {    
+    position: static;
+  }
+  
+  &:hover .linkArrow {    
+    transform: rotate(-45deg);
+  }
 `
