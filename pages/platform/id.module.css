@@ -1,0 +1,9 @@
+.container {
+  font-family: "Kanit";
+  width: 100%;
+  background-color: #272a2e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style: none;
+}

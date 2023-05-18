@@ -1,19 +1,11 @@
 import axios from "axios";
-import { IAttributes, IAttributesItem } from "../types";
-// http://localhost:1337/api/platforms
-export const getDetails = async ({ id }: any) => {
-  try {
-    const response = await axios.get(`${process.env.BASE_URL}/api/details/${id}`);
+import { ServerResponse } from "../types";
 
-    const regex = /!\[.*\]\((.*)\)/;
-    const data = [{ ...response.data.data }].map((el) => {
-      const match = el.attributes.image.match(regex);
-      const imageUrl = match ? match[1] : el.attributes.image;
-      return {
-        id: el.id,
-        image: imageUrl,
-      };
-    });
+export const getDetails = async () => {
+  try {
+    const data = await axios.get<ServerResponse>(
+      `${process.env.BASE_URL}/api/details`
+    );
     return data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -22,25 +14,24 @@ export const getDetails = async ({ id }: any) => {
   }
 };
 
-export const getAllPlatform = async () => {
+export const getDetailsID = async (id: string) => {
+  try {
+    const data = await axios.get<ServerResponse>(
+      `${process.env.BASE_URL}/api/details/${id}`
+    );
+    return data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error(error.message);
+    }
+  }
+};
+
+export const getPlatform = async () => {
   try {
     const response = await axios.get(`${process.env.BASE_URL}/api/platforms`);
 
-    const data = response?.data?.data
-      ?.map((el: IAttributes) => {
-        return {
-          technology: el.attributes.data.technology,
-          description: el.attributes.data.description,
-          paltfornName: el.attributes.data.paltfornName,
-          id: el.id,
-        };
-      })
-      .sort(
-        (a: IAttributesItem, b: IAttributesItem) =>
-          b.technology.length - a.technology.length
-      );
-
-    return data;
+    return response?.data?.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.error(error.message);

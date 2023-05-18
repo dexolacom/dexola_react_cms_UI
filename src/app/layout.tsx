@@ -37,7 +37,7 @@ export default function RootLayout({
         <title>{metadata.title}</title>
       </Head>
 
-      <body className={robotoMono.className}>
+      <body>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>

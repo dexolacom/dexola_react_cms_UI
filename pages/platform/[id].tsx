@@ -1,77 +1,84 @@
-// "use client";
+import { GetStaticProps } from "next";
+import { Suspense } from "react";
 
-import axios from "axios";
+import TechnoList from "../../components/Technology/TechnoList/TechnoList";
 
-const PlatformItem = ({ platform }: any) => {
-  console.log(platform);
+import { getDetails, getDetailsID } from "../../api/api";
+import { PlatformDetailData } from "../../types";
+
+import st from "./id.module.css";
+
+export const getStaticPaths = async () => {
+  try {
+    const response = await getDetails();
+
+    const paths = response?.data?.data?.map((detail) => ({
+      params: { id: String(detail.id) },
+    }));
+
+    return { paths, fallback: false };
+  } catch (error) {
+    console.error(error);
+    return { paths: [], fallback: false };
+  }
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  try {
+    if (!params || typeof params.id !== "string") {
+      // throw new Error("Invalid params ID getStaticProps");
+      console.error("Invalid params ID getStaticProps");
+      return {
+        props: {
+          platformDetails: [],
+        },
+      };
+    }
+    const { id } = params;
+
+    const response = await getDetailsID(id);
+
+    const platformDetails = response?.data?.data;
+
+    return {
+      props: {
+        platformDetails,
+      },
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      props: {
+        platformDetails: [],
+      },
+    };
+  }
+};
+
+const PlatformDetails = ({
+  platformDetails,
+}: {
+  platformDetails: PlatformDetailData | null;
+}) => {
+  if (!platformDetails) {
+    return <div>Loading...</div>;
+  }
+
+  const { id, attributes } = platformDetails;
+  const { data, image, createdAt, updatedAt, publishedAt } = attributes;
+
   return (
-    <div>
-      PlatformItem
-      <br />
-      {"ID" + platform.id}
-      <br />
-      {"ID" + platform.attributes.data.name}
-    </div>
+    <Suspense fallback={"Loading ......"}>
+      <div className={st.container}>
+        <TechnoList
+          key={id}
+          heading={data.paltfornName}
+          description={data.summary}
+          technology={data.technology}
+        />
+      </div>
+    </Suspense>
   );
 };
 
-export const getStaticPaths = async () => {
-  const response = await axios.get("http://localhost:1337/api/details");
-  const detailsData = response.data.data;
-
-  const paths = detailsData.map((detail: any) => ({
-    params: { id: String(detail.id) },
-  }));
-  console.log(" -=-=-=- paths", paths);
-  return { paths, fallback: false };
-};
-
-export const getStaticProps = async ({ params }: any) => {
-  const { id } = params;
-  console.log("id getStaticProps", id);
-  const response = await axios.get(`http://localhost:1337/api/details/${id}`);
-  const detailData = response.data;
-
-  const platform = detailData.data;
-
-  return {
-    props: {
-      platform,
-    },
-  };
-};
-
-export default PlatformItem;
-
-// const PlatformItem = () => {
-//   const router = useRouter();
-//   const { id } = router.query;
-//   const [platform, setPlatform] = useState<any>();
-
-//   const getDetailsAll = async () => {
-//     const response = await axios.get(`http://localhost:1337/api/details`);
-//     const res = response.data.data.filter((el: any) => el.id === Number(id));
-//     console.log("res", res);
-//   };
-
-//   const fetchData = async (id: string) => {
-//     const datailsData = await getDetails(id);
-//     console.log("datailsData", datailsData);
-//   };
-
-//   useEffect(() => {
-//     getDetailsAll();
-//     if (id) {
-//       fetchData(String(id));
-//     }
-//   }, [id]);
-
-//   return (
-//     <div>
-//       PlatformItem
-//       <p>id = {id}</p>
-//     </div>
-//   );
-// };
-
-// export default PlatformItem;
+export default PlatformDetails;

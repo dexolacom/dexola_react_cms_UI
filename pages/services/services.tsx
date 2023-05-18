@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // import Image from 'next/image';
 import {
@@ -7,9 +7,9 @@ import {
   ContentText,
   Sidebar,
   Title,
-} from '../styles';
-import { ImagesWrapper, ImagesColumn } from './styles';
-import ServiceCard from '../../components/ServiceCard/ServiceCard';
+} from "../styles";
+import { ImagesWrapper, ImagesColumn } from "./styles";
+import ServiceCard from "../../components/ServiceCard/ServiceCard";
 
 const Services = () => {
   return (
@@ -33,22 +33,22 @@ const Services = () => {
         <ImagesWrapper>
           <ImagesColumn>
             <ServiceCard
-              imgPath={'/img_1_1_3.png'}
-              title={'Smart Contracts Development'}
+              imgPath={"/img_1_1_3.png"}
+              title={"Smart Contracts Development"}
             />
             <ServiceCard
-              imgPath={'/img_3_1_3.png'}
-              title={'Analytics and Crypto Trading Tools'}
+              imgPath={"/img_3_1_3.png"}
+              title={"Analytics and Crypto Trading Tools"}
             />
           </ImagesColumn>
           <ImagesColumn>
             <ServiceCard
-              imgPath={'/img_2_1_3.png'}
-              title={'Smart Contract Audits'}
+              imgPath={"/img_2_1_3.png"}
+              title={"Smart Contract Audits"}
             />
             <ServiceCard
-              imgPath={'/img_4_1_3.png'}
-              title={'Web3 White Label Solutions'}
+              imgPath={"/img_4_1_3.png"}
+              title={"Web3 White Label Solutions"}
             />
           </ImagesColumn>
         </ImagesWrapper>
