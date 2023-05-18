@@ -27,7 +27,6 @@ export const MainKatinParagraph = styled(MainRobotoParagraph)`
   `
 // --- - ---
 export const BlockWrapper = styled(FlexRowBlock)`
-  background-color: #aaa;
   width: 100vw; 
    /* height: 100vh; */
   height: fit-content;
