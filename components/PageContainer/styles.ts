@@ -12,8 +12,21 @@ export const FlexColumnBlock = styled.div`
   justify-content: flex-start;
   `
 
+export const MainRobotoParagraph = styled.p`
+  font-family: var(--font-roboto-mono);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: #B3B3B3;
+  `
+export const MainKatinParagraph = styled(MainRobotoParagraph)`
+  font-family: var(--font-kanit);
+  color: #FFFFFF;
+  `
+// --- - ---
 export const BlockWrapper = styled(FlexRowBlock)`
-  background-color: #aaa;
   width: 100vw; 
    /* height: 100vh; */
   height: fit-content;
@@ -28,6 +41,7 @@ export const Sidebar = styled.div`
 `
 
 export const Title = styled.p`
+  max-width: 272px;
   font-family: var(--font-kanit);
   font-style: normal;
   font-weight: 300;
@@ -46,14 +60,6 @@ export const ContentBox = styled(FlexColumnBlock)`
   background: #17191D;
 `
 
-export const ContentText = styled.p`
+export const ContentText = styled(MainRobotoParagraph)`
   margin-bottom: 16px;
-  font-family: var(--font-roboto-mono);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  /* or 150% */
-  letter-spacing: -0.02em;
-  color: #B3B3B3;
 `

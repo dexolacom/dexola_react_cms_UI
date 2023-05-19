@@ -1,8 +1,6 @@
 import { IProps } from "../../../types";
 import st from "./tech.module.css";
 
-
-
 const TechnoList = ({ heading, technology, description }: IProps) => {
   return (
     <>
