@@ -1,9 +1,9 @@
 'use client';
 
-import { ContactButton } from './styles';
+import styles from './styles.module.css';
 
 const ContactUs = () => {
-  return <ContactButton>Contact us</ContactButton>;
+  return <button className={styles.contactUs}>Contact us</button>;
 };
 
 export default ContactUs;
