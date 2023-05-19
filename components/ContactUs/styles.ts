@@ -27,4 +27,5 @@ export const ContactButton = styled.button`
   color: #FFFFFF;
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   cursor: pointer;
+  z-index: 2;
 `

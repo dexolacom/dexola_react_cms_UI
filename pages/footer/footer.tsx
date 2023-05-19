@@ -2,22 +2,10 @@
 
 import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';
-import {
-  AddressColumn,
-  ArrowBlock,
-  ColumnText,
-  ColumnTitle,
-  FooterRow,
-  TechItemColumn,
-} from './styles';
 import RunningLine from '../../components/RunningLine/RunningLine';
 import FooterRow1 from './FooterRow';
-
-interface IFooterInfo {
-  title: string;
-  firstColumn: string[];
-  secondColumn: string[];
-}
+import { IFooterInfo } from '../../interfaces/interfaces';
+import { AddressColumn, ColumnText, ColumnTitle, FooterRow } from './styles';
 
 const TEMP_FOOTER_INFO: IFooterInfo[] = [
   {
@@ -55,6 +43,7 @@ const Footer = () => {
             priority
           />
         </FooterRow>
+
         <>
           {TEMP_FOOTER_INFO &&
             TEMP_FOOTER_INFO.length > 0 &&

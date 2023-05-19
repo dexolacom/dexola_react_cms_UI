@@ -8,6 +8,9 @@ import {
 import { ImagesWrapper, ImagesColumn, LinksBlock, LinkItem } from './styles';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import PageContainer from '../../components/PageContainer/PageWrapper';
+import { ArrowBlock } from '../../components/ServiceCard/styles';
+
+const SERVICES_TITLES: string[] = ['R&D', 'How we Work', 'Our Process'];
 
 const Services = () => {
   return (
@@ -51,36 +54,16 @@ const Services = () => {
         </ImagesColumn>
       </ImagesWrapper>
       <LinksBlock>
-        <LinkItem>
-          <MainKatinParagraph>R&D</MainKatinParagraph>
-          <Image
-            src={'/arrow_rb.svg'}
-            alt="arrow"
-            width={13}
-            height={13}
-            priority
-          />
-        </LinkItem>
-        <LinkItem>
-          <MainKatinParagraph>How we Work</MainKatinParagraph>
-          <Image
-            src={'/arrow_rb.svg'}
-            alt="arrow"
-            width={13}
-            height={13}
-            priority
-          />
-        </LinkItem>
-        <LinkItem>
-          <MainKatinParagraph>Our Process</MainKatinParagraph>
-          <Image
-            src={'/arrow_rb.svg'}
-            alt="arrow"
-            width={13}
-            height={13}
-            priority
-          />
-        </LinkItem>
+        <>
+          {SERVICES_TITLES &&
+            SERVICES_TITLES.length &&
+            SERVICES_TITLES.map(el => (
+              <LinkItem>
+                <MainKatinParagraph>{el}</MainKatinParagraph>
+                <ArrowBlock className="linkArrow"></ArrowBlock>
+              </LinkItem>
+            ))}
+        </>
       </LinksBlock>
     </PageContainer>
   );

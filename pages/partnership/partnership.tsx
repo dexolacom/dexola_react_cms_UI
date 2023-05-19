@@ -1,11 +1,60 @@
 'use client';
 
-import Image from 'next/image';
+import { useState } from 'react';
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import { ContentText } from '../../components/PageContainer/styles';
-import { CompanyTypesItem, TypesTitle } from './styles';
+import TypeItem from './typeItem';
+
+interface ITypeItem {
+  title: string;
+  text: string;
+}
+
+const TYPE_COMPANIES_INFO: ITypeItem[] = [
+  {
+    title: 'Crypto Marketing Agencies',
+    text: 'By partnering with Dexola, marketing agencies can offer their clients robust and secure blockchain solutions, enhancing the overall effectiveness of their marketing campaigns and solidifying their position as an all-in-one crypto marketing provider.',
+  },
+  {
+    title: 'Funds and Accelerators',
+    text: 'Other test text #2 must be here.',
+  },
+  {
+    title: 'Software Development Companies',
+    text: 'Other test text #3 must be here.',
+  },
+  {
+    title: 'Companies Providing Crypto Legal Services',
+    text: 'Other test text #4 must be here.',
+  },
+  {
+    title: 'Blockchain Consultancies',
+    text: 'Other test text #5 must be here.',
+  },
+  {
+    title: 'Data Security and Privacy Firms',
+    text: 'Other test text #6 must be here.',
+  },
+  {
+    title: 'Token Economics and Tokenomics Specialists',
+    text: 'Other test text #7 must be here.',
+  },
+];
+const INIT_TYPE_STATUS = Array(7).fill(false);
 
 const Partnership = () => {
+  const [typeStatus, setTypeStatus] = useState<boolean[]>(INIT_TYPE_STATUS);
+
+  const clickHandler = (e: React.SyntheticEvent) => {
+    const id = +e?.currentTarget?.id;
+    if (typeStatus.length > 0) {
+      const newStatusArray = typeStatus.map((el, idx) =>
+        idx === id && !el ? true : false,
+      );
+      setTypeStatus(newStatusArray);
+    }
+  };
+
   return (
     <PageContainer title={'Partnership'}>
       <ContentText>
@@ -23,34 +72,19 @@ const Partnership = () => {
       <ContentText>
         We are eager to partner with the following types of companies:
       </ContentText>
-      <CompanyTypesItem>
-        <TypesTitle>Crypto Marketing Agencies</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
-      <CompanyTypesItem>
-        <TypesTitle>Funds and Accelerators</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
-      <CompanyTypesItem>
-        <TypesTitle>Software Development Companies</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
-      <CompanyTypesItem>
-        <TypesTitle>Companies Providing Crypto Legal Services</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
-      <CompanyTypesItem>
-        <TypesTitle>Blockchain Consultancies</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
-      <CompanyTypesItem>
-        <TypesTitle>Data Security and Privacy Firms</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
-      <CompanyTypesItem>
-        <TypesTitle>Token Economics and Tokenomics Specialists</TypesTitle>
-        <Image src={'/plus.svg'} alt="plus" width={24} height={24} priority />
-      </CompanyTypesItem>
+      <>
+        {TYPE_COMPANIES_INFO &&
+          TYPE_COMPANIES_INFO.length > 0 &&
+          TYPE_COMPANIES_INFO.map((item, idx) => (
+            <TypeItem
+              index={idx}
+              title={item.title}
+              text={item.text}
+              clickHandler={clickHandler}
+              showStatus={typeStatus[idx]}
+            />
+          ))}
+      </>
     </PageContainer>
   );
 };
