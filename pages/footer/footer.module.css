@@ -1,0 +1,67 @@
+.footerRow {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  padding: 18px 0;
+  border-bottom: 1px solid #36383c;
+}
+
+.footerRow:last-of-type {
+  border-bottom: none;
+}
+
+.techItemColumn {
+  composes: flexColumnBlock from '../../components/PageContainer/pageContainer.module.css';
+}
+
+.techItemColumn > div {
+  cursor: pointer;
+  position: relative;
+}
+
+.techItemColumn > div > p {
+  width: 172px;
+}
+
+.techItemColumn > div:hover .arrowBlock {
+  transform: rotate(-45deg);
+  color: #f00;
+}
+
+.columnTitle {
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  padding: 6px 0 0;
+  margin-bottom: 6px;
+  font-size: 13px;
+  letter-spacing: -0.03em;
+  text-align: left;
+}
+
+.columnText {
+  composes: columnTitle;
+  text-align: right;
+  color: #ffffff;
+}
+
+.addressColumn {
+  composes: flexColumnBlock from '../../components/PageContainer/pageContainer.module.css';
+}
+
+.addressColumn > p {
+  width: 100%;
+}
+
+.addressColumn > p:last-of-type {
+  color: #b3b3b3;
+}
+
+.arrowBlock {
+  position: absolute;
+  bottom: 15px;
+  right: -12px;
+  width: 6px;
+  height: 7px;
+  background-image: url(/arrow_small.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  transition: transform 0.2s linear;
+  transform: rotate(0deg);
+}

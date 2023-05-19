@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import RunningLine from '../../components/RunningLine/RunningLine';
-import FooterRow1 from './FooterRow';
+import FooterRow from './FooterRow';
 import { IFooterInfo } from '../../interfaces/interfaces';
-import { AddressColumn, ColumnText, ColumnTitle, FooterRow } from './styles';
+import styles from './footer.module.css';
 
 const TEMP_FOOTER_INFO: IFooterInfo[] = [
   {
@@ -34,7 +34,7 @@ const Footer = () => {
     <>
       <RunningLine />
       <PageContainer title={''}>
-        <FooterRow>
+        <div className={styles.footerRow}>
           <Image
             src="/logo-white.svg"
             alt="Logo"
@@ -42,26 +42,26 @@ const Footer = () => {
             height={14}
             priority
           />
-        </FooterRow>
+        </div>
 
         <>
           {TEMP_FOOTER_INFO &&
             TEMP_FOOTER_INFO.length > 0 &&
             TEMP_FOOTER_INFO?.map((item: IFooterInfo, idx) => (
-              <FooterRow1 key={`${idx}`} footerInfo={item} />
+              <FooterRow key={`${idx}`} footerInfo={item} />
             ))}
         </>
 
-        <FooterRow>
-          <AddressColumn>
-            <ColumnTitle>
+        <div className={styles.footerRow}>
+          <div className={styles.addressColumn}>
+            <p className={styles.columnTitle}>
               210 Middleton st, Nashville Tennessee 37210, US
-            </ColumnTitle>
-          </AddressColumn>
-          <AddressColumn>
-            <ColumnText>© 2023</ColumnText>
-          </AddressColumn>
-        </FooterRow>
+            </p>
+          </div>
+          <div className={styles.addressColumn}>
+            <p className={styles.columnText}>© 2023</p>
+          </div>
+        </div>
       </PageContainer>
     </>
   );

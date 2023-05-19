@@ -17,7 +17,7 @@ const ServiceCard = ({
     <ImageItem>
       <Image src={imgPath} alt="Service1" width={275} height={275} priority />
       <CardHover title={title} color={color} />
-      <ArrowBlock className="linkArrow"></ArrowBlock>
+      <div className="linkArrow"></div>
     </ImageItem>
   );
 };

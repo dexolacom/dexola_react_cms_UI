@@ -10,7 +10,7 @@ export const ImageItem = styled(FlexColumnBlock)`
   overflow: hidden;
   cursor: pointer;
 
-  &:hover .infoHover {
+  &:hover .cardWrapper {
     top: 0px; 
     padding-top: 32px;
     
