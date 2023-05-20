@@ -1,45 +1,40 @@
-import styled from 'styled-components';
-import { FlexColumnBlock, FlexRowBlock } from '../components/PageContainer/styles';
-
-export const HeaderWrapper = styled(FlexColumnBlock)`
-justify-content: space-between;
-  width: 100vw; 
+.headerWrapper {
+  composes: flexColumnBlock from '../../components/PageContainer/pageContainer.module.css';
+  justify-content: space-between;
+  width: 100vw;
   height: 100vh;
-  background-image: url(Dexola_BG_1.png);
+  background-image: url(../../public/Dexola_BG_1.png);
   background-size: cover;
-`
-export const TopBox = styled(FlexRowBlock)`
-  position: fixed; 
+}
+
+.topBox {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  position: fixed;
   width: 100%;
   align-items: center;
   padding: 34px 32px 0 32px;
-`
+}
 
-export const Logo = styled.div`
-  padding: 34px 0 0 32px;
-  cursor: pointer;
-`
-
-export const Description = styled.div`
+.description {
   padding: 168px 0 0 116px;
   padding-top: 26vh;
   /* padding-left: 9vh; */
-`
+}
 
-export const HeaderTitle = styled.p`
+.headerTitle {
   margin-bottom: 32px;
   font-family: var(--font-kanit);
   font-style: normal;
   font-weight: 400;
   font-size: 64px;
   line-height: 72px;
-  /* or 112% */
   letter-spacing: 0.02em;
   text-transform: capitalize;
-  color: #17191D;
-`
+  color: #17191d;
+}
 
-export const SubTitle = styled(FlexRowBlock)`
+.subTitle {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
   width: 430px;
   width: 370px;
   font-family: var(--font-roboto-mono);
@@ -47,32 +42,38 @@ export const SubTitle = styled(FlexRowBlock)`
   font-weight: 400;
   font-size: 20px;
   line-height: 36px;
-  /* or 180% */
   letter-spacing: -0.02em;
-  color: #17191D;
-`
-export const LogoTrinetix = styled.div`
+  color: #17191d;
+}
+
+.logoTrinetix {
   display: inline-block;
   width: 100px;
   height: 32px;
-  background: #17191D;
+  background: #17191d;
   border-radius: 2px;
-  background-image: url(logo-trinetix.svg);
+  background-image: url(../../public/logo-trinetix.svg);
   background-repeat: no-repeat;
   background-position: center center;
   cursor: pointer;
-`
+}
 
-export const Blank = styled.span`
+.blank {
   position: relative;
   bottom: 8px;
   animation: blink 2s infinite;
-  @keyframes blink {
-      from { opacity: 1; }
-      to { opacity: 0; }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
   }
-`
-export const OurAddress = styled.p`
+  to {
+    opacity: 0;
+  }
+}
+
+.ourAddress {
   padding-bottom: 28px;
   padding-left: 116px;
   font-family: var(--font-roboto-mono);
@@ -80,7 +81,6 @@ export const OurAddress = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  /* identical to box height, or 175% */
   letter-spacing: -0.01em;
   color: #000000;
-`
+}

@@ -1,6 +1,5 @@
 'use client';
 
-// import { BlockWrapper, ContentBox, Sidebar, Title } from './styles';
 import styles from './pageContainer.module.css';
 
 const PageContainer = ({

@@ -1,7 +1,5 @@
 'use client';
 
-// import Image from 'next/image';
-import { CardWrapper, ServiceDescription } from './styles';
 import styles from './serviceCard.module.css';
 
 const CardHover = ({ title, color }: { title: string; color: string }) => {
@@ -14,12 +12,12 @@ const CardHover = ({ title, color }: { title: string; color: string }) => {
 
   return (
     <div className={styles.cardWrapper}>
-      <div
-        className={styles.serviceDescription}
-        style={{ backgroundColor: color ? color : 'white' }}
-        // color={color}
-      >
-        {title}
+      <div className={styles.descriptionBlock}>
+        <div
+          className={styles.colorMarker}
+          style={{ backgroundColor: color ? color : 'white' }}
+        />
+        <div className={styles.serviceDescription}>{title}</div>
       </div>
       <ul>
         {textArray &&
@@ -31,14 +29,3 @@ const CardHover = ({ title, color }: { title: string; color: string }) => {
 };
 
 export default CardHover;
-
-// return (
-//   <CardWrapper className="infoHover">
-//     <ServiceDescription color={color}>{title}</ServiceDescription>
-//     <ul>
-//       {textArray &&
-//         textArray.length > 0 &&
-//         textArray.map(el => <li key={el}>{el}</li>)}
-//     </ul>
-//   </CardWrapper>
-// );
