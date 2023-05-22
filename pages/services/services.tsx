@@ -52,8 +52,8 @@ const Services = () => {
         <>
           {SERVICES_TITLES &&
             SERVICES_TITLES.length &&
-            SERVICES_TITLES.map(el => (
-              <div className={styles.linkItem}>
+            SERVICES_TITLES.map((el, idx) => (
+              <div key={`${idx}`} className={styles.linkItem}>
                 <p className={styles2.mainKatinParagraph}>{el}</p>
                 <div className={styles.arrowBlockServ}></div>
               </div>

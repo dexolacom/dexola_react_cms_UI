@@ -75,3 +75,13 @@
   composes: mainRobotoParagraph;
   margin-bottom: 16px;
 }
+
+.subtitle {
+  font-family: var(--font-kanit);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}

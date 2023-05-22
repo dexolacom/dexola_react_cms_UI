@@ -78,6 +78,7 @@ const Partnership = () => {
           TYPE_COMPANIES_INFO.map((item, idx) => (
             <TypeItem
               index={idx}
+              key={item.title}
               title={item.title}
               text={item.text}
               clickHandler={clickHandler}

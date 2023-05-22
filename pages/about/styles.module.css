@@ -1,12 +1,6 @@
 .aboutSubtitle {
+  composes: subtitle from '../../components/PageContainer/pageContainer.module.css';
   margin-bottom: 12px;
-  font-family: var(--font-kanit);
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0.02em;
-  color: #ffffff;
 }
 
 .advertWrapper {

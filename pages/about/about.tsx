@@ -24,8 +24,8 @@ const About = () => {
       <div className={styles.advertWrapper}>
         {ADVERT_INFO &&
           ADVERT_INFO.length &&
-          ADVERT_INFO.map(el => (
-            <div className={styles.advertBlock}>
+          ADVERT_INFO.map((el, idx) => (
+            <div key={`${idx}`} className={styles.advertBlock}>
               <p className={styles.advertAmount}>{el.amount}</p>
               <p className={styles.advertText}>{el.description}</p>
             </div>
