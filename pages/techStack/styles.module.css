@@ -1,0 +1,30 @@
+.techItem {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  height: auto;
+  padding: 18px 0;
+  border-bottom: 1px solid #36383c;
+}
+
+.techItem:last-of-type {
+  border-bottom: none;
+}
+
+.techItemColumn {
+  composes: flexColumnBlock from '../../components/PageContainer/pageContainer.module.css';
+}
+
+.techItemColumn > p {
+  width: 172px;
+}
+
+.columnTitle {
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  padding: 6px 0;
+  text-align: left;
+}
+
+.columnText {
+  composes: columnTitle;
+  text-align: right;
+  color: #ffffff;
+}

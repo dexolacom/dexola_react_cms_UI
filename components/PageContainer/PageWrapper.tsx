@@ -1,6 +1,6 @@
 'use client';
 
-import { BlockWrapper, ContentBox, Sidebar, Title } from './styles';
+import styles from './pageContainer.module.css';
 
 const PageContainer = ({
   title,
@@ -10,12 +10,12 @@ const PageContainer = ({
   children: JSX.Element | JSX.Element[];
 }) => {
   return (
-    <BlockWrapper>
-      <Sidebar>
-        <Title>{title}</Title>
-      </Sidebar>
-      <ContentBox>{children}</ContentBox>
-    </BlockWrapper>
+    <div className={styles.blockWrapper}>
+      <div className={styles.sidebar}>
+        <p className={styles.title}>{title}</p>
+      </div>
+      <div className={styles.contentBox}>{children}</div>
+    </div>
   );
 };
 

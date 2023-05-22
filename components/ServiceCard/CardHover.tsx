@@ -1,7 +1,6 @@
 'use client';
 
-// import Image from 'next/image';
-import { CardWrapper, ServiceDescription } from './styles';
+import styles from './serviceCard.module.css';
 
 const CardHover = ({ title, color }: { title: string; color: string }) => {
   // --- !TEMP -
@@ -10,15 +9,22 @@ const CardHover = ({ title, color }: { title: string; color: string }) => {
     'Wallets and Custodian Solutions',
     'Formal Verification',
   ];
+
   return (
-    <CardWrapper className="infoHover">
-      <ServiceDescription color={color}>{title}</ServiceDescription>
+    <div className={styles.cardWrapper}>
+      <div className={styles.descriptionBlock}>
+        <div
+          className={styles.colorMarker}
+          style={{ backgroundColor: color ? color : 'white' }}
+        />
+        <div className={styles.serviceDescription}>{title}</div>
+      </div>
       <ul>
         {textArray &&
           textArray.length > 0 &&
           textArray.map(el => <li key={el}>{el}</li>)}
       </ul>
-    </CardWrapper>
+    </div>
   );
 };
 

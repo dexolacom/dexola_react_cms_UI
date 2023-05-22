@@ -1,17 +1,11 @@
-import styled from 'styled-components';
-
-export const ContactButton = styled.button`
+.contactUs {
   position: fixed;
   width: 128px;
   height: 40px;
   right: 32px;
   bottom: 32px;
-  background-image: url(Rectangle3002.svg);
-  animation: back 8s linear infinite;
-  @keyframes back {
-    from { background-position-x: left; }
-    to { background-position-x: right; }
-  }
+  background-image: url(../../public/Rectangle3002.svg);
+  background-position: -3px center;
 
   outline: none;
   border: none;
@@ -21,11 +15,21 @@ export const ContactButton = styled.button`
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  /* identical to box height, or 171% */
 
   letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
   cursor: pointer;
   z-index: 2;
-`
+
+  animation: moveBack 8s linear infinite;
+}
+
+@keyframes moveBack {
+  from {
+    background-position-x: left;
+  }
+  to {
+    background-position-x: right;
+  }
+}

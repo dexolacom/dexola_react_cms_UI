@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import PageContainer from '../../components/PageContainer/PageWrapper';
-import { ContentText } from '../../components/PageContainer/styles';
+import styles from '../../components/PageContainer/pageContainer.module.css';
 import TypeItem from './typeItem';
 
 interface ITypeItem {
@@ -57,21 +57,21 @@ const Partnership = () => {
 
   return (
     <PageContainer title={'Partnership'}>
-      <ContentText>
+      <p className={styles.contentText}>
         By forging strategic partnerships, Dexola aims to create a robust
         network of industry-leading professionals committed to delivering the
         best possible solutions and services to our clients. Together, we can
         drive innovation, foster growth, and contribute to the ongoing success
         of the blockchain and cryptocurrency industry.
-      </ContentText>
-      <ContentText>
+      </p>
+      <p className={styles.contentText}>
         We are actively seeking to establish mutually beneficial relationships
         with various types of businesses, working together to provide
         comprehensive, holistic services to our clients.
-      </ContentText>
-      <ContentText>
+      </p>
+      <p className={styles.contentText}>
         We are eager to partner with the following types of companies:
-      </ContentText>
+      </p>
       <>
         {TYPE_COMPANIES_INFO &&
           TYPE_COMPANIES_INFO.length > 0 &&
