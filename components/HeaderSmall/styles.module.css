@@ -1,0 +1,8 @@
+.topBox {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  padding: 34px 32px 32px;
+  z-index: 7;
+}
