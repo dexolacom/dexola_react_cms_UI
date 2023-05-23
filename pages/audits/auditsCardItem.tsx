@@ -1,56 +1,60 @@
 'use client';
 
+import { useState } from 'react';
+import Image from 'next/image';
+import { IAuditsContent } from '../../interfaces/interfaces';
 import styles from './styles.module.css';
 
-const AuditCardItem = ({
-  // index,
-  title,
-}: // text,
-// clickHandler,
-// showStatus,
-{
-  // index: number;
-  title: string;
-  // text: string;
-  // clickHandler: (e: React.SyntheticEvent) => void;
-  // showStatus: boolean;
-}) => {
-  // const textStyles = () => {
-  //   const result = showStatus
-  //     ? { marginBottom: '16px', height: '100%', opacity: 1 }
-  //     : { margiBottom: '0', height: '0', opacity: 0 };
-  //   return result;
-  // };
+const AuditCardItem = ({ content }: { content: IAuditsContent }) => {
+  const { title, text, links } = content;
+  const [showStatus, setShowStatus] = useState<boolean>(false);
+  const clickHandler = () => {
+    setShowStatus(prev => !prev);
+  };
+
+  const blockStyles = () => {
+    const result = showStatus
+      ? { height: '100%', opacity: 1 }
+      : { height: '0', opacity: 0, padding: 0 };
+    return result;
+  };
 
   return (
     <div className={styles.auditsCard}>
-      <p className={styles.auditsTitle}>{title}</p>
-      <p className={styles.auditsText}>
-        Conducting specialized security tests, including stress testing,
-        penetration testing, and attack simulations, to identify potential
-        vulnerabilities and ensure robustness.
-      </p>
+      <div>
+        <p className={styles.auditsSubtitle}>{title}</p>
+        <p className={styles.auditsCardText}>{text}</p>
+      </div>
       <div className={styles.auditsCardLink}>
-        <p>Related cases</p>
-        <p>Related cases</p>
+        <div
+          className={styles.auditsCardLinkItem}
+          onClick={clickHandler}
+          style={{ paddingBottom: showStatus ? '0px' : '24px' }}>
+          <p className={styles.linkItemTitle}>Related cases</p>
+          <div
+            className={styles.signBlock}
+            style={{ height: showStatus ? '2px' : '16px' }}
+          />
+        </div>
+        {links &&
+          links.length > 0 &&
+          links.map(el => (
+            <div
+              className={styles.linkItemBlock}
+              key={el}
+              style={blockStyles()}>
+              <p className={styles.linkItemText}>{el}</p>
+              <Image
+                src={'/arrow_tr_8x8.svg'}
+                alt="Arrow"
+                width={8}
+                height={8}
+                priority
+              />
+            </div>
+          ))}
       </div>
     </div>
-    // ------
-    // <div className={styles.typesItemWrapper}>
-    //   <div
-    //     className={styles.companyTypesItem}
-    //     id={`${index}`}
-    //     onClick={e => clickHandler(e)}>
-    //     <p className={styles.typesTitle}>{title}</p>
-    //     <div
-    //       className={styles.signBlock}
-    //       style={{ height: showStatus ? '2px' : '16px' }}
-    //     />
-    //   </div>
-    //   <p className={styles.typesText} style={textStyles()}>
-    //     {text}
-    //   </p>
-    // </div>
   );
 };
 

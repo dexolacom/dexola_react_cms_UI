@@ -3,3 +3,14 @@ export interface IFooterInfo {
   firstColumn: string[];
   secondColumn: string[];
 }
+
+export interface IAuditsContent {
+  title: string;
+  text: string;
+  links: string[];
+}
+
+export interface ITypeItem {
+  title: string;
+  text: string;
+}

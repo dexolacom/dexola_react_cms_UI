@@ -2,44 +2,10 @@
 
 import { useState } from 'react';
 import PageContainer from '../../components/PageContainer/PageWrapper';
-import styles from '../../components/PageContainer/pageContainer.module.css';
 import TypeItem from './typeItem';
+import styles from '../../components/PageContainer/pageContainer.module.css';
+import { TYPE_COMPANIES_INFO } from '../../constants/textConstants';
 
-interface ITypeItem {
-  title: string;
-  text: string;
-}
-
-const TYPE_COMPANIES_INFO: ITypeItem[] = [
-  {
-    title: 'Crypto Marketing Agencies',
-    text: 'By partnering with Dexola, marketing agencies can offer their clients robust and secure blockchain solutions, enhancing the overall effectiveness of their marketing campaigns and solidifying their position as an all-in-one crypto marketing provider.',
-  },
-  {
-    title: 'Funds and Accelerators',
-    text: 'Other test text #2 must be here.',
-  },
-  {
-    title: 'Software Development Companies',
-    text: 'Other test text #3 must be here.',
-  },
-  {
-    title: 'Companies Providing Crypto Legal Services',
-    text: 'Other test text #4 must be here.',
-  },
-  {
-    title: 'Blockchain Consultancies',
-    text: 'Other test text #5 must be here.',
-  },
-  {
-    title: 'Data Security and Privacy Firms',
-    text: 'Other test text #6 must be here.',
-  },
-  {
-    title: 'Token Economics and Tokenomics Specialists',
-    text: 'Other test text #7 must be here.',
-  },
-];
 const INIT_TYPE_STATUS = Array(7).fill(false);
 
 const Partnership = () => {
