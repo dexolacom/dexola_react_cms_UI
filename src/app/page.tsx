@@ -1,7 +1,6 @@
 import CasesSection from '../../components/cases/casesSection';
 import ContactButton from '../../components/ContactUs/ContactUs';
 import About from '../../pages/about/about';
-import Audits from '../../pages/audits/audits'; // TEMP !
 import Footer from '../../pages/footer/footer';
 import Header from '../../pages/header/header';
 import Partnership from '../../pages/partnership/partnership';
@@ -15,9 +14,6 @@ export default function Home() {
     <RootLayout>
       <ContactButton />
       <Header />
-      {/* --- temp --- */}
-      <Audits />
-      {/* --- / temp --- */}
       <About />
       <Services />
       <CasesSection />
