@@ -1,76 +1,76 @@
 'use client';
 
 import PageContainer from '../../components/PageContainer/PageWrapper';
-import { FlexColumnBlock } from '../../components/PageContainer/styles';
-import { ColumnText, ColumnTitle, TechItem, TechItemColumn } from './styles';
+import styles from './styles.module.css';
+import styles1 from '../../components/PageContainer/pageContainer.module.css';
 
 const TechStack = () => {
   return (
     <PageContainer title={'Technology Stack'}>
-      <FlexColumnBlock>
-        <TechItem>
-          <TechItemColumn>
-            <ColumnTitle>Native platforms</ColumnTitle>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>JavaScript</ColumnText>
-            <ColumnText>Vue.js</ColumnText>
-            <ColumnText>Solidity</ColumnText>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>React.js</ColumnText>
-            <ColumnText>Node.js</ColumnText>
-            <ColumnText>Rust</ColumnText>
-          </TechItemColumn>
-        </TechItem>
-        <TechItem>
-          <TechItemColumn>
-            <ColumnTitle>Cloud development</ColumnTitle>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>AWS</ColumnText>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Google Cloud</ColumnText>
-          </TechItemColumn>
-        </TechItem>
-        <TechItem>
-          <TechItemColumn>
-            <ColumnTitle>Blockchain development</ColumnTitle>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Ethereum</ColumnText>
-            <ColumnText>Stellar</ColumnText>
-            <ColumnText>Fantom</ColumnText>
-            <ColumnText>Tron</ColumnText>
-            <ColumnText>Solidity</ColumnText>
-            <ColumnText>Web3</ColumnText>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Binance</ColumnText>
-            <ColumnText>Solana</ColumnText>
-            <ColumnText>Polygon</ColumnText>
-            <ColumnText>Multichain</ColumnText>
-            <ColumnText>Rust</ColumnText>
-            <ColumnText>Hardhat</ColumnText>
-          </TechItemColumn>
-        </TechItem>
-        <TechItem>
-          <TechItemColumn>
-            <ColumnTitle>Additional tools</ColumnTitle>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Apollo Client</ColumnText>
-            <ColumnText>Express.js</ColumnText>
-            <ColumnText>GpaphQL</ColumnText>
-          </TechItemColumn>
-          <TechItemColumn>
-            <ColumnText>Apollo Server</ColumnText>
-            <ColumnText>OAuth</ColumnText>
-            <ColumnText>SQL & NoSQL</ColumnText>
-          </TechItemColumn>
-        </TechItem>
-      </FlexColumnBlock>
+      <div className={styles1.flexColumnBlock}>
+        <div className={styles.techItem}>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnTitle}>Native platforms</p>
+          </div>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnText}>JavaScript</p>
+            <p className={styles.columnText}>Vue.js</p>
+            <p className={styles.columnText}>Solidity</p>
+          </div>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnText}>React.js</p>
+            <p className={styles.columnText}>Node.js</p>
+            <p className={styles.columnText}>Rust</p>
+          </div>
+        </div>
+        <div className={styles.techItem}>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnTitle}>Cloud development</p>
+          </div>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnText}>AWS</p>
+          </div>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnText}>Google Cloud</p>
+          </div>
+        </div>
+        <div className={styles.techItem}>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnTitle}>Blockchain development</p>
+          </div>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnText}>Ethereum</p>
+            <p className={styles.columnText}>Stellar</p>
+            <p className={styles.columnText}>Fantom</p>
+            <p className={styles.columnText}>Tron</p>
+            <p className={styles.columnText}>Solidity</p>
+            <p className={styles.columnText}>Web3</p>
+          </div>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnText}>Binance</p>
+            <p className={styles.columnText}>Solana</p>
+            <p className={styles.columnText}>Polygon</p>
+            <p className={styles.columnText}>Multichain</p>
+            <p className={styles.columnText}>Rust</p>
+            <p className={styles.columnText}>Hardhat</p>
+          </div>
+        </div>
+        <div className={styles.techItem}>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnTitle}>Additional tools</p>
+          </div>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnText}>Apollo Client</p>
+            <p className={styles.columnText}>Express.js</p>
+            <p className={styles.columnText}>GpaphQL</p>
+          </div>
+          <div className={styles.techItemColumn}>
+            <p className={styles.columnText}>Apollo Server</p>
+            <p className={styles.columnText}>OAuth</p>
+            <p className={styles.columnText}>SQL & NoSQL</p>
+          </div>
+        </div>
+      </div>
     </PageContainer>
   );
 };

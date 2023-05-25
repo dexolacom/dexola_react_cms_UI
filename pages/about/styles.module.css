@@ -1,0 +1,36 @@
+.aboutSubtitle {
+  composes: subtitle from '../../components/PageContainer/pageContainer.module.css';
+  margin-bottom: 12px;
+}
+
+.advertWrapper {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  flex-wrap: wrap;
+  padding: 32px 0;
+}
+
+.advertBlock {
+  flex-basis: 50%;
+  margin-bottom: 32px;
+}
+
+.advertAmount {
+  margin-buttom: 8px;
+  font-family: var(--font-kanit);
+  font-style: normal;
+  font-weight: 275;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0.06em;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.advertText {
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  width: 274px;
+}
+
+.aboutText {
+  composes: contentText from '../../components/PageContainer/pageContainer.module.css';
+}

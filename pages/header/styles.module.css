@@ -1,0 +1,104 @@
+.headerWrapper {
+  composes: flexColumnBlock from '../../components/PageContainer/pageContainer.module.css';
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  /* background-size: cover; */
+}
+
+.videoWrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+.videoWrapper [poster] {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.videoWrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+}
+
+/* .topBox {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  padding: 34px 32px 32px;
+  z-index: 7;
+} */
+
+.description {
+  padding: 168px 0 0 116px;
+  padding-top: 26vh;
+  /* padding-left: 9vh; */
+}
+
+.headerTitle {
+  margin-bottom: 32px;
+  font-family: var(--font-kanit);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #17191d;
+}
+
+.subTitle {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  width: 430px;
+  width: 370px;
+  font-family: var(--font-roboto-mono);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  color: #17191d;
+}
+
+.logoTrinetix {
+  display: inline-block;
+  width: 100px;
+  height: 32px;
+  background: #17191d;
+  border-radius: 2px;
+  background-image: url(../../public/logo-trinetix.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.blank {
+  position: relative;
+  bottom: 8px;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.ourAddress {
+  padding-bottom: 28px;
+  padding-left: 116px;
+  font-family: var(--font-roboto-mono);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}

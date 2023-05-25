@@ -1,7 +1,7 @@
 :root {
   /* FONTS */
-  --font-kanit: "Kanit", sans-serif;
-  --font-roboto-mono: "Roboto Mono", monospace;
+  --font-kanit: 'Kanit', sans-serif;
+  --font-roboto-mono: 'Roboto Mono', monospace;
   /* SIZE */
   --content-size: 100%;
   /* COLORS */

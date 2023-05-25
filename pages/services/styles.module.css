@@ -1,0 +1,42 @@
+.imagesWrapper {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  justify-content: center;
+  padding-top: 24px;
+  margin-bottom: 39px;
+  /* width: 100vw; */
+}
+
+.imagesColumn {
+  composes: flexColumnBlock from '../../components/PageContainer/pageContainer.module.css';
+  margin-right: 32px;
+}
+
+.imagesColumn:nth-of-type(2) {
+  padding-top: 80px;
+}
+
+.linksBlock {
+  composes: flexColumnBlock from '../../components/PageContainer/pageContainer.module.css';
+}
+
+.linkItem {
+  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
+  align-items: center;
+  height: 64px;
+  padding-right: 10px;
+  border-bottom: 1px solid #36383c;
+  cursor: pointer;
+}
+
+.linkItem .arrowBlock {
+  position: static;
+}
+
+.arrowBlockServ {
+  composes: arrowBlock from '../../components/ServiceCard/serviceCard.module.css';
+  position: static;
+}
+
+.linkItem:hover .arrowBlockServ {
+  transform: rotate(-45deg);
+}
