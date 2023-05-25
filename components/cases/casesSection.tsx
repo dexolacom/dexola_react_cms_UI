@@ -1,26 +1,28 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import React, { useEffect, useState, Suspense } from "react";
 
-import { PlatformData, PlatformItem } from "../../types";
-import st from "./cases.module.css";
 import { getPlatform } from "../../api/api";
-import TechnologiList from "../Technology/TechnologiList";
 import PageContainer from "../PageContainer/PageWrapper";
 
+import st from "./cases.module.css";
+import CustomReactMarkdown from "../CustomMarkdown/CustomReactMarkdown";
+import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
+
 const CasesSection = () => {
-  const [platform, setPlatform] = useState<PlatformData[]>([]);
+  const [platform, setPlatform] = useState<IPlatfrom[]>();
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await getPlatform();
 
-      const result = response?.map((item: PlatformItem) => ({
-        id: item.id,
-        ...item.attributes.data,
+      const transformData = response?.map((item: IItem) => ({
+        services: item?.attributes?.services,
+        summary: removeImageLinksFromMarkdown(item?.attributes?.summary),
+        id: item?.id,
       }));
-
-      setPlatform(result);
+      setPlatform(transformData);
     };
 
     fetchData();
@@ -28,13 +30,24 @@ const CasesSection = () => {
 
   return (
     <PageContainer title={"Case Studies"}>
-      <div className={st.container}>
-        {platform?.length > 0
-          ? platform?.map((item: any) => (
-              <TechnologiList data={[item]} key={item.id} />
-            ))
-          : "Loading ..... "}
-      </div>
+      <Suspense fallback={"Loading ......"}>
+        <div className={st.container}>
+          {platform
+            ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
+            .map((el) => (
+              <Link href={`/platform/${el.id}`} key={el.id}>
+                <div className={st.wrapper} key={el.id}>
+                  <CustomReactMarkdown technology={el?.services}>
+                    {el.summary}
+                  </CustomReactMarkdown>
+                  <div className={st.imageContainer}>
+                    <div className={st.imageDiv}></div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+        </div>
+      </Suspense>
     </PageContainer>
   );
 };

@@ -1,0 +1,54 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+}
+.asideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 420px;
+  padding: 80px 0 0 100px;
+  background-image: url("../../public/LH_BG_2.png");
+  background-size: cover;
+}
+.content {
+  width: calc(100vw - 420px);
+  height: fit-content;
+  padding: 92px 114px 92px 135px;
+  background: #17191d;
+}
+
+.title {
+  max-width: 272px;
+  font-family: var(--font-kanit);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+/* arrow */
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #272a2e;
+  width: 32px;
+  height: 32px;
+}
+
+.imageDiv {
+  background-image: url("../../public/arrowTop.png");
+  background-size: cover;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in-out;
+}
