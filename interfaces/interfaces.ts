@@ -14,3 +14,11 @@ export interface ITypeItem {
   title: string;
   text: string;
 }
+
+export interface IContactButton {
+  name: string;
+  image_src: string;
+  width: number;
+  height: number;
+  clickHandler: () => void;
+}

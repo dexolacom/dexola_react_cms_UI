@@ -1,10 +1,47 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import HeaderSmall from '../../components/HeaderSmall/headerSmall';
+import ContactFormButton from './ContactFormButton';
+import { IContactButton } from '../../interfaces/interfaces';
 import styles from './contactForm.module.css';
 
 const ContactForm = () => {
+  const alarmText = 'Please complete this field';
+  const [isSended, setIsSended] = useState<boolean>(false);
+  const sendClick = () => {
+    // setIsSended(true);  !!! Temp comment
+  };
+  const telegramClick = () => {
+    // setIsSended(true);  !!! Temp comment
+  };
+  const emailClick = () => {
+    // setIsSended(true);  !!! Temp comment
+  };
+
+  const sendProps: IContactButton = {
+    name: 'Send it',
+    image_src: '/line_64.svg',
+    width: 24,
+    height: 1.5,
+    clickHandler: sendClick,
+  };
+  const telegramProps: IContactButton = {
+    name: 'Telegram',
+    image_src: '/telegram.svg',
+    width: 12,
+    height: 11,
+    clickHandler: telegramClick,
+  };
+  const emailProps: IContactButton = {
+    name: 'Email',
+    image_src: '/email.svg',
+    width: 16,
+    height: 10,
+    clickHandler: emailClick,
+  };
+
   return (
     <div className={styles.wrapper}>
       <HeaderSmall isWhite={true} />
@@ -29,44 +66,41 @@ const ContactForm = () => {
         </p>
       </div>
       <div className={styles.rightBlock}>
-        <div className={styles.rightSubBlock}>
-          <input placeholder="Your name" />
-          <input placeholder="Your phone (optional)" />
-          <input placeholder="Your email" />
-          <input placeholder="Your message" />
+        <div className={styles.rightFirstBlock}>
+          {isSended ? (
+            <p className={styles.thanksText}>
+              Thank you!
+              <br /> We will get in touch soon
+            </p>
+          ) : (
+            <div className={styles.rightSubBlock}>
+              <input className={styles.contactInput} placeholder="Your name" />
+              <p className={styles.alarmMessage}>{alarmText}</p>
+              <input
+                className={styles.contactInput}
+                placeholder="Your phone (optional)"
+              />
+              <p
+                className={styles.alarmMessage}
+                style={{ visibility: 'hidden' }}>
+                {alarmText}
+              </p>
+              <input className={styles.contactInput} placeholder="Your email" />
+              <p className={styles.alarmMessage}>{alarmText}</p>
+              <input
+                className={styles.contactInput}
+                placeholder="Your message"
+              />
+              <p className={styles.alarmMessage}>{alarmText}</p>
+              <ContactFormButton data={sendProps} />
+            </div>
+          )}
         </div>
-        <div className={styles.buttonWrapperFirst}>
-          <button> - Send it</button>
-        </div>
-        <div className={styles.rightSubBlock}>
-          <p>Or ping us by:</p>
-          <div className={styles.buttonWrapperSecond}>
-            <button>
-              <div>
-                <Image
-                  src={'/telegram.svg'}
-                  alt="Telegram"
-                  width={12}
-                  height={11}
-                  // priority
-                  style={{ marginRight: '12px' }}
-                />
-                Telegram
-              </div>
-            </button>
-            <button>
-              <div>
-                <Image
-                  src={'/email.svg'}
-                  alt="Email"
-                  width={16}
-                  height={10}
-                  // priority
-                  style={{ marginRight: '12px' }}
-                />
-                Email
-              </div>
-            </button>
+        <div className={styles.buttonWrapperSecond}>
+          <p className={styles.formText}>Or ping us by:</p>
+          <div className={styles.buttonWrapper}>
+            <ContactFormButton data={telegramProps} />
+            <ContactFormButton data={emailProps} />
           </div>
         </div>
       </div>
