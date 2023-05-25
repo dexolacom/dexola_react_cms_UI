@@ -1,8 +1,14 @@
 .topBox {
   composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   align-items: center;
-  padding: 34px 32px 32px;
+  padding: 34px 32px 0;
   z-index: 7;
+}
+
+.imageBox {
+  cursor: pointer;
 }
