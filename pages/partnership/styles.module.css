@@ -18,7 +18,6 @@
 
 .signBlock {
   width: 16px;
-  /* height: ${(props) => (props.show ? '2px' : '16px')}; */
   background-image: url(../../public/plus_v.svg), url(../../public/plus_h.svg);
   background-repeat: no-repeat;
   background-position: center;

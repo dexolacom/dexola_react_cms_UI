@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { PlatformData, PlatformItem } from "../../types";
-import st from "./cases.module.css";
-import { getPlatform } from "../../api/api";
-import TechnologiList from "../Technology/TechnologiList";
-import PageContainer from "../PageContainer/PageWrapper";
+import { PlatformData, PlatformItem } from '../../types';
+import st from './cases.module.css';
+import { getPlatform } from '../../Api/api';
+import TechnologiList from '../technology/technologiList';
+import PageContainer from '../PageContainer/PageWrapper';
 
 const CasesSection = () => {
   const [platform, setPlatform] = useState<PlatformData[]>([]);
@@ -27,13 +27,13 @@ const CasesSection = () => {
   }, []);
 
   return (
-    <PageContainer title={"Case Studies"}>
+    <PageContainer title={'Case Studies'}>
       <div className={st.container}>
         {platform?.length > 0
           ? platform?.map((item: any) => (
               <TechnologiList data={[item]} key={item.id} />
             ))
-          : "Loading ..... "}
+          : 'Loading ..... '}
       </div>
     </PageContainer>
   );
