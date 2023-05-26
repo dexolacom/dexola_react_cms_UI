@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import styles from './pageContainer.module.css';
+import styles from "./pageContainer.module.css";
 
 const PageContainer = ({
   title,
