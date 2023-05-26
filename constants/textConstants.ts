@@ -109,5 +109,31 @@ export const RandD_INFO: ITypeItem[] = [
     title: 'Private Blockchains',
     text: 'Our engineers have thoroughly explored private blockchains tailored to the specific project needs. We anticipate the opportunity to apply our knowledge in a real-world product, helping customers to fully benefit from blockchain technology while preserving privacy and control over their data.',
   },
+];
 
+export const HowWeWork_INFO: ITypeItem[] = [
+  {
+    title: 'Standardized and Documented Code',
+    text: 'We provide well-documented and standardized code, making it easy for clients to transition development in-house or onboard additional teams. Dexola ensures that you maintain control and flexibility when working with external vendors.',
+  },
+  {
+    title: 'Agile Methodologies and Industry-Standard Tools',
+    text: "Our team follows agile methodologies and utilizes industry-standard tools to deliver timely, high-quality solutions. This allows us to remain flexible and adapt to the client's software ecosystem.",
+  },
+  {
+    title: 'Excellence in UI/UX Design',
+    text: 'Drawing from our legacy in UX design, our UI/UX team aims to deliver the best user experience in the blockchain space by improving usability and user engagement for your projects.',
+  },
+  {
+    title: 'Tech Partnership Mindset',
+    text: "We deeply understand each client's specific processes and goals through thorough business analysis, and work closely with clients as partners to achieve their business objectives.",
+  },
+  {
+    title: 'Adaptable Approach',
+    text: 'By being agile and adaptable, we adjust our services and solutions to the evolving needs of medium-sized businesses. Our flexible approach ensures that we continue to deliver exceptional value and results for our clients, even as their requirements change.',
+  },
+  {
+    title: 'Legal and Compliance:',
+    text: 'As a US-based corporation, Dexola follows US regulations and compliance. We believe that integration into the existing financial system and better transparency will drive mass adoption of decentralized finance.',
+  },
 ];

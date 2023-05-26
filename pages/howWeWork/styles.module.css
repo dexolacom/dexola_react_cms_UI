@@ -1,0 +1,31 @@
+.textBlockWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.textBlock {
+  width: 47.5%;
+  height: 352px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #393939;
+}
+
+.textBlock:last-of-type {
+  border-bottom: none;
+}
+
+.blockTitle {
+  margin-bottom: 8px;
+  /* font-family: 'Georama'; ??? */
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.blockText {
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+}
