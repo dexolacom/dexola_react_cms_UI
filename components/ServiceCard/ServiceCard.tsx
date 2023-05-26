@@ -14,7 +14,6 @@ const ServiceCard = ({
   title: string;
   color: string;
 }) => {
-  console.log('title: ', title);
   return (
     <div className={styles.imageItem}>
       <Image src={imgPath} alt="Service1" width={275} height={275} priority />

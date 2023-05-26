@@ -6,33 +6,6 @@
   /* background-size: cover; */
 }
 
-.videoWrapper {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-}
-.videoWrapper [poster] {
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
-.videoWrapper video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.1;
-}
-
-/* .topBox {
-  composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
-  position: fixed;
-  width: 100%;
-  align-items: center;
-  padding: 34px 32px 32px;
-  z-index: 7;
-} */
-
 .description {
   padding: 168px 0 0 116px;
   padding-top: 26vh;
