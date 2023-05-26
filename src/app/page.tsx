@@ -4,6 +4,7 @@ import About from '../../pages/about/about';
 import Footer from '../../pages/footer/footer';
 import Header from '../../pages/header/header';
 import Partnership from '../../pages/partnership/partnership';
+import RandD from '../../pages/RandD/rd';
 import Services from '../../pages/services/services';
 import TechStack from '../../pages/techStack/techStack';
 import RootLayout from './layout';
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <CasesSection />
       <TechStack />
+      <RandD />
       <Partnership />
       <Footer />
     </RootLayout>

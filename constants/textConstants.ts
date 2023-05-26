@@ -87,3 +87,27 @@ export const TYPE_COMPANIES_INFO: ITypeItem[] = [
     text: 'Other test text #7 must be here.',
   },
 ];
+
+export const RandD_INFO: ITypeItem[] = [
+  {
+    title: 'Blockchain Interoperability',
+    text: 'We are exploring the possibilities of blockchain interoperability to enable seamless communication and transactions between different blockchain networks. By understanding the challenges and potential solutions for connecting disparate blockchain systems, we aim to create robust, efficient, and secure cross-chain solutions that enhance the overall utility and adoption of blockchain technology.',
+  },
+  {
+    title: 'Layer 2 and Zero Knowledge',
+    text: 'Our team is investigating the potential of Zero Knowledge proofs and Layer 2 scaling solutions to improve privacy, security, and scalability in blockchain. By understanding the intricacies of these technologies, we aim to develop solutions that protect user data and enable more efficient transaction processing for blockchain applications.',
+  },
+  {
+    title: 'Account Abstraction',
+    text: "Dexola's R& D team is actively researching Account Abstraction to improve user experience and streamline the interaction between users and blockchain networks.By understanding the potential of Account Abstraction, we aim to develop more flexible and secure account management solutions for our clients, ultimately contributing to the mass adoption of blockchain technology.",
+  },
+  {
+    title: 'Blockchain Identity Management',
+    text: 'Our R&D team is also researching blockchain-based identity management systems that can provide secure, transparent, and user-centric digital identity solutions. By leveraging the decentralized and tamper-proof nature of blockchain technology, we aim to develop cutting-edge identity management systems that give individuals more control over their personal information while improving security and privacy.',
+  },
+  {
+    title: 'Private Blockchains',
+    text: 'Our engineers have thoroughly explored private blockchains tailored to the specific project needs. We anticipate the opportunity to apply our knowledge in a real-world product, helping customers to fully benefit from blockchain technology while preserving privacy and control over their data.',
+  },
+
+];
