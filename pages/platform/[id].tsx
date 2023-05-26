@@ -16,6 +16,8 @@ import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMark
 import RenderListTechnology from "../../lib/RenderListTechnology";
 
 import st from "./id.module.css";
+import style from "../../components/commonStyles/commonStyles.module.css";
+import markdownStyle from "../../components/CustomMarkdown/mardown.module.css";
 
 export const getStaticPaths = async () => {
   try {
@@ -106,16 +108,18 @@ const PlatformDetails = ({
           {imageUrl && (
             <Image
               src={`${process.env.BASE_URL + imageUrl}`}
-              alt="wer"
+              alt="platform Image"
+              // rel="preload"
               width={825}
               height={525}
               sizes="100vw"
               style={{ maxWidth: "100%", height: "auto" }}
+              priority
             />
           )}
         </div>
         <ul>
-          <h3 className={st.headText}>Technology Stack</h3>
+          <h3 className={markdownStyle.headText}>Technology Stack</h3>
           <RenderListTechnology arr={network} title={"Network"} />
           <RenderListTechnology arr={backEnd} title={"Back-End"} />
           <RenderListTechnology arr={database} title={"Database"} />
@@ -127,14 +131,14 @@ const PlatformDetails = ({
         {platformLink !== null ? (
           <Link
             href={platformLink}
-            className={st.link}
+            className={style.link}
             target="_blank"
             rel="noreferrer noopener"
           >
             <div className={st.container}>
               {platformLink}
-              <div className={st.imageContainer}>
-                <div className={st.imageDiv}></div>
+              <div className={style.imageContainerItem}>
+                <div className={style.imageDivArrowA}></div>
               </div>
             </div>
           </Link>

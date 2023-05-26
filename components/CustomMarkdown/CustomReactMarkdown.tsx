@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import st from "../Cases/cases.module.css";
+import st from "./mardown.module.css";
 
 const CustomReactMarkdown: React.FC<CustomReactMarkdownProps> = ({
   technology,

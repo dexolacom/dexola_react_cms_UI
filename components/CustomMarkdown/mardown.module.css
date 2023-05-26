@@ -1,0 +1,62 @@
+.desc {
+  color: var(--preset-color);
+  margin: 0 0 30px 0;
+  font-family: var(--font-roboto-mono);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.headText {
+  font-family: var(--font-kanit);
+  color: var(--white);
+  font-size: 20px;
+  margin: 25px 0;
+}
+
+/* CustomReactMarkdownProps  Action list */
+
+.action {
+  padding-left: 40px;
+  list-style-type: disc;
+  margin: 0 0 30px 0;
+}
+
+.actionList::marker {
+  color: var(--preset-color);
+}
+
+.actionListItem {
+  color: var(--preset-color);
+  font-family: var(--font-roboto-mono);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 20px 0;
+  color: var(--preset-color);
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-roboto-mono);
+  font-size: 16px;
+}
+
+.listItem {
+  color: var(--preset-color);
+  padding: 7px 12px;
+  border: 1px solid var(--grey);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-roboto-mono);
+  font-size: 16px;
+}
+
+.listBullet {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--bg-marker);
+}

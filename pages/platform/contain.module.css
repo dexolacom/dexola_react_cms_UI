@@ -18,7 +18,7 @@
   width: calc(100vw - 420px);
   height: fit-content;
   padding: 92px 114px 92px 135px;
-  background: #17191d;
+  background: var(--bg-dark);
 }
 
 .title {
@@ -30,7 +30,7 @@
   line-height: 48px;
   letter-spacing: 0.02em;
   text-transform: capitalize;
-  color: #ffffff;
+  color: var(--white);
 }
 /* arrow */
 
@@ -38,17 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #272a2e;
+  background: var(--bg-color);
   width: 32px;
   height: 32px;
-}
-
-.imageDiv {
-  background-image: url("../../public/arrowTop.png");
-  background-size: cover;
-  background-position: center;
-  width: 15px;
-  height: 15px;
-  background-repeat: no-repeat;
-  transition: all 0.2s ease-in-out;
 }

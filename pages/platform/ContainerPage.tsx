@@ -2,10 +2,14 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import st from "./contain.module.css";
 import HeaderSmall from "../../components/HeaderSmall/headerSmall";
-import Footer from "../footer/footer";
 import ContactUs from "../../components/ContactUs/ContactUs";
+
+import Footer from "../footer/footer";
+
+import st from "./contain.module.css";
+import style from "../../components/commonStyles/commonStyles.module.css";
+
 const PageContainerItem = ({
   title,
   children,
@@ -28,7 +32,7 @@ const PageContainerItem = ({
           {isGoBack && (
             <Link href="/" onClick={handleGoBack}>
               <div className={st.imageContainer}>
-                <div className={st.imageDiv}></div>
+                <div className={style.imageDivContain}></div>
               </div>
             </Link>
           )}

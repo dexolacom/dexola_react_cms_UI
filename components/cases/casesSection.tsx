@@ -1,14 +1,17 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import React, { useEffect, useState, Suspense } from "react";
 
 import { getPlatform } from "../../api/api";
+
+import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
+
 import PageContainer from "../PageContainer/PageWrapper";
+import CustomReactMarkdown from "../CustomMarkdown/CustomReactMarkdown";
 
 import st from "./cases.module.css";
-import CustomReactMarkdown from "../CustomMarkdown/CustomReactMarkdown";
-import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
+import style from "../commonStyles/commonStyles.module.css";
 
 const CasesSection = () => {
   const [platform, setPlatform] = useState<IPlatfrom[]>();
@@ -36,12 +39,12 @@ const CasesSection = () => {
             ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
             .map((el) => (
               <Link href={`/platform/${el.id}`} key={el.id}>
-                <div className={st.wrapper} key={el.id}>
+                <div className={style.wrapper} key={el.id}>
                   <CustomReactMarkdown technology={el?.services}>
                     {el.summary}
                   </CustomReactMarkdown>
-                  <div className={st.imageContainer}>
-                    <div className={st.imageDiv}></div>
+                  <div className={style.imageContainerCases}>
+                    <div className={style.imageDivArrowA}></div>
                   </div>
                 </div>
               </Link>

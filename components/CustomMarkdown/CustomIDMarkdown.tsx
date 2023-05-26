@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import st from "../../pages/platform/id.module.css";
+import st from "./mardown.module.css";
 
 const CustomMarkdown: React.FC<CustomIDMarkdownProps> = ({ children }) => {
   const H3Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
