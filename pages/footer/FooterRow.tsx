@@ -1,6 +1,5 @@
 'use client';
 
-import { IFooterInfo } from '../../interfaces/interfaces';
 import styles from './footer.module.css';
 
 const FooterRow = ({ footerInfo }: { footerInfo: IFooterInfo }) => {

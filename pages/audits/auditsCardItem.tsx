@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { IAuditsContent } from '../../interfaces/interfaces';
 import styles from './styles.module.css';
 
 const AuditCardItem = ({ content }: { content: IAuditsContent }) => {

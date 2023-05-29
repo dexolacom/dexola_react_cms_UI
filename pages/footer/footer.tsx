@@ -4,30 +4,8 @@ import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import RunningLine from '../../components/RunningLine/RunningLine';
 import FooterRow from './FooterRow';
-import { IFooterInfo } from '../../interfaces/interfaces';
 import styles from './footer.module.css';
-
-const TEMP_FOOTER_INFO: IFooterInfo[] = [
-  {
-    title: 'About',
-    firstColumn: ['About Dexola'],
-    secondColumn: ['Synergy with Trinetix'],
-  },
-  {
-    title: 'Services',
-    firstColumn: [
-      'Smart Contracts Devel...',
-      'Analytics and Crypto...',
-      'How we Work',
-    ],
-    secondColumn: ['Smart Contract Audit', 'R&D', 'Our Process'],
-  },
-  {
-    title: 'Cases',
-    firstColumn: ['Featured Case 1', 'Featured Case 3'],
-    secondColumn: ['Featured Case 2', 'All Cases'],
-  },
-];
+import { TEMP_FOOTER_INFO } from '../../constants/textConstants';
 
 const Footer = () => {
   return (

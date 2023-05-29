@@ -1,10 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import HeaderSmall from '../../components/HeaderSmall/headerSmall';
 import ContactFormButton from './ContactFormButton';
-import { IContactButton } from '../../interfaces/interfaces';
 import styles from './contactForm.module.css';
 
 const ContactForm = () => {

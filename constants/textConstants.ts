@@ -1,5 +1,3 @@
-import { IAuditsContent, ITypeItem } from "../interfaces/interfaces";
-
 export const ADVERT_INFO = [
   {
     amount: '40+',
@@ -136,5 +134,27 @@ export const PROCESS_INFO: ITypeItem[] = [
   {
     title: '6. Delivery and Reporting',
     text: 'For T&M billing and dedicated team models, our project manager provides weekly project status reports during each sprint. Every report contains a summary of tasks completed by each team member and the time spent on implementation.<br>In the fixed-price billing model, the final report is provided once a milestone has been achieved. Following this transparent and accountable way, our clients can monitor project progress and evaluate the overall performance.',
+  },
+];
+
+export const TEMP_FOOTER_INFO: IFooterInfo[] = [
+  {
+    title: 'About',
+    firstColumn: ['About Dexola'],
+    secondColumn: ['Synergy with Trinetix'],
+  },
+  {
+    title: 'Services',
+    firstColumn: [
+      'Smart Contracts Devel...',
+      'Analytics and Crypto...',
+      'How we Work',
+    ],
+    secondColumn: ['Smart Contract Audit', 'R&D', 'Our Process'],
+  },
+  {
+    title: 'Cases',
+    firstColumn: ['Featured Case 1', 'Featured Case 3'],
+    secondColumn: ['Featured Case 2', 'All Cases'],
   },
 ];
