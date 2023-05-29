@@ -7,7 +7,7 @@ import React, { Suspense } from "react";
 
 import { getPlatform, getPlatformId } from "../../api/api";
 
-import PageContainerItem from "./ContainerPage";
+import PageContainerItem from "./PageContainer/ContainerPage";
 import CustomReactMarkdown from "../../components/CustomMarkdown/CustomReactMarkdown";
 import CustomMarkdown from "../../components/CustomMarkdown/CustomIDMarkdown";
 
@@ -18,6 +18,7 @@ import RenderListTechnology from "../../lib/RenderListTechnology";
 import st from "./id.module.css";
 import style from "../../components/commonStyles/commonStyles.module.css";
 import markdownStyle from "../../components/CustomMarkdown/mardown.module.css";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
 export const getStaticPaths = async () => {
   try {
@@ -87,6 +88,7 @@ const PlatformDetails = ({
     platformLink,
     description,
     paltformName,
+    videoLink,
   } = attributes;
 
   // get Link Image
@@ -95,7 +97,7 @@ const PlatformDetails = ({
   const removeLinlImage = removeImageLinksFromMarkdown(summary);
 
   return (
-    <PageContainerItem title={paltformName} isGoBack={true}>
+    <PageContainerItem title={paltformName}>
       <Suspense fallback={"Loading ... . . ."}>
         <CustomReactMarkdown
           technology={services}
@@ -104,7 +106,7 @@ const PlatformDetails = ({
         >
           {removeLinlImage}
         </CustomReactMarkdown>
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", marginTop: "30px" }}>
           {imageUrl && (
             <Image
               src={`${process.env.BASE_URL + imageUrl}`}
@@ -120,14 +122,31 @@ const PlatformDetails = ({
         </div>
         <ul>
           <h3 className={markdownStyle.headText}>Technology Stack</h3>
-          <RenderListTechnology arr={network} title={"Network"} />
-          <RenderListTechnology arr={backEnd} title={"Back-End"} />
-          <RenderListTechnology arr={database} title={"Database"} />
-          <RenderListTechnology arr={blockchain} title={"Blockchain"} />
-          <RenderListTechnology arr={frontEnd} title={"Front-End"} />
-          <RenderListTechnology arr={infrastructure} title={"Infrastructure"} />
+          {network && network.length > 0 && (
+            <RenderListTechnology arr={network} title={"Network"} />
+          )}
+          {backEnd && backEnd.length > 0 && (
+            <RenderListTechnology arr={backEnd} title={"Back-End"} />
+          )}
+          {database && database.length > 0 && (
+            <RenderListTechnology arr={database} title={"Database"} />
+          )}
+          {blockchain && blockchain.length > 0 && (
+            <RenderListTechnology arr={blockchain} title={"Blockchain"} />
+          )}
+          {frontEnd && frontEnd.length > 0 && (
+            <RenderListTechnology arr={frontEnd} title={"Front-End"} />
+          )}
+          {infrastructure && infrastructure.length > 0 && (
+            <RenderListTechnology
+              arr={infrastructure}
+              title={"Infrastructure"}
+            />
+          )}
         </ul>
         <CustomMarkdown>{description}</CustomMarkdown>
+        {videoLink !== null ? <VideoPlayer videoLink={videoLink} /> : <></>}
+
         {platformLink !== null ? (
           <Link
             href={platformLink}

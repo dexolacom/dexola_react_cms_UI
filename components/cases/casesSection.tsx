@@ -14,7 +14,7 @@ import st from "./cases.module.css";
 import style from "../commonStyles/commonStyles.module.css";
 
 const CasesSection = () => {
-  const [platform, setPlatform] = useState<IPlatfrom[]>();
+  const [platforms, setPlatforms] = useState<IPlatfrom[]>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +25,11 @@ const CasesSection = () => {
         summary: removeImageLinksFromMarkdown(item?.attributes?.summary),
         id: item?.id,
       }));
-      setPlatform(transformData);
+
+      const filteredPlatforms = transformData?.filter((platform: IPlatfrom) =>
+        [1, 2, 3].includes(platform.id)
+      );
+      setPlatforms(filteredPlatforms);
     };
 
     fetchData();
@@ -35,10 +39,10 @@ const CasesSection = () => {
     <PageContainer title={"Case Studies"}>
       <Suspense fallback={"Loading ......"}>
         <div className={st.container}>
-          {platform
+          {platforms
             ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
             .map((el) => (
-              <Link href={`/platform/${el.id}`} key={el.id}>
+              <Link href={`/platforms/${el.id}`} key={el.id}>
                 <div className={style.wrapper} key={el.id}>
                   <CustomReactMarkdown technology={el?.services}>
                     {el.summary}
@@ -51,6 +55,9 @@ const CasesSection = () => {
             ))}
         </div>
       </Suspense>
+      <Link href="/platforms" className={st.button}>
+        Browse All Case Studies
+      </Link>
     </PageContainer>
   );
 };

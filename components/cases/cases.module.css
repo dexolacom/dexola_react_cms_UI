@@ -1,3 +1,60 @@
 .container {
   width: 100%;
+  margin-bottom: 50px;
+}
+.platformsLink {
+  background: #272a2e;
+  padding: 10px 30px;
+  width: 330px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-roboto-mono);
+  font-size: 16px;
+}
+/*  test animation  */
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 300px;
+  background: #272a2e;
+  color: #fff;
+}
+
+.button::before {
+  content: "";
+  transform: translateX(0);
+  opacity: 1;
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.button::after {
+  content: url("/gorizont.svg");
+  transform: translateX(100%);
+  opacity: 0;
+  width: 31px;
+  height: 17px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.button:hover::before {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.button:hover::after {
+  transform: translateX(0);
+  opacity: 1;
 }

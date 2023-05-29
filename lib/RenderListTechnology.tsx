@@ -1,4 +1,4 @@
-import st from "../pages/platform/id.module.css";
+import st from "../pages/platforms/id.module.css";
 
 const RenderListTechnology = ({
   arr,
@@ -14,7 +14,7 @@ const RenderListTechnology = ({
         <div className={st.listContainer2}>
           {arr?.map((el: string, idx: number) => (
             <li className={st.listTechnologyItem} key={idx}>
-              <p className={st.itemList}>{el}</p>
+              <p className={st.itemList}>&nbsp;{el}</p>
             </li>
           ))}
         </div>
