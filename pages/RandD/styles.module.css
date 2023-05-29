@@ -1,0 +1,4 @@
+.contentTextLast {
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  padding-top: 16px;
+}

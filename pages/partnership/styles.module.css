@@ -3,6 +3,10 @@
   border-bottom: 1px solid #36383c;
 }
 
+.typesItemWrapper:last-of-type {
+  border-bottom: none;
+}
+
 .companyTypesItem {
   composes: flexRowBlock from '../../components/PageContainer/pageContainer.module.css';
   align-items: center;
@@ -14,6 +18,7 @@
   composes: mainKatinParagraph from '../../components/PageContainer/pageContainer.module.css';
   font-weight: 600;
   letter-spacing: 0.08em;
+  z-index: 5;
 }
 
 .signBlock {
@@ -26,6 +31,6 @@
 
 .typesText {
   composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
-  transition: opacity 0.2s ease-out, height 0.25s ease-out,
+  transition: opacity 0.2s ease-out, height 0.2s ease-out,
     margin-bottom 0.2s ease-out;
 }
