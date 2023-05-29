@@ -1,0 +1,75 @@
+/* Base  */
+.imageDivArrowA,
+.imageDivContain,
+.imageDivArrowTop {
+  background-size: cover;
+  background-position: center;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+
+.imageDivArrowA {
+  background-image: url("../../public/cassesArrowA.png");
+}
+
+.imageDivContain {
+  background-image: url("../../public/arrowTop.png");
+}
+
+.imageDivArrowTop {
+  background-image: url("../../public/arrowTop.png");
+  background-image: none;
+}
+
+/* Link */
+
+.imageContainerItem {
+  position: absolute;
+  right: 10px;
+  top: 23px;
+}
+
+.link {
+  display: inline-block;
+  width: 100%;
+  padding: 13px 25px;
+  color: var(--white);
+  border: 1px solid var(--border-grey);
+  text-decoration: none;
+  font-family: var(--font-roboto-mono);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+}
+
+.link:hover .imageDivArrowA {
+  transform: rotate(-45deg);
+}
+
+/* Cases */
+
+.wrapper {
+  background-color: var(--bg-color);
+  padding: 30px 30px 10px 30px;
+  margin: 20px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.imageContainerCases {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.wrapper:hover {
+  background-color: var(--bg-card-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.wrapper:hover .imageDivArrowA {
+  transform: rotate(-45deg);
+}

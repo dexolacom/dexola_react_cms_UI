@@ -1,25 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import TypeItem from './typeItem';
-import styles from '../../components/PageContainer/pageContainer.module.css';
 import { TYPE_COMPANIES_INFO } from '../../constants/textConstants';
-
-const INIT_TYPE_STATUS = Array(7).fill(false);
+import styles from '../../components/PageContainer/pageContainer.module.css';
+import { useTypeStatus } from '../../utils/utils';
 
 const Partnership = () => {
-  const [typeStatus, setTypeStatus] = useState<boolean[]>(INIT_TYPE_STATUS);
-
-  const clickHandler = (e: React.SyntheticEvent) => {
-    const id = +e?.currentTarget?.id;
-    if (typeStatus.length > 0) {
-      const newStatusArray = typeStatus.map((el, idx) =>
-        idx === id && !el ? true : false,
-      );
-      setTypeStatus(newStatusArray);
-    }
-  };
+  const { typeStatus, clickHandler } = useTypeStatus(7);
 
   return (
     <PageContainer title={'Partnership'}>

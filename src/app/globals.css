@@ -1,15 +1,19 @@
 :root {
   /* FONTS */
-  --font-kanit: 'Kanit', sans-serif;
-  --font-roboto-mono: 'Roboto Mono', monospace;
+  --font-kanit: "Kanit", sans-serif;
+  --font-roboto-mono: "Roboto Mono", monospace;
   /* SIZE */
   --content-size: 100%;
   /* COLORS */
   --bg-color: #272a2e;
+  --bg-card-color: #212325;
   --white: #ffffff;
   --black: #000;
   --grey: #545454;
   --preset-color: #b3b3b3;
+  --border-grey: #393939;
+  --bg-marker: #eb3795;
+  --bg-dark: #17191d;
 }
 
 * {

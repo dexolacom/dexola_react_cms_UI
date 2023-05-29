@@ -1,19 +1,30 @@
+import "../../src/app/globals.css";
+
 import { GetStaticProps } from "next";
-import { Suspense } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { Suspense } from "react";
 
-import TechnoList from "../../components/Technology/TechnoList/TechnoList";
+import { getPlatform, getPlatformId } from "../../api/api";
 
-import { getDetails, getDetailsID } from "../../api/api";
-import { PlatformDetailData } from "../../types";
+import PageContainerItem from "./ContainerPage";
+import CustomReactMarkdown from "../../components/CustomMarkdown/CustomReactMarkdown";
+import CustomMarkdown from "../../components/CustomMarkdown/CustomIDMarkdown";
+
+import { getImageUrlFromMarkdown } from "../../lib/getImageUrlFromMarkdown";
+import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
+import RenderListTechnology from "../../lib/RenderListTechnology";
 
 import st from "./id.module.css";
+import style from "../../components/commonStyles/commonStyles.module.css";
+import markdownStyle from "../../components/CustomMarkdown/mardown.module.css";
 
 export const getStaticPaths = async () => {
   try {
-    const response = await getDetails();
+    const response = await getPlatform();
 
-    const paths = response?.data?.data?.map((detail) => ({
-      params: { id: String(detail.id) },
+    const paths = response?.map((platform: { id: number }) => ({
+      params: { id: String(platform.id) },
     }));
 
     return { paths, fallback: false };
@@ -26,7 +37,6 @@ export const getStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     if (!params || typeof params.id !== "string") {
-      // throw new Error("Invalid params ID getStaticProps");
       console.error("Invalid params ID getStaticProps");
       return {
         props: {
@@ -36,9 +46,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
     const { id } = params;
 
-    const response = await getDetailsID(id);
+    const response = await getPlatformId(id);
 
-    const platformDetails = response?.data?.data;
+    const platformDetails = response;
 
     return {
       props: {
@@ -49,7 +59,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     console.error(error);
     return {
       props: {
-        platformDetails: [],
+        platformDetails: {},
       },
     };
   }
@@ -58,26 +68,85 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const PlatformDetails = ({
   platformDetails,
 }: {
-  platformDetails: PlatformDetailData | null;
+  platformDetails: PlatformData;
 }) => {
   if (!platformDetails) {
     return <div>Loading...</div>;
   }
+  const { attributes } = platformDetails;
 
-  const { id, attributes } = platformDetails;
-  const { data, image, createdAt, updatedAt, publishedAt } = attributes;
+  const {
+    services,
+    summary,
+    network,
+    backEnd,
+    database,
+    blockchain,
+    frontEnd,
+    infrastructure,
+    platformLink,
+    description,
+    paltformName,
+  } = attributes;
+
+  // get Link Image
+  const imageUrl = getImageUrlFromMarkdown(summary);
+  // remove Link Image from text
+  const removeLinlImage = removeImageLinksFromMarkdown(summary);
 
   return (
-    <Suspense fallback={"Loading ......"}>
-      <div className={st.container}>
-        <TechnoList
-          key={id}
-          heading={data.paltfornName}
-          description={data.summary}
-          technology={data.technology}
-        />
-      </div>
-    </Suspense>
+    <PageContainerItem title={paltformName} isGoBack={true}>
+      <Suspense fallback={"Loading ... . . ."}>
+        <CustomReactMarkdown
+          technology={services}
+          heading={"Services"}
+          subHeading={"Summary"}
+        >
+          {removeLinlImage}
+        </CustomReactMarkdown>
+        <div style={{ width: "100%" }}>
+          {imageUrl && (
+            <Image
+              src={`${process.env.BASE_URL + imageUrl}`}
+              alt="platform Image"
+              // rel="preload"
+              width={825}
+              height={525}
+              sizes="100vw"
+              style={{ maxWidth: "100%", height: "auto" }}
+              priority
+            />
+          )}
+        </div>
+        <ul>
+          <h3 className={markdownStyle.headText}>Technology Stack</h3>
+          <RenderListTechnology arr={network} title={"Network"} />
+          <RenderListTechnology arr={backEnd} title={"Back-End"} />
+          <RenderListTechnology arr={database} title={"Database"} />
+          <RenderListTechnology arr={blockchain} title={"Blockchain"} />
+          <RenderListTechnology arr={frontEnd} title={"Front-End"} />
+          <RenderListTechnology arr={infrastructure} title={"Infrastructure"} />
+        </ul>
+        <CustomMarkdown>{description}</CustomMarkdown>
+        {platformLink !== null ? (
+          <Link
+            href={platformLink}
+            className={style.link}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <div className={st.container}>
+              {platformLink}
+              <div className={style.imageContainerItem}>
+                <div className={style.imageDivArrowA}></div>
+              </div>
+            </div>
+          </Link>
+        ) : (
+          <></>
+        )}
+      </Suspense>
+    </PageContainerItem>
   );
 };
 

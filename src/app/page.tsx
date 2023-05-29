@@ -3,7 +3,6 @@ import ContactButton from '../../components/ContactUs/ContactUs';
 import About from '../../pages/about/about';
 import Footer from '../../pages/footer/footer';
 import Header from '../../pages/header/header';
-import HowWeWork from '../../pages/howWeWork/howWeWork';
 import Partnership from '../../pages/partnership/partnership';
 import Services from '../../pages/services/services';
 import TechStack from '../../pages/techStack/techStack';
@@ -15,9 +14,6 @@ export default function Home() {
     <RootLayout>
       <ContactButton />
       <Header />
-      {/* --- - --- */}
-      <HowWeWork />
-      {/* --- / - --- */}
       <About />
       <Services />
       <CasesSection />
