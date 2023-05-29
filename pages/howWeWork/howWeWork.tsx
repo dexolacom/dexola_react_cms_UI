@@ -19,9 +19,18 @@ const HowWeWork = () => {
           {HowWeWork_INFO &&
             HowWeWork_INFO.length > 0 &&
             HowWeWork_INFO.map(el => (
-              <div className={styles.textBlock}>
-                <p className={styles.blockTitle}>{el.title}</p>
-                <p className={styles.blockText}>{el.text}</p>
+              <div className={styles.rowBlock} key={el[0].title}>
+                <div className={styles.textBlock}>
+                  <p className={styles.blockTitle}>{el[0].title}</p>
+                  <p className={styles.blockText}>{el[0].text}</p>
+                </div>
+
+                {el[1] ? (
+                  <div className={styles.textBlock}>
+                    <p className={styles.blockTitle}>{el[1].title}</p>
+                    <p className={styles.blockText}>{el[1].text}</p>
+                  </div>
+                ) : undefined}
               </div>
             ))}
         </>

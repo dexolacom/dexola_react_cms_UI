@@ -1,20 +1,26 @@
 .textBlockWrapper {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 100%;
   padding-top: 16px;
 }
 
-.textBlock {
-  width: 47.5%;
-  height: 352px;
+.rowBlock {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: max-content;
   margin-bottom: 32px;
-  border-bottom: 1px solid #393939;
 }
 
-.textBlock:last-of-type {
+.rowBlock:last-of-type .textBlock {
   border-bottom: none;
+}
+
+.textBlock {
+  width: 47.5%;
+  height: auto;
+  border-bottom: 1px solid #393939;
 }
 
 .blockTitle {
@@ -28,4 +34,5 @@
 
 .blockText {
   composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  margin-bottom: 32px;
 }
