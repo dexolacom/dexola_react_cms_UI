@@ -19,7 +19,7 @@ const ContactFormButton = ({ data }: { data: IContactButton }) => {
           alt={name}
           width={width}
           height={height}
-          // priority
+          priority
           style={{ marginRight: '12px' }}
         />
         {name}
