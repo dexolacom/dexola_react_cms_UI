@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import PageContainer from '../../components/PageContainer/PageWrapper';
-import TypeItem from './typeItem';
-import { TYPE_COMPANIES_INFO } from '../../constants/textConstants';
-import styles from '../../components/PageContainer/pageContainer.module.css';
-import { useTypeStatus } from '../../utils/utils';
+import PageContainer from "../../components/PageContainer/PageWrapper";
+import TypeItem from "./typeItem";
+import { TYPE_COMPANIES_INFO } from "../../constants/textConstants";
+import styles from "../../components/PageContainer/pageContainer.module.css";
+import { useTypeStatus } from "../../utils/utils";
 
 const Partnership = () => {
   const { typeStatus, clickHandler } = useTypeStatus(7);
 
   return (
-    <PageContainer title={'Partnership'}>
+    <PageContainer title={"Partnership"}>
       <p className={styles.contentText}>
         By forging strategic partnerships, Dexola aims to create a robust
         network of industry-leading professionals committed to delivering the
