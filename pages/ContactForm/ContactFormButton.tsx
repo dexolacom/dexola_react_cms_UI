@@ -2,7 +2,6 @@
 
 // import { useState } from 'react';
 import Image from 'next/image';
-import { IContactButton } from '../../interfaces/interfaces';
 import styles from './contactForm.module.css';
 
 const ContactFormButton = ({ data }: { data: IContactButton }) => {

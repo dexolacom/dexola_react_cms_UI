@@ -43,3 +43,28 @@ interface CustomReactMarkdownProps {
 interface CustomIDMarkdownProps {
   children: React.ReactNode;
 }
+
+interface IFooterInfo {
+  title: string;
+  firstColumn: string[];
+  secondColumn: string[];
+}
+
+interface IAuditsContent {
+  title: string;
+  text: string;
+  links: string[];
+}
+
+interface ITypeItem {
+  title: string;
+  text: string;
+}
+
+interface IContactButton {
+  name: string;
+  image_src: string;
+  width: number;
+  height: number;
+  clickHandler: () => void;
+}

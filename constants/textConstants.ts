@@ -1,5 +1,3 @@
-import { IAuditsContent, ITypeItem } from "../interfaces/interfaces";
-
 export const ADVERT_INFO = [
   {
     amount: '40+',
@@ -108,6 +106,55 @@ export const RandD_INFO: ITypeItem[] = [
   {
     title: 'Private Blockchains',
     text: 'Our engineers have thoroughly explored private blockchains tailored to the specific project needs. We anticipate the opportunity to apply our knowledge in a real-world product, helping customers to fully benefit from blockchain technology while preserving privacy and control over their data.',
+  },
+];
+
+export const PROCESS_INFO: ITypeItem[] = [
+  {
+    title: '1. Initial Contact and Project Assessment',
+    text: "When a new client contacts us, our project manager requests the terms of reference for the upcoming project. Together with the team lead, they review the documentation, compile a list of questions, and clarify uncertainties with the client. If technical documentation is incomplete or the client needs help deciding on the best technical solution, we'll offer an extended discovery phase.If the documentation is complete and project milestones and timelines are clear, we'll move on to the development proposal stage.",
+  },
+  {
+    title: '2. Discovery',
+    text: "During the discovery phase, our project manager and team lead work closely with the client to gather answers to all remaining questions and gain a complete understanding of the project's objectives and feasibility.The client receives a detailed document outlining the technical implementation of their project, including diagrams and descriptions of each top-level use case.",
+  },
+  {
+    title: '3. Development Proposal',
+    text: "Once the project flow is approved, we create a development proposal. This involves dividing the project into milestones, starting with a Minimum Viable Product (MVP) development and followed by the roadmap of later feature expansions.",
+  },
+  {
+    title: '4. Product Backlog Creation',
+    text: 'When the client confirms the development proposal, we prepare the backlog for the first milestone. This includes a list of user stories with acceptance criteria, supported by the use case descriptions, and a detailed specification of each functionality to be delivered by the end of the milestone.',
+  },
+  {
+    title: '5. Sprint/Milestone Planning',
+    text: 'With the acceptance criteria approved, our team can start the development process. Before starting, we create a sprint plan outlining the tasks to be included for each team member. Demo is held at the end of the sprint to present the work done. Documentation will also cover any use cases that are addressed during the sprint.',
+  },
+  {
+    title: '6. Delivery and Reporting',
+    text: 'For T&M billing and dedicated team models, our project manager provides weekly project status reports during each sprint. Every report contains a summary of tasks completed by each team member and the time spent on implementation.<br>In the fixed-price billing model, the final report is provided once a milestone has been achieved. Following this transparent and accountable way, our clients can monitor project progress and evaluate the overall performance.',
+  },
+];
+
+export const TEMP_FOOTER_INFO: IFooterInfo[] = [
+  {
+    title: 'About',
+    firstColumn: ['About Dexola'],
+    secondColumn: ['Synergy with Trinetix'],
+  },
+  {
+    title: 'Services',
+    firstColumn: [
+      'Smart Contracts Devel...',
+      'Analytics and Crypto...',
+      'How we Work',
+    ],
+    secondColumn: ['Smart Contract Audit', 'R&D', 'Our Process'],
+  },
+  {
+    title: 'Cases',
+    firstColumn: ['Featured Case 1', 'Featured Case 3'],
+    secondColumn: ['Featured Case 2', 'All Cases'],
   },
 ];
 
