@@ -7,7 +7,7 @@ import { HowWeWork_INFO } from '../../constants/textConstants';
 
 const HowWeWork = () => {
   return (
-    <PageContainer title={'How we work'} link={'some link'}>
+    <PageContainer title={'How we work'} link={'/#Services'}>
       <p className={styles2.contentText}>
         At Dexola, our approach to working with clients is rooted in
         collaboration, adaptability, and a dedication to delivering outstanding

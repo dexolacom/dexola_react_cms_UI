@@ -17,7 +17,7 @@ const SERVICES_TITLES: ITypeItem[] = [
 
 const Services = () => {
   return (
-    <PageContainer title={'Services'}>
+    <PageContainer title={'Services'} id="Services">
       <p className={styles2.contentText}>
         Our experience covers most areas of DeFi as the underlying technologies
         of most dApps are pieces of the same puzzle. We specialize in
@@ -61,8 +61,8 @@ const Services = () => {
           {SERVICES_TITLES &&
             SERVICES_TITLES.length &&
             SERVICES_TITLES.map((el, idx) => (
-              <Link href={`/${el.text}`}>
-                <div key={`${idx}`} className={styles.linkItem}>
+              <Link href={`/${el.text}`} key={`${idx}`}>
+                <div className={styles.linkItem}>
                   <p className={styles2.mainKatinParagraph}>{el.title}</p>
                   <div className={styles.arrowBlockServ}></div>
                 </div>
