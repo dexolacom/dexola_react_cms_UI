@@ -26,6 +26,7 @@ interface PlatformData {
     updatedAt: string;
     publishedAt: string;
     paltformName: string;
+    videoLink: string;
   };
 
   meta: {};
@@ -36,6 +37,7 @@ interface CustomReactMarkdownProps {
   children: React.ReactNode;
   heading?: string;
   subHeading?: string;
+  platfromId?: number;
 }
 
 interface CustomIDMarkdownProps {
