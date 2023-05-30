@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+}
+.content {
+  border-bottom: 2px solid #393939;
+}
+
+.desc {
+  color: var(--preset-color);
+  margin: 0 0 30px 0;
+  font-family: var(--font-roboto-mono);
+  font-size: 16px;
+  line-height: 1.6;
+}

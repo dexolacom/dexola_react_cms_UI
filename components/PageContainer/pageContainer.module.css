@@ -34,7 +34,7 @@
 
 .sidebar {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   width: 420px;
   padding: 80px 0 0 100px;
   /* ----- */
