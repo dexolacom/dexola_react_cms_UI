@@ -1,0 +1,38 @@
+.textBlockWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.rowBlock {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: max-content;
+  margin-bottom: 32px;
+}
+
+.rowBlock:last-of-type .textBlock {
+  border-bottom: none;
+}
+
+.textBlock {
+  width: 47.5%;
+  height: auto;
+  border-bottom: 1px solid #393939;
+}
+
+.blockTitle {
+  margin-bottom: 8px;
+  /* font-family: 'Georama'; ??? */
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.blockText {
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  margin-bottom: 32px;
+}
