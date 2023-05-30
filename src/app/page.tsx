@@ -1,4 +1,4 @@
-import CasesSection from "../../components/Cases/CasesSection";
+import CasesSection from "../../components/Cases/casesSection";
 import ContactButton from "../../components/ContactUs/ContactUs";
 import About from "../../pages/about/about";
 import Footer from "../../pages/footer/footer";
