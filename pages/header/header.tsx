@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import VideoBG from '../../components/VideoBG/VideoBG';
-import HeaderSmall from '../../components/HeaderSmall/headerSmall';
+// import HeaderSmall from '../../components/HeaderSmall/headerSmall';
 import styles from './styles.module.css';
 
 const Header = () => {
