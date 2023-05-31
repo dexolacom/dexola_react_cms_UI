@@ -19,5 +19,9 @@
     "react-dom": "18.2.0",
     "styled-components": "^6.0.0-rc.1",
     "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
   }
 }
