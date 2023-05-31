@@ -1,24 +1,24 @@
-import "../../src/app/globals.css";
+import '../../src/app/globals.css';
 
-import { GetStaticProps } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import React, { Suspense } from "react";
+import { GetStaticProps } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { Suspense } from 'react';
 
-import { getPlatform, getPlatformId } from "../../api/api";
+import { getPlatform, getPlatformId } from '../../Api/api';
 
-import PageContainerItem from "./PageContainer/ContainerPage";
-import CustomReactMarkdown from "../../components/CustomMarkdown/CustomReactMarkdown";
-import CustomMarkdown from "../../components/CustomMarkdown/CustomIDMarkdown";
+import PageContainerItem from './PageContainer/ContainerPage';
+import CustomReactMarkdown from '../../components/CustomMarkdown/CustomReactMarkdown';
+import CustomMarkdown from '../../components/CustomMarkdown/CustomIDMarkdown';
 
-import { getImageUrlFromMarkdown } from "../../lib/getImageUrlFromMarkdown";
-import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
-import RenderListTechnology from "../../lib/RenderListTechnology";
+import { getImageUrlFromMarkdown } from '../../lib/getImageUrlFromMarkdown';
+import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
+import RenderListTechnology from '../../lib/RenderListTechnology';
 
-import st from "./id.module.css";
-import style from "../../components/commonStyles/commonStyles.module.css";
-import markdownStyle from "../../components/CustomMarkdown/mardown.module.css";
-import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import st from './id.module.css';
+import style from '../../components/commonStyles/commonStyles.module.css';
+import markdownStyle from '../../components/CustomMarkdown/mardown.module.css';
+import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 
 export const getStaticPaths = async () => {
   try {
@@ -37,8 +37,8 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    if (!params || typeof params.id !== "string") {
-      console.error("Invalid params ID getStaticProps");
+    if (!params || typeof params.id !== 'string') {
+      console.error('Invalid params ID getStaticProps');
       return {
         props: {
           platformDetails: [],
@@ -98,15 +98,14 @@ const PlatformDetails = ({
 
   return (
     <PageContainerItem title={paltformName}>
-      <Suspense fallback={"Loading ... . . ."}>
+      <Suspense fallback={'Loading ... . . .'}>
         <CustomReactMarkdown
           technology={services}
-          heading={"Services"}
-          subHeading={"Summary"}
-        >
+          heading={'Services'}
+          subHeading={'Summary'}>
           {removeLinlImage}
         </CustomReactMarkdown>
-        <div style={{ width: "100%", marginTop: "30px" }}>
+        <div style={{ width: '100%', marginTop: '30px' }}>
           {imageUrl && (
             <Image
               src={`${process.env.BASE_URL + imageUrl}`}
@@ -115,7 +114,7 @@ const PlatformDetails = ({
               width={825}
               height={525}
               sizes="100vw"
-              style={{ maxWidth: "100%", height: "auto" }}
+              style={{ maxWidth: '100%', height: 'auto' }}
               priority
             />
           )}
@@ -123,24 +122,24 @@ const PlatformDetails = ({
         <ul>
           <h3 className={markdownStyle.headText}>Technology Stack</h3>
           {network && network.length > 0 && (
-            <RenderListTechnology arr={network} title={"Network"} />
+            <RenderListTechnology arr={network} title={'Network'} />
           )}
           {backEnd && backEnd.length > 0 && (
-            <RenderListTechnology arr={backEnd} title={"Back-End"} />
+            <RenderListTechnology arr={backEnd} title={'Back-End'} />
           )}
           {database && database.length > 0 && (
-            <RenderListTechnology arr={database} title={"Database"} />
+            <RenderListTechnology arr={database} title={'Database'} />
           )}
           {blockchain && blockchain.length > 0 && (
-            <RenderListTechnology arr={blockchain} title={"Blockchain"} />
+            <RenderListTechnology arr={blockchain} title={'Blockchain'} />
           )}
           {frontEnd && frontEnd.length > 0 && (
-            <RenderListTechnology arr={frontEnd} title={"Front-End"} />
+            <RenderListTechnology arr={frontEnd} title={'Front-End'} />
           )}
           {infrastructure && infrastructure.length > 0 && (
             <RenderListTechnology
               arr={infrastructure}
-              title={"Infrastructure"}
+              title={'Infrastructure'}
             />
           )}
         </ul>
@@ -152,8 +151,7 @@ const PlatformDetails = ({
             href={platformLink}
             className={style.link}
             target="_blank"
-            rel="noreferrer noopener"
-          >
+            rel="noreferrer noopener">
             <div className={st.container}>
               {platformLink}
               <div className={style.imageContainerItem}>

@@ -1,6 +1,6 @@
 'use client';
 
-import PageContainer from '../../components/PageContainer/PageWrapper';
+import PageContainer from '../PageContainer/PageWrapper';
 import styles from './styles.module.css';
 import styles1 from '../../components/PageContainer/pageContainer.module.css';
 

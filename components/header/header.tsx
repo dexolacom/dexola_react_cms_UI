@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import VideoBG from '../../components/VideoBG/VideoBG';
+import VideoBG from '../VideoBG/VideoBG';
 // import HeaderSmall from '../../components/HeaderSmall/headerSmall';
 import styles from './styles.module.css';
 

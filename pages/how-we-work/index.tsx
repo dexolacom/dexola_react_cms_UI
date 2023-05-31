@@ -1,12 +1,12 @@
 'use client';
 
-import RootLayout from '@/app/layout';
+import RootLayout from '../../src/app/layout';
 import ContactButton from '../../components/ContactUs/ContactUs';
 import HeaderSmall from '../../components/HeaderSmall/headerSmall';
-import Footer from '../footer/footer';
+import Footer from '../../components/footer/footer';
 import HowWeWork from './howWeWork';
 
-export default function Home() {
+export default function Home2() {
   return (
     <RootLayout>
       <ContactButton />

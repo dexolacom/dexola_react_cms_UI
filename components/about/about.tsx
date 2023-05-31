@@ -1,6 +1,6 @@
 'use client';
 
-import PageContainer from '../../components/PageContainer/PageWrapper';
+import PageContainer from '../PageContainer/PageWrapper';
 import { ADVERT_INFO } from '../../constants/textConstants';
 import styles from './styles.module.css';
 

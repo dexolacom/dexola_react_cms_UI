@@ -1,14 +1,14 @@
 // " use client";
-import "../../src/app/globals.css";
+import '../../src/app/globals.css';
 
-import { getPlatform } from "../../api/api";
+import { getPlatform } from '../../Api/api';
 
-import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
+import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
 
-import PageContainerItem from "./PageContainer/ContainerPage";
-import CustomPlatfromsMarkdown from "../../components/CustomMarkdown/CustomPlatfromsMarkdown";
+import PageContainerItem from './PageContainer/ContainerPage';
+import CustomPlatfromsMarkdown from '../../components/CustomMarkdown/CustomPlatfromsMarkdown';
 
-import st from "./index.module.css";
+import st from './index.module.css';
 
 export async function getStaticProps() {
   try {
@@ -36,7 +36,7 @@ export async function getStaticProps() {
 
 const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
   return (
-    <PageContainerItem title={"All Case Studies"}>
+    <PageContainerItem title={'All Case Studies'}>
       <p className={st.desc}>
         Discover how we develop sophisticated, user-friendly blockchain
         solutions for clients in various industries. These projects showcase our
@@ -46,12 +46,11 @@ const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
       <div className={st.container}>
         {platforms
           ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
-          .map((el) => (
+          .map(el => (
             <div key={el.id} className={st.content}>
               <CustomPlatfromsMarkdown
                 technology={el?.services}
-                platfromId={el.id}
-              >
+                platfromId={el.id}>
                 {el.summary}
               </CustomPlatfromsMarkdown>
             </div>
