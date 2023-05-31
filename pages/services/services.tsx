@@ -4,12 +4,20 @@ import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import styles from './styles.module.css';
 import styles2 from '../../components/PageContainer/pageContainer.module.css';
+import Link from 'next/link';
 
-const SERVICES_TITLES: string[] = ['R&D', 'How we Work', 'Our Process'];
+const SERVICES_TITLES: ITypeItem[] = [
+  {
+    title: 'R&D',
+    text: 'rd',
+  },
+  { title: 'How we Work', text: 'how-we-work' },
+  { title: 'Our Process', text: 'our-process' },
+];
 
 const Services = () => {
   return (
-    <PageContainer title={'Services'}>
+    <PageContainer title={'Services'} id="Services">
       <p className={styles2.contentText}>
         Our experience covers most areas of DeFi as the underlying technologies
         of most dApps are pieces of the same puzzle. We specialize in
@@ -53,10 +61,12 @@ const Services = () => {
           {SERVICES_TITLES &&
             SERVICES_TITLES.length &&
             SERVICES_TITLES.map((el, idx) => (
-              <div key={`${idx}`} className={styles.linkItem}>
-                <p className={styles2.mainKatinParagraph}>{el}</p>
-                <div className={styles.arrowBlockServ}></div>
-              </div>
+              <Link href={`/${el.text}`} key={`${idx}`}>
+                <div className={styles.linkItem}>
+                  <p className={styles2.mainKatinParagraph}>{el.title}</p>
+                  <div className={styles.arrowBlockServ}></div>
+                </div>
+              </Link>
             ))}
         </>
       </div>

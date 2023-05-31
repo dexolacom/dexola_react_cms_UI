@@ -3,12 +3,13 @@
   width: 100%;
   height: 378px;
   overflow: hidden;
+  margin-bottom: 24px;
 }
 
 .auditsText {
   composes: contentText from '../../components/PageContainer/pageContainer.module.css';
   margin-bottom: 32px;
-  padding-top: 24px;
+  /* padding-top: 24px; */
 }
 
 .auditsTitle {

@@ -9,7 +9,7 @@ import { AUDITS_CONTENT_ARRAY } from '../../constants/textConstants';
 
 const Audits = () => {
   return (
-    <PageContainer title={'Smart contract audits'}>
+    <PageContainer title={'Smart contract audits'} link={'/#Services'}>
       <figure className={styles.imageWrapper}>
         <Image
           src={'/Img_2_1-3-768x768.png'}
