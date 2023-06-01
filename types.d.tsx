@@ -68,3 +68,7 @@ interface IContactButton {
   height: number;
   clickHandler: () => void;
 }
+
+interface IServicesContent {
+  [key: string]: IAuditsContent[];
+}

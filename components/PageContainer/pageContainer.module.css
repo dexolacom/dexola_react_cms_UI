@@ -94,6 +94,13 @@
 .titleBlock {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.link {
+  position: absolute;
+  top: 6px;
+  left: -56px;
 }
 
 .linkBlock {

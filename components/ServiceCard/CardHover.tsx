@@ -1,9 +1,10 @@
 'use client';
 
-import { AUDITS_CONTENT_ARRAY } from '../../constants/textConstants';
+import { SERVICES_CONTENT_INF0 } from '../../constants/textConstants';
 import styles from './serviceCard.module.css';
 
 const CardHover = ({ title, color }: { title: string; color: string }) => {
+  const cardHoverInfo = SERVICES_CONTENT_INF0[title];
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.descriptionBlock}>
@@ -14,9 +15,9 @@ const CardHover = ({ title, color }: { title: string; color: string }) => {
         <div className={styles.serviceDescription}>{title}</div>
       </div>
       <ul>
-        {AUDITS_CONTENT_ARRAY &&
-          AUDITS_CONTENT_ARRAY.length > 0 &&
-          AUDITS_CONTENT_ARRAY.map(el => <li key={el.title}>{el.title}</li>)}
+        {cardHoverInfo &&
+          cardHoverInfo?.length > 0 &&
+          cardHoverInfo.map(el => <li key={el.title}>{el.title}</li>)}
       </ul>
     </div>
   );
