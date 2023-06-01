@@ -2,7 +2,8 @@
   composes: flexColumnBlock from '../PageContainer/pageContainer.module.css';
   position: relative;
   width: 275px;
-  height: 355px;
+  /* height: 355px; */
+  height: 380px;
   margin-bottom: 24px;
   background: #272a2e;
   overflow: hidden;

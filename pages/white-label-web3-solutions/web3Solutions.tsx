@@ -2,11 +2,13 @@
 
 import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';
-import { WEB3SOLUTIONS_CONTENT_ARRAY } from '../../constants/textConstants';
+import { SERVICES_CONTENT_INF0 } from '../../constants/textConstants';
 import AuditCardItem from '../smart-contract-audits/auditsCardItem';
 import styles from '../smart-contract-audits/styles.module.css';
 
 const Web3Solutions = () => {
+  const WEB3SOLUTIONS_CONTENT_ARRAY =
+    SERVICES_CONTENT_INF0['Web3 White Label Solutions'];
   return (
     <PageContainer title={'White-label Web3 Solutions'} link={'/#Services'}>
       <figure className={styles.imageWrapper}>

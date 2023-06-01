@@ -2,11 +2,13 @@
 
 import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';
-import { ANALITICSTOOLS_CONTENT_ARRAY } from '../../constants/textConstants';
+import { SERVICES_CONTENT_INF0 } from '../../constants/textConstants';
 import AuditCardItem from '../smart-contract-audits/auditsCardItem';
 import styles from '../smart-contract-audits/styles.module.css';
 
 const AnaliticsTools = () => {
+  const ANALITICSTOOLS_CONTENT_ARRAY =
+    SERVICES_CONTENT_INF0['Analytics and Crypto Trading Tools'];
   return (
     <PageContainer
       title={'Blockchain analytics and crypto trading automation tools'}

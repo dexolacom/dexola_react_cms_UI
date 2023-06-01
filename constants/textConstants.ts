@@ -17,44 +17,6 @@ export const ADVERT_INFO = [
   },
 ];
 
-export const AUDITS_CONTENT_ARRAY: IAuditsContent[] = [
-  {
-    title: 'Custom Security Testing',
-    text: 'We perform thorough security tests, including stress testing, penetration testing, and attack simulations, to find vulnerabilities.',
-    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-  {
-    title: 'Formal Verification',
-    text: "We use mathematical methods to prove that smart contract code works the way it should and meets all the requirements it's supposed to meet.",
-    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-  {
-    title: 'Code Quality Assessment',
-    text: 'We check the overall code quality, how easy it is to maintain, and if it follows best practices and coding standards. This makes it easier to update and troubleshoot in the future.',
-    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-  {
-    title: 'Tokenomics Review',
-    text: "We study a project's tokenomics to make sure that the ecosystem is balanced and sustainable. We also provide recommendations on how to improve them if necessary.",
-    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-  {
-    title: 'Compliance Review',
-    text: 'We check smart contracts to make sure they meet all relevant regulations, industry standards, and legal requirements.',
-    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-  {
-    title: 'Documentation Review',
-    text: 'We review the quality and comprehensiveness of smart contract documentation, such as whitepapers and technical guides, to make sure they are accurate and clear for developers and stakeholders.',
-    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-  {
-    title: 'Post-Audit Support',
-    text: 'We offer ongoing support even after the audit is complete. This includes help fixing any problems we found, retesting, and giving advice on how to make future updates or improvements.',
-    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-];
-
 export const TYPE_COMPANIES_INFO: ITypeItem[] = [
   {
     title: 'Crypto Marketing Agencies',
@@ -189,8 +151,8 @@ export const HowWeWork_INFO: ITypeItem[][] = [
   // }]
 ];
 
-export const DEVELOPMENT_CONTENT_ARRAY: IAuditsContent[] = [
-  {
+export const SERVICES_CONTENT_INF0: IServicesContent = {
+  'Smart Contracts Development': [{
     title: 'Decentralized Finances',
     text: 'DeFi solutions that cover lending and borrowing platforms, yield farming, decentralized exchanges, and asset management, all built on secure and scalable protocols.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
@@ -224,11 +186,8 @@ export const DEVELOPMENT_CONTENT_ARRAY: IAuditsContent[] = [
     title: 'Wallets and Custodian Solutions',
     text: 'Secure and user-friendly wallet and custodian solutions that simplify the management of digital assets. Our solutions prioritize protecting assets and making them accessible whenever users need them.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-];
-
-export const ANALITICSTOOLS_CONTENT_ARRAY: IAuditsContent[] = [
-  {
+  },],
+  'Analytics and Crypto Trading Tools': [{
     title: 'Market Data Analysis',
     text: 'Tools to gather, analyze, and visualize real-time market data. This gives our clients valuable insights to make informed decisions in the fast-paced crypto market.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
@@ -252,11 +211,43 @@ export const ANALITICSTOOLS_CONTENT_ARRAY: IAuditsContent[] = [
     title: 'Ongoing Support and Updates',
     text: 'Continuous support after the development is completed, including assistance with troubleshooting, performance optimization, and updates to adapt to evolving market conditions and client needs.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },],
+  'Smart Contract Audits': [{
+    title: 'Custom Security Testing',
+    text: 'We perform thorough security tests, including stress testing, penetration testing, and attack simulations, to find vulnerabilities.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
   },
-];
-
-export const WEB3SOLUTIONS_CONTENT_ARRAY: IAuditsContent[] = [
   {
+    title: 'Formal Verification',
+    text: "We use mathematical methods to prove that smart contract code works the way it should and meets all the requirements it's supposed to meet.",
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Code Quality Assessment',
+    text: 'We check the overall code quality, how easy it is to maintain, and if it follows best practices and coding standards. This makes it easier to update and troubleshoot in the future.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Tokenomics Review',
+    text: "We study a project's tokenomics to make sure that the ecosystem is balanced and sustainable. We also provide recommendations on how to improve them if necessary.",
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Compliance Review',
+    text: 'We check smart contracts to make sure they meet all relevant regulations, industry standards, and legal requirements.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Documentation Review',
+    text: 'We review the quality and comprehensiveness of smart contract documentation, such as whitepapers and technical guides, to make sure they are accurate and clear for developers and stakeholders.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Post-Audit Support',
+    text: 'We offer ongoing support even after the audit is complete. This includes help fixing any problems we found, retesting, and giving advice on how to make future updates or improvements.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },],
+  'Web3 White Label Solutions': [{
     title: 'Bubblegum NFT Marketplace',
     text: 'Launch your own branded NFT marketplace with our Bubblegum platform. This solution offers seamless creation, trading, and management of non-fungible tokens, catering to a diverse range of industries, from art and collectibles to gaming and virtual real estate.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
@@ -270,26 +261,5 @@ export const WEB3SOLUTIONS_CONTENT_ARRAY: IAuditsContent[] = [
     title: 'Crypto-bridge Solution',
     text: 'Enable cross-chain transactions and improve blockchain interoperability with our crypto-bridge solution. This platform allows token transfers between different blockchain networks, fostering seamless interaction and collaboration within the blockchain ecosystem.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-  },
-
-];
-
-// for next task!!!
-// export const SERVICES_CONTENT_INF0: IAuditsContent[] = [
-//   {
-//     title: 'Bubblegum NFT Marketplace',
-//     text: 'Launch your own branded NFT marketplace with our Bubblegum platform. This solution offers seamless creation, trading, and management of non-fungible tokens, catering to a diverse range of industries, from art and collectibles to gaming and virtual real estate.',
-//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-//   },
-//   {
-//     title: 'Custodian Solution',
-//     text: 'Safeguard your digital assets with our scalable custodian solution that supports multiple blockchains (Bitcoin, Ethereum, and EVM-compatible networks). With a focus on security and ease of use, the platform provides advanced storage, management, and reporting features, ensuring asset protection and compliance with industry best practices and regulatory requirements.',
-//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-//   },
-//   {
-//     title: 'Crypto-bridge Solution',
-//     text: 'Enable cross-chain transactions and improve blockchain interoperability with our crypto-bridge solution. This platform allows token transfers between different blockchain networks, fostering seamless interaction and collaboration within the blockchain ecosystem.',
-//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
-//   },
-
-// ];
+  },]
+};

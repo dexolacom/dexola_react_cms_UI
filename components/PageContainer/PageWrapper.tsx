@@ -19,7 +19,7 @@ const PageContainer = ({
     <div className={styles.blockWrapper} id={id}>
       <div className={styles.sidebar}>
         <div className={styles.titleBlock}>
-          <Link href={`${link}`}>
+          <Link href={`${link}`} className={styles.link}>
             <div
               className={styles.linkBlock}
               style={{ display: link ? 'block' : 'none' }}
