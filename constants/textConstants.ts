@@ -188,3 +188,108 @@ export const HowWeWork_INFO: ITypeItem[][] = [
   //   text: 'test text test text test text test text test text test text'
   // }]
 ];
+
+export const DEVELOPMENT_CONTENT_ARRAY: IAuditsContent[] = [
+  {
+    title: 'Decentralized Finances',
+    text: 'DeFi solutions that cover lending and borrowing platforms, yield farming, decentralized exchanges, and asset management, all built on secure and scalable protocols.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'NFT Apps',
+    text: 'Custom NFT applications for creating, managing, and trading digital assets. Our solutions work for art, gaming, distribution, retail, finances, and other different areas.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Cross-chain Solutions and Crypto Bridges',
+    text: 'Blockchain networks that work together by using cross-chain solutions and cryptographic bridges. This allows us to achieve fast and easy token transfers and smooth communication between different blockchain architectures.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Token Sales',
+    text: 'Platforms for enabling ERC-20, ERC-721, and ERC-1155 token sales (ICO, IDO, etc). We provide comprehensive support and consulting to streamline the project launch on decentralized exchanges, maximizing growth potential.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'GameFi Development',
+    text: 'GameFi services at the intersection between gaming and decentralized finance. Our goal is to create fun and engaging experiences that generate revenue and user engagement.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'DEX/CEX Development',
+    text: 'Secure, fast, and easy-to-use exchange platforms, both centralized and decentralized. Our platforms have advanced features that make trading smooth and effortless.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Wallets and Custodian Solutions',
+    text: 'Secure and user-friendly wallet and custodian solutions that simplify the management of digital assets. Our solutions prioritize protecting assets and making them accessible whenever users need them.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+];
+
+export const ANALITICSTOOLS_CONTENT_ARRAY: IAuditsContent[] = [
+  {
+    title: 'Market Data Analysis',
+    text: 'Tools to gather, analyze, and visualize real-time market data. This gives our clients valuable insights to make informed decisions in the fast-paced crypto market.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Automated Trading Strategies and Bots',
+    text: "Customized automated trading strategies tailored to each client's risk profile, investment goals, and market conditions.This helps optimize efficiency and reduces the need for manual intervention.",
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Portfolio Management Tools',
+    text: 'Portfolio management solutions that track, analyze, and optimize digital asset holdings. This helps to ensure that our clients have a well-balanced and high-performing portfolio',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Risk Management Solutions',
+    text: 'Tools to assess and mitigate risks associated with crypto trading, such as position-sizing algorithms, stop-loss orders, and automated hedging strategies.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Ongoing Support and Updates',
+    text: 'Continuous support after the development is completed, including assistance with troubleshooting, performance optimization, and updates to adapt to evolving market conditions and client needs.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+];
+
+export const WEB3SOLUTIONS_CONTENT_ARRAY: IAuditsContent[] = [
+  {
+    title: 'Bubblegum NFT Marketplace',
+    text: 'Launch your own branded NFT marketplace with our Bubblegum platform. This solution offers seamless creation, trading, and management of non-fungible tokens, catering to a diverse range of industries, from art and collectibles to gaming and virtual real estate.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Custodian Solution',
+    text: 'Safeguard your digital assets with our scalable custodian solution that supports multiple blockchains (Bitcoin, Ethereum, and EVM-compatible networks). With a focus on security and ease of use, the platform provides advanced storage, management, and reporting features, ensuring asset protection and compliance with industry best practices and regulatory requirements.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Crypto-bridge Solution',
+    text: 'Enable cross-chain transactions and improve blockchain interoperability with our crypto-bridge solution. This platform allows token transfers between different blockchain networks, fostering seamless interaction and collaboration within the blockchain ecosystem.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+
+];
+
+// for next task!!!
+// export const SERVICES_CONTENT_INF0: IAuditsContent[] = [
+//   {
+//     title: 'Bubblegum NFT Marketplace',
+//     text: 'Launch your own branded NFT marketplace with our Bubblegum platform. This solution offers seamless creation, trading, and management of non-fungible tokens, catering to a diverse range of industries, from art and collectibles to gaming and virtual real estate.',
+//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+//   },
+//   {
+//     title: 'Custodian Solution',
+//     text: 'Safeguard your digital assets with our scalable custodian solution that supports multiple blockchains (Bitcoin, Ethereum, and EVM-compatible networks). With a focus on security and ease of use, the platform provides advanced storage, management, and reporting features, ensuring asset protection and compliance with industry best practices and regulatory requirements.',
+//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+//   },
+//   {
+//     title: 'Crypto-bridge Solution',
+//     text: 'Enable cross-chain transactions and improve blockchain interoperability with our crypto-bridge solution. This platform allows token transfers between different blockchain networks, fostering seamless interaction and collaboration within the blockchain ecosystem.',
+//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+//   },
+
+// ];
