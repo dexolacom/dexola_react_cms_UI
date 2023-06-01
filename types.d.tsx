@@ -46,8 +46,8 @@ interface CustomIDMarkdownProps {
 
 interface IFooterInfo {
   title: string;
-  firstColumn: string[];
-  secondColumn: string[];
+  firstColumn: ITypeItem[];
+  secondColumn: ITypeItem[];
 }
 
 interface IAuditsContent {

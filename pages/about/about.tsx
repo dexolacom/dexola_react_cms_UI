@@ -7,7 +7,9 @@ import styles from './styles.module.css';
 const About = () => {
   return (
     <PageContainer title={'About'}>
-      <p className={styles.aboutSubtitle}>About Dexola</p>
+      <p className={styles.aboutSubtitle} id="About">
+        About Dexola
+      </p>
       <p className={styles.aboutText}>
         Dexola is an autonomous blockchain software development branch of
         Trinetix, a globally trusted digital partner serving enterprise clients.
@@ -32,7 +34,9 @@ const About = () => {
           ))}
       </div>
 
-      <p className={styles.aboutSubtitle}>Synergy with Trinetix</p>
+      <p className={styles.aboutSubtitle} id="Synergy-with-Trinetix">
+        Synergy with Trinetix
+      </p>
       <p className={styles.aboutText}>
         Dexola formed a strategic partnership with Trinetix Group. While our own
         certified development and design teams focus on blockchain, Trinetix
