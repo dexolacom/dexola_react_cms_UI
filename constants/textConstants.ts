@@ -254,3 +254,42 @@ export const ANALITICSTOOLS_CONTENT_ARRAY: IAuditsContent[] = [
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
   },
 ];
+
+export const WEB3SOLUTIONS_CONTENT_ARRAY: IAuditsContent[] = [
+  {
+    title: 'Bubblegum NFT Marketplace',
+    text: 'Launch your own branded NFT marketplace with our Bubblegum platform. This solution offers seamless creation, trading, and management of non-fungible tokens, catering to a diverse range of industries, from art and collectibles to gaming and virtual real estate.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Custodian Solution',
+    text: 'Safeguard your digital assets with our scalable custodian solution that supports multiple blockchains (Bitcoin, Ethereum, and EVM-compatible networks). With a focus on security and ease of use, the platform provides advanced storage, management, and reporting features, ensuring asset protection and compliance with industry best practices and regulatory requirements.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+  {
+    title: 'Crypto-bridge Solution',
+    text: 'Enable cross-chain transactions and improve blockchain interoperability with our crypto-bridge solution. This platform allows token transfers between different blockchain networks, fostering seamless interaction and collaboration within the blockchain ecosystem.',
+    links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+  },
+
+];
+
+// for next task!!!
+// export const SERVICES_CONTENT_INF0: IAuditsContent[] = [
+//   {
+//     title: 'Bubblegum NFT Marketplace',
+//     text: 'Launch your own branded NFT marketplace with our Bubblegum platform. This solution offers seamless creation, trading, and management of non-fungible tokens, catering to a diverse range of industries, from art and collectibles to gaming and virtual real estate.',
+//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+//   },
+//   {
+//     title: 'Custodian Solution',
+//     text: 'Safeguard your digital assets with our scalable custodian solution that supports multiple blockchains (Bitcoin, Ethereum, and EVM-compatible networks). With a focus on security and ease of use, the platform provides advanced storage, management, and reporting features, ensuring asset protection and compliance with industry best practices and regulatory requirements.',
+//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+//   },
+//   {
+//     title: 'Crypto-bridge Solution',
+//     text: 'Enable cross-chain transactions and improve blockchain interoperability with our crypto-bridge solution. This platform allows token transfers between different blockchain networks, fostering seamless interaction and collaboration within the blockchain ecosystem.',
+//     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
+//   },
+
+// ];

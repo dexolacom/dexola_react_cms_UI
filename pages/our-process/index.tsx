@@ -3,15 +3,15 @@
 import RootLayout from '../../src/app/layout';
 import ContactButton from '../../components/ContactUs/ContactUs';
 import HeaderSmall from '../../components/HeaderSmall/headerSmall';
-import Audits from './audits';
 import Footer from '../footer/footer';
+import OurProcess from './ourProcess';
 
-export default function ContractAudits() {
+export default function HowWork() {
   return (
     <RootLayout>
       <ContactButton />
       <HeaderSmall isWhite={true} />
-      <Audits />
+      <OurProcess />
       <Footer />
     </RootLayout>
   );

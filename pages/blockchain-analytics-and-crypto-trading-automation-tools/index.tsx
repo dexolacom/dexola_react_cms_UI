@@ -6,7 +6,7 @@ import HeaderSmall from '../../components/HeaderSmall/headerSmall';
 import Footer from '../footer/footer';
 import AnaliticsTools from './analiticsTools';
 
-export default function Home3() {
+export default function Analitics() {
   return (
     <RootLayout>
       <ContactButton />

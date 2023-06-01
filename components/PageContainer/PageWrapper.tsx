@@ -16,7 +16,7 @@ const PageContainer = ({
 }) => {
   const isLink = true;
   return (
-    <div className={styles.blockWrapper}>
+    <div className={styles.blockWrapper} id={id}>
       <div className={styles.sidebar}>
         <div className={styles.titleBlock}>
           <Link href={`${link}`}>

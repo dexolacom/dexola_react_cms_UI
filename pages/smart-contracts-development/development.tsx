@@ -12,7 +12,7 @@ const DevelopContract = () => {
       <figure className={styles.imageWrapper}>
         <Image
           src={'/Img_1_1-3-768x768.png'}
-          alt="Audits"
+          alt="Development"
           fill={true}
           style={{ objectFit: 'cover' }}
           priority
