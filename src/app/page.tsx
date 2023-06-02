@@ -7,7 +7,6 @@ import Partnership from '../../pages/partnership/partnership';
 import Services from '../../pages/services/services';
 import TechStack from '../../pages/techStack/techStack';
 import RootLayout from './layout';
-// import styles from './page.module.css';
 
 export default function Home() {
   return (
