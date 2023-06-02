@@ -1,0 +1,36 @@
+.itemWrapper {
+  padding: 8px 0 0 16px;
+}
+
+.item {
+  padding: 0 0 32px 32px;
+  border-left: 1.5px solid #444444;
+}
+
+.item:last-of-type {
+  padding-bottom: 0;
+  border-left: none;
+}
+.itemTitle {
+  composes: mainKatinParagraph from '../../components/PageContainer/pageContainer.module.css';
+  /* font-family: 'Georama';  ???  */
+  position: relative;
+  top: -8px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.itemTitle::before {
+  content: '';
+  position: absolute;
+  left: -36px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+}
+
+.itemText {
+  composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+}

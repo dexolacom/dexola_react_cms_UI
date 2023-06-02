@@ -34,14 +34,19 @@ const About = () => {
 
       <p className={styles.aboutSubtitle}>Synergy with Trinetix</p>
       <p className={styles.aboutText}>
-        Dexola is deeply integrated with Trinetix Group. Thus we have our own
-        certified development and design teams that focus on blockchain, this
-        strategic partnership gives us access to more than 800 professionals in
-        other areas of development, design, legal and operations that we can
-        also offer as a part of our service.
-        <br /> As a part of this collaboration as a supplementary service we
-        offer mobile and web apps development, intelligent automation and
-        digital assistants, cloud enablement and user experience design.
+        Dexola formed a strategic partnership with Trinetix Group. While our own
+        certified development and design teams focus on blockchain, Trinetix
+        gives us access to more than 800 professionals in other areas of
+        development, design, legal, and operations. As part of this
+        collaboration, we can offer supplementary services such as mobile and
+        web app development, intelligent automation and digital assistants,
+        cloud enablement, chatbots, AI, and VR solutions.
+      </p>
+      <p className={styles.aboutText}>
+        Trinetix is known for its exceptional expertise in user experience and
+        user interface design, with over a quarter of the workforce dedicated to
+        UX/UI. Dexola clients can also benefit from this pool of talent,
+        enabling us to consistently deliver a world-class user experience.
       </p>
     </PageContainer>
   );

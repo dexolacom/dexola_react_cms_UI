@@ -5,11 +5,12 @@ import PageContainer from '../../components/PageContainer/PageWrapper';
 
 import styles from './styles.module.css';
 import AuditCardItem from './auditsCardItem';
-import { AUDITS_CONTENT_ARRAY } from '../../constants/textConstants';
+import { SERVICES_CONTENT_INF0 } from '../../constants/textConstants';
 
 const Audits = () => {
+  const AUDITS_CONTENT_ARRAY = SERVICES_CONTENT_INF0['Smart Contract Audits'];
   return (
-    <PageContainer title={'Smart contract audits'}>
+    <PageContainer title={'Smart contract audits'} link={'/#Services'}>
       <figure className={styles.imageWrapper}>
         <Image
           src={'/Img_2_1-3-768x768.png'}
