@@ -15,7 +15,9 @@ export async function getStaticProps() {
     const response = await getPlatform();
     const transformData = response?.map((item: IItem) => ({
       services: item?.attributes?.services,
-      summary: removeImageLinksFromMarkdown(item?.attributes?.summary),
+      summary: item?.attributes?.summary
+        ? removeImageLinksFromMarkdown(item.attributes.summary)
+        : null,
       id: item?.id,
     }));
 
@@ -25,7 +27,7 @@ export async function getStaticProps() {
       },
     };
   } catch (error) {
-    console.error(error);
+    console.error("getStaticProps ERROR", error);
     return {
       props: {
         platforms: [],
@@ -47,12 +49,12 @@ const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
         {platforms
           ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
           .map((el) => (
-            <div key={el.id} className={st.content}>
+            <div key={el?.id} className={st.content}>
               <CustomPlatfromsMarkdown
                 technology={el?.services}
-                platfromId={el.id}
+                platfromId={el?.id}
               >
-                {el.summary}
+                {el?.summary}
               </CustomPlatfromsMarkdown>
             </div>
           ))}
