@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import React, { useEffect, useState, Suspense } from "react";
+import Link from 'next/link';
+import React, { useEffect, useState, Suspense } from 'react';
 
-import { getPlatform } from "../../api/api";
+import { getPlatform } from '../../Api/api';
 
-import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
+import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
 
-import PageContainer from "../PageContainer/PageWrapper";
-import CustomReactMarkdown from "../CustomMarkdown/CustomReactMarkdown";
+import PageContainer from '../PageContainer/PageWrapper';
+import CustomReactMarkdown from '../CustomMarkdown/CustomReactMarkdown';
 
-import st from "./cases.module.css";
-import style from "../commonStyles/commonStyles.module.css";
+import st from './cases.module.css';
+import style from '../commonStyles/commonStyles.module.css';
 
 const CasesSection = () => {
   const [platforms, setPlatforms] = useState<IPlatfrom[]>();
@@ -27,7 +27,7 @@ const CasesSection = () => {
       }));
 
       const filteredPlatforms = transformData?.filter((platform: IPlatfrom) =>
-        [1, 2, 3].includes(platform.id)
+        [1, 2, 3].includes(platform.id),
       );
       setPlatforms(filteredPlatforms);
     };
@@ -36,12 +36,12 @@ const CasesSection = () => {
   }, []);
 
   return (
-    <PageContainer title={"Case Studies"}>
-      <Suspense fallback={"Loading ......"}>
+    <PageContainer title={'Case Studies'} id="Cases">
+      <Suspense fallback={'Loading ......'}>
         <div className={st.container}>
           {platforms
             ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
-            .map((el) => (
+            .map(el => (
               <Link href={`/platforms/${el.id}`} key={el.id}>
                 <div className={style.wrapper} key={el.id}>
                   <CustomReactMarkdown technology={el?.services}>

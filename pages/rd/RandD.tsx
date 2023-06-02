@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import { RandD_INFO } from '../../constants/textConstants';

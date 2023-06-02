@@ -1,18 +1,10 @@
-'use client';
-
-import RootLayout from '../../src/app/layout';
-import ContactButton from '../../components/ContactUs/ContactUs';
-import HeaderSmall from '../../components/HeaderSmall/headerSmall';
+import SmallContainer from '../../components/PageContainer/PageContainerSmall';
 import Audits from './audits';
-import Footer from '../../components/footer/footer';
 
 export default function ContractAudits() {
   return (
-    <RootLayout>
-      <ContactButton />
-      <HeaderSmall isWhite={true} />
+    <SmallContainer>
       <Audits />
-      <Footer />
-    </RootLayout>
+    </SmallContainer>
   );
 }

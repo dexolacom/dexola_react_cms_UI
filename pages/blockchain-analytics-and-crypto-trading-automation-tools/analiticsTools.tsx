@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';
@@ -8,7 +8,9 @@ import styles from '../smart-contract-audits/styles.module.css';
 
 const AnaliticsTools = () => {
   const ANALITICSTOOLS_CONTENT_ARRAY =
-    SERVICES_CONTENT_INF0['Analytics and Crypto Trading Tools'];
+    SERVICES_CONTENT_INF0[
+      'Blockchain analytics and crypto trading automation tools'
+    ];
   return (
     <PageContainer
       title={'Blockchain analytics and crypto trading automation tools'}

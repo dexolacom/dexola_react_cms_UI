@@ -26,7 +26,7 @@ const PageContainerItem = ({
   return (
     <>
       <div className={st.container}>
-        <HeaderSmall isWhite={true} />
+        {/* <HeaderSmall isWhite={true} /> */}
         <aside className={st.asideBar}>
           <button onClick={handleGoBack} className={st.btnGoBack}>
             <div className={st.imageContainer}>

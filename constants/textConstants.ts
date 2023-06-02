@@ -187,7 +187,7 @@ export const SERVICES_CONTENT_INF0: IServicesContent = {
     text: 'Secure and user-friendly wallet and custodian solutions that simplify the management of digital assets. Our solutions prioritize protecting assets and making them accessible whenever users need them.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
   },],
-  'Analytics and Crypto Trading Tools': [{
+  'Blockchain analytics and crypto trading automation tools': [{
     title: 'Market Data Analysis',
     text: 'Tools to gather, analyze, and visualize real-time market data. This gives our clients valuable insights to make informed decisions in the fast-paced crypto market.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
@@ -247,7 +247,7 @@ export const SERVICES_CONTENT_INF0: IServicesContent = {
     text: 'We offer ongoing support even after the audit is complete. This includes help fixing any problems we found, retesting, and giving advice on how to make future updates or improvements.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],
   },],
-  'Web3 White Label Solutions': [{
+  'White-label Web3 Solutions': [{
     title: 'Bubblegum NFT Marketplace',
     text: 'Launch your own branded NFT marketplace with our Bubblegum platform. This solution offers seamless creation, trading, and management of non-fungible tokens, catering to a diverse range of industries, from art and collectibles to gaming and virtual real estate.',
     links: ['Nimbus', 'Liquid Access', 'Anmol Network', 'Assembly', 'CryptoSerpent', 'Fairspin'],

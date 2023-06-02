@@ -6,10 +6,8 @@ import styles from './styles.module.css';
 
 const About = () => {
   return (
-    <PageContainer title={'About'}>
-      <p className={styles.aboutSubtitle} id="About">
-        About Dexola
-      </p>
+    <PageContainer title={'About'} id="About">
+      <p className={styles.aboutSubtitle}>About Dexola</p>
       <p className={styles.aboutText}>
         Dexola is an autonomous blockchain software development branch of
         Trinetix, a globally trusted digital partner serving enterprise clients.

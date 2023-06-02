@@ -14,7 +14,7 @@ const Menu = () => {
         <MenuItem title={'Cases'} />
         <MenuItem title={'Technology Stack'} />
         <MenuItem title={'Partnership'} />
-        <MenuItem title={'Contact Us'} />
+        {/* <MenuItem title={'Contact Us'} /> */}
       </ul>
     </div>
   );
