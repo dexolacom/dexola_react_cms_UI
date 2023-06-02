@@ -4,7 +4,7 @@ import RootLayout from '../../src/app/layout';
 import ContactButton from '../../components/ContactUs/ContactUs';
 import HeaderSmall from '../../components/HeaderSmall/headerSmall';
 import Audits from './audits';
-import Footer from '../footer/footer';
+import Footer from '../../components/footer/footer';
 
 export default function ContractAudits() {
   return (

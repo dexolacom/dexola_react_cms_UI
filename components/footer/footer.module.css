@@ -17,7 +17,7 @@
   position: relative;
 }
 
-.techItemColumn > div > p {
+.techItemColumn > div > a > p {
   width: 172px;
 }
 
@@ -28,6 +28,7 @@
 
 .columnTitle {
   composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
+  min-width: 60px;
   padding: 6px 0 0;
   margin-bottom: 6px;
   font-size: 13px;

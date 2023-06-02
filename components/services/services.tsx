@@ -1,7 +1,7 @@
 'use client';
 
-import ServiceCard from '../../components/ServiceCard/ServiceCard';
-import PageContainer from '../../components/PageContainer/PageWrapper';
+import ServiceCard from '../ServiceCard/ServiceCard';
+import PageContainer from '../PageContainer/PageWrapper';
 import styles from './styles.module.css';
 import styles2 from '../../components/PageContainer/pageContainer.module.css';
 import Link from 'next/link';
