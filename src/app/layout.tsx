@@ -2,7 +2,6 @@ import './globals.css';
 import Head from 'next/head';
 
 import { Kanit, Roboto_Mono } from 'next/font/google';
-// import StyledComponentsRegistry from "../../lib/registry";
 
 export const metadata = {
   title: 'Dexola',
@@ -37,11 +36,7 @@ export default function RootLayout({
         <title>{metadata.title}</title>
       </Head>
 
-      <body>
-        {/* <StyledComponentsRegistry> */}
-        {children}
-        {/* </StyledComponentsRegistry> */}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
