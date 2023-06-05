@@ -26,7 +26,7 @@ const VideoBG = ({
           Your browser does not support the video tag.
         </video>
       </figure>
-      <HeaderSmall isWhite={isWhite} />
+      {/* <HeaderSmall isWhite={isWhite} /> */}
     </>
   );
 };

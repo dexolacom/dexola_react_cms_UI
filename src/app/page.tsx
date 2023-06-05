@@ -7,12 +7,13 @@ import Partnership from '../../components/partnership/partnership';
 import Services from '../../components/services/services';
 import TechStack from '../../components/techStack/techStack';
 import RootLayout from './layout';
-// import styles from './page.module.css';
+import HeaderSmall from '../../components/HeaderSmall/headerSmall';
 
 export default function Home() {
   return (
     <RootLayout>
       <ContactButton />
+      <HeaderSmall isWhite={false} />
       <Header />
       <About />
       <Services />

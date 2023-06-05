@@ -14,7 +14,6 @@ const PageContainer = ({
   id?: string;
   children: JSX.Element | JSX.Element[];
 }) => {
-  const isLink = true;
   return (
     <div className={styles.blockWrapper} id={id}>
       <div className={styles.sidebar}>

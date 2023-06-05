@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './styles.module.css';
 // --- - ---
@@ -9,15 +9,6 @@ import Modal from 'react-modal';
 import Menu from '../Menu/Menu';
 
 const customStyles = {
-  // overlay: {
-  //   position: 'fixed',
-  //   top: 0,
-  //   left: 0,
-  //   right: 0,
-  //   bottom: 0,
-  //   backgroundColor: 'rgba(255, 255, 255, 0.75)',
-  //   zIndex: 3,
-  // },
   content: {
     top: 0,
     left: 0,
@@ -34,10 +25,19 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
     setIsMenu(prev => !prev);
   };
 
+  useEffect(() => {
+    isMenu
+      ? window.document.body.classList.add('modal-open')
+      : window.document.body.classList.remove('modal-open');
+
+    return () => {
+      window.document.body.classList.remove('modal-open');
+    };
+  }, [isMenu]);
+
   const logoHandler = () => {
     console.log('Logo clicked!!!');
   };
-  // --- - ---
 
   function closeModal() {
     setIsMenu(false);
@@ -45,13 +45,17 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
   Modal.setAppElement('#yourAppElement');
   // --- / - ---
 
-  const imgSrc = isWhite
-    ? isMenu
-      ? '/close.svg'
-      : '/menu_short_white.svg'
-    : isMenu
+  const imgSrc = isMenu
     ? '/close_black.svg'
+    : isWhite
+    ? '/menu_short_white.svg'
     : '/menu_short_black.svg';
+
+  const imgSrcLogo = isMenu
+    ? '/logo.svg'
+    : isWhite
+    ? '/logo-white.svg'
+    : '/logo.svg';
 
   return (
     <>
@@ -65,7 +69,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
           shouldCloseOnEsc={true}
           preventScroll={true}
           overlayClassName={styles.overlayClass}>
-          <Menu />
+          <Menu closeModal={closeModal} />
         </Modal>
       </div>
       {/* --- / - --- */}
@@ -73,7 +77,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
         <Link href={'/'}>
           <div className={styles.imageBox} onClick={logoHandler}>
             <Image
-              src={isWhite ? '/logo-white.svg' : '/logo.svg'}
+              src={imgSrcLogo}
               alt="Logo"
               width={64}
               height={14}
