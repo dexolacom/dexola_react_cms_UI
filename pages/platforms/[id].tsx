@@ -19,7 +19,7 @@ import style from "../../components/commonStyles/commonStyles.module.css";
 import markdownStyle from "../../components/CustomMarkdown/mardown.module.css";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import PageContainer from "../../components/PageContainer/PageWrapper";
-import Footer from "../footer/footer";
+import Footer from "../../components/footer/footer";
 
 export const getStaticPaths = async () => {
   try {
@@ -76,8 +76,6 @@ const PlatformDetails = ({
     return <div>Loading...</div>;
   }
 
-  const [isHovered, setIsHovered] = useState(false);
-
   const { attributes } = platformDetails;
 
   const {
@@ -105,13 +103,9 @@ const PlatformDetails = ({
       <PageContainer
         isArrow={true}
         title={paltformName}
-        // onHoverChange={setIsHovered}
-        // isHovered={isHovered}
+        
       >
         <Suspense fallback={"Loading ... . . ."}>
-          {/* {
-          isHovered ? 'isHovered': '=-=-=-=-'
-        } */}
           <CustomReactMarkdown
             technology={services}
             heading={"Services"}
@@ -185,49 +179,3 @@ const PlatformDetails = ({
 };
 
 export default PlatformDetails;
-
-// export const getStaticPaths = async () => {
-//   try {
-//     const response = await getPlatform();
-
-//     const paths = response?.map((platform: { id: number }) => ({
-//       params: { id: String(platform.id) },
-//     }));
-
-//     return { paths, fallback: false };
-//   } catch (error) {
-//     console.error(error);
-//     return { paths: [], fallback: false };
-//   }
-// };
-
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-//   try {
-//     if (!params || typeof params.id !== "string") {
-//       console.error("Invalid params ID getStaticProps");
-//       return {
-//         props: {
-//           platformDetails: [],
-//         },
-//       };
-//     }
-//     const { id } = params;
-
-//     const response = await getPlatformId(id);
-
-//     const platformDetails = response;
-
-//     return {
-//       props: {
-//         platformDetails,
-//       },
-//     };
-//   } catch (error) {
-//     console.error(error);
-//     return {
-//       props: {
-//         platformDetails: {},
-//       },
-//     };
-//   }
-// };

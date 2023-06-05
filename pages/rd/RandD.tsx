@@ -2,7 +2,7 @@
 
 import PageContainer from "../../components/PageContainer/PageWrapper";
 import { RandD_INFO } from "../../constants/textConstants";
-import TypeItem from "../partnership/typeItem";
+import TypeItem from "../../components/partnership/typeItem";
 import { useTypeStatus } from "../../utils/utils";
 import styles from "./styles.module.css";
 import styles2 from "../../components/PageContainer/pageContainer.module.css";
@@ -11,7 +11,7 @@ const RandD = () => {
   const { typeStatus, clickHandler } = useTypeStatus(5);
 
   return (
-    <PageContainer title={"R&D"} link={"/#Services"}>
+    <PageContainer title={"R&D"} link={"/#Services"} isArrow={false}>
       <p className={styles2.contentText}>
         Our Research and Development team constantly explores emerging
         technology areas and creates proof-of-concept projects to stay updated

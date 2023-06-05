@@ -7,7 +7,7 @@ import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMark
 
 import PageContainer from "../../components/PageContainer/PageWrapper";
 import CustomPlatfromsMarkdown from "../../components/CustomMarkdown/CustomPlatfromsMarkdown";
-import Footer from "../footer/footer";
+import Footer from "../../components/footer/footer";
 
 import st from "./index.module.css";
 
@@ -68,29 +68,3 @@ const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
 };
 
 export default AllPlatforms;
-
-// export async function getStaticProps() {
-//   try {
-//     const response = await getPlatform();
-//     const transformData = response?.map((item: IItem) => ({
-//       services: item?.attributes?.services,
-//       summary: item?.attributes?.summary
-//         ? removeImageLinksFromMarkdown(item.attributes.summary)
-//         : null,
-//       id: item?.id,
-//     }));
-
-//     return {
-//       props: {
-//         platforms: transformData,
-//       },
-//     };
-//   } catch (error) {
-//     console.error("getStaticProps ERROR", error);
-//     return {
-//       props: {
-//         platforms: [],
-//       },
-//     };
-//   }
-// }

@@ -18,7 +18,7 @@ const ServiceCard = ({
   return (
     <div className={styles.imageItem}>
       <Image src={imgPath} alt="Service1" width={275} height={275} priority />
-      <Link href={convertTitleToLink()}>
+      <Link href={`/${convertTitleToLink()}`}>
         <CardHover title={title} color={color} />
         <div className={styles.arrowBlock}></div>
       </Link>

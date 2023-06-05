@@ -29,6 +29,7 @@ const ArrowGoBack = ({ isHovered }: { isHovered: boolean }) => {
           animate="hover"
           exit="hoverEnd"
           key="not-hovered"
+          strokeWidth="1.5"
         />
       )}
       {!isHovered && (
@@ -40,6 +41,7 @@ const ArrowGoBack = ({ isHovered }: { isHovered: boolean }) => {
           animate="hoverEnd"
           exit="hoverEnd"
           key="not-hovered"
+          strokeWidth="1.5"
         />
       )}
     </motion.svg>

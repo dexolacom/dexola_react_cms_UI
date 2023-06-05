@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import HeaderSmall from '../../components/HeaderSmall/headerSmall';
+import HeaderSmall from '../HeaderSmall/headerSmall';
 import ContactFormButton from './ContactFormButton';
 import styles from './contactForm.module.css';
 

@@ -10,7 +10,11 @@ const Web3Solutions = () => {
   const WEB3SOLUTIONS_CONTENT_ARRAY =
     SERVICES_CONTENT_INF0["Web3 White Label Solutions"];
   return (
-    <PageContainer title={"White-label Web3 Solutions"} link={"/#Services"}>
+    <PageContainer
+      title={"White-label Web3 Solutions"}
+      link={"/#Services"}
+      isArrow={true}
+    >
       <figure className={styles.imageWrapper}>
         <Image
           src={"/Img_4_1-2-768x768.png"}

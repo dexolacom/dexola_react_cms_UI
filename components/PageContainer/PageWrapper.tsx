@@ -1,13 +1,12 @@
 "use client";
 
-// import { useRouter } from "next/router";
-
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./pageContainer.module.css";
-import st from "../commonStyles/commonStyles.module.css";
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
 import ArrowGoBack from "../ArrowAnime/ArrowBack";
+
+import styles from "./pageContainer.module.css";
 
 const PageContainer = ({
   title,
@@ -59,11 +58,7 @@ const PageContainer = ({
           <p className={styles.title}>{title}</p>
         </div>
       </div>
-      <div
-        className={
-          isHovered ? `${styles.contentBoxHover}` : `${styles.contentBox}`
-        }
-      >
+      <div className={isHovered ? styles.contentBoxHover : styles.contentBox}>
         {children}
       </div>
     </div>
