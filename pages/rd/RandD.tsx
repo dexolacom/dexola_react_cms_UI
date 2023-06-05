@@ -2,7 +2,7 @@
 
 import PageContainer from '../../components/PageContainer/PageWrapper';
 import { RandD_INFO } from '../../constants/textConstants';
-import TypeItem from '../partnership/typeItem';
+import TypeItem from '../../components/partnership/typeItem';
 import { useTypeStatus } from '../../utils/utils';
 import styles from './styles.module.css';
 import styles2 from '../../components/PageContainer/pageContainer.module.css';

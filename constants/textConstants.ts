@@ -101,22 +101,22 @@ export const PROCESS_INFO: ITypeItem[] = [
 export const TEMP_FOOTER_INFO: IFooterInfo[] = [
   {
     title: 'About',
-    firstColumn: ['About Dexola'],
-    secondColumn: ['Synergy with Trinetix'],
+    firstColumn: [{ title: 'About Dexola', text: '#About' }],
+    secondColumn: [{ title: 'Synergy with Trinetix', text: '#Synergy-with-Trinetix' }],
   },
   {
     title: 'Services',
     firstColumn: [
-      'Smart Contracts Devel...',
-      'Analytics and Crypto...',
-      'How we Work',
+      { title: 'Smart Contracts Devel...', text: 'smart-contracts-development' },
+      { title: 'Analytics and Crypto...', text: 'blockchain-analytics-and-crypto-trading-automation-tools' },
+      { title: 'How we Work', text: 'how-we-work' },
     ],
-    secondColumn: ['Smart Contract Audit', 'R&D', 'Our Process'],
+    secondColumn: [{ title: 'Smart Contract Audit', text: 'smart-contract-audits' }, { title: 'R&D', text: 'rd' }, { title: 'Our Process', text: 'our-process' }],
   },
   {
     title: 'Cases',
-    firstColumn: ['Featured Case 1', 'Featured Case 3'],
-    secondColumn: ['Featured Case 2', 'All Cases'],
+    firstColumn: [{ title: 'Featured Case 1', text: '' }, { title: 'Featured Case 3', text: '' }],
+    secondColumn: [{ title: 'Featured Case 2', text: '' }, { title: 'All Cases', text: '' }],
   },
 ];
 

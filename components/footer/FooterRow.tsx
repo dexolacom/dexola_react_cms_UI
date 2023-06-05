@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import styles from './footer.module.css';
 
 const FooterRow = ({ footerInfo }: { footerInfo: IFooterInfo }) => {
@@ -13,9 +14,11 @@ const FooterRow = ({ footerInfo }: { footerInfo: IFooterInfo }) => {
         {firstColumn &&
           firstColumn.length > 0 &&
           firstColumn.map(el => (
-            <div key={el}>
-              <p className={styles.columnText}>{el}</p>
-              <div className={styles.arrowBlock}></div>
+            <div key={el.title}>
+              <Link href={`/${el.text}`}>
+                <p className={styles.columnText}>{el.title}</p>
+                <div className={styles.arrowBlock}></div>
+              </Link>
             </div>
           ))}
       </div>
@@ -23,9 +26,11 @@ const FooterRow = ({ footerInfo }: { footerInfo: IFooterInfo }) => {
         {secondColumn &&
           secondColumn.length > 0 &&
           secondColumn.map(el => (
-            <div key={el}>
-              <p className={styles.columnText}>{el}</p>
-              <div className={styles.arrowBlock}></div>
+            <div key={el.title}>
+              <Link href={`/${el.text}`}>
+                <p className={styles.columnText}>{el.title}</p>
+                <div className={styles.arrowBlock}></div>
+              </Link>
             </div>
           ))}
       </div>

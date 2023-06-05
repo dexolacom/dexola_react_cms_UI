@@ -1,14 +1,14 @@
 // "use client";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
-import HeaderSmall from "../../../components/HeaderSmall/headerSmall";
-import ContactUs from "../../../components/ContactUs/ContactUs";
+import HeaderSmall from '../../../components/HeaderSmall/headerSmall';
+import ContactUs from '../../../components/ContactUs/ContactUs';
 
-import Footer from "../../footer/footer";
+import Footer from '../../../components/footer/footer';
 
-import st from "./contain.module.css";
-import style from "../../../components/commonStyles/commonStyles.module.css";
+import st from './contain.module.css';
+import style from '../../../components/commonStyles/commonStyles.module.css';
 
 const PageContainerItem = ({
   title,
