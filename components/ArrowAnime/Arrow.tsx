@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { svgVariant, svgWrapper } from "../../Variants/Variants";
 
 interface IProps {

@@ -43,7 +43,7 @@
 }
 
 .sidebar::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
@@ -74,6 +74,17 @@
   padding: 92px 114px 92px 135px;
   background: #17191d;
   z-index: 2;
+  transition: padding 0.4s ease;
+}
+
+.contentBoxHover {
+  composes: flexColumnBlock;
+  width: calc(100vw - 420px);
+  height: fit-content;
+  padding: 110px 114px 92px 135px;
+  background: #17191d;
+  z-index: 2;
+  transition: padding 0.4s ease;
 }
 
 .contentText {
@@ -93,7 +104,7 @@
 
 .titleBlock {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   position: relative;
 }
 
@@ -111,4 +122,26 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+}
+
+/* arrow */
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  background: var(--bg-color);
+  width: 33px;
+  height: 32px;
+}
+
+.btnGoBack {
+  width: 32px;
+  height: 32px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 25px;
+  background-color: transparent;
 }

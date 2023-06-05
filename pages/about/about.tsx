@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import PageContainer from '../../components/PageContainer/PageWrapper';
-import { ADVERT_INFO } from '../../constants/textConstants';
-import styles from './styles.module.css';
+import PageContainer from "../../components/PageContainer/PageWrapper";
+import { ADVERT_INFO } from "../../constants/textConstants";
+import styles from "./styles.module.css";
 
 const About = () => {
   return (
-    <PageContainer title={'About'}>
+    <PageContainer title={"About"}>
       <p className={styles.aboutSubtitle}>About Dexola</p>
       <p className={styles.aboutText}>
         Dexola is an autonomous blockchain software development branch of

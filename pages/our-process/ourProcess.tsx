@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import PageContainer from '../../components/PageContainer/PageWrapper';
-import ProcessItem from './processItem';
-import { PROCESS_INFO } from '../../constants/textConstants';
-import styles2 from '../../components/PageContainer/pageContainer.module.css';
-import styles from './styles.module.css';
+import PageContainer from "../../components/PageContainer/PageWrapper";
+import ProcessItem from "./processItem";
+import { PROCESS_INFO } from "../../constants/textConstants";
+import styles2 from "../../components/PageContainer/pageContainer.module.css";
+import styles from "./styles.module.css";
 
 const OurProcess = () => {
   return (
-    <PageContainer title={'Our Process'} link={'/#Services'}>
+    <PageContainer title={"Our Process"} link={"/#Services"}>
       <p className={styles2.contentText}>
         Our approach to each project is unique and adaptable. We are flexible in
         pivoting, growing, or removing functionality as needed to hit the moving
@@ -20,7 +20,7 @@ const OurProcess = () => {
       <div className={styles.itemWrapper}>
         {PROCESS_INFO &&
           PROCESS_INFO.length > 0 &&
-          PROCESS_INFO.map(item => (
+          PROCESS_INFO.map((item) => (
             <ProcessItem key={item.title} title={item.title} text={item.text} />
           ))}
       </div>

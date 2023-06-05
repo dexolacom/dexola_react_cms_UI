@@ -1,5 +1,5 @@
 /* Base  */
-
+.imageContainer,
 .imageDivContain,
 .imageDivArrowTop {
   background-size: cover;
@@ -12,6 +12,8 @@
 
 .imageDivContain {
   background-image: url("../../public/arrowTop.png");
+  width: 15px;
+  height: 15px;
 }
 
 .imageDivArrowTop {

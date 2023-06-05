@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import PageContainer from '../../components/PageContainer/PageWrapper';
-import styles from './styles.module.css';
-import styles1 from '../../components/PageContainer/pageContainer.module.css';
+import PageContainer from "../../components/PageContainer/PageWrapper";
+import styles from "./styles.module.css";
+import styles1 from "../../components/PageContainer/pageContainer.module.css";
 
 const TechStack = () => {
   return (
-    <PageContainer title={'Technology Stack'}>
+    <PageContainer title={"Technology Stack"}>
       <div className={styles1.flexColumnBlock}>
         <div className={styles.techItem}>
           <div className={styles.techItemColumn}>
