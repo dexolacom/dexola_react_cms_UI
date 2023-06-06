@@ -1,7 +1,6 @@
 /* Base  */
-.imageDivArrowA,
-.imageDivContain,
-.imageDivArrowTop {
+
+.imageDivArrowA {
   background-size: cover;
   background-position: center;
   width: 15px;
@@ -11,25 +10,10 @@
 }
 
 .imageDivArrowA {
-  background-image: url("../../public/cassesArrowA.png");
-}
-
-.imageDivContain {
   background-image: url("../../public/arrowTop.png");
-}
-
-.imageDivArrowTop {
-  background-image: url("../../public/arrowTop.png");
-  background-image: none;
 }
 
 /* Link */
-
-.imageContainerItem {
-  position: absolute;
-  right: 10px;
-  top: 23px;
-}
 
 .link {
   display: inline-block;
@@ -42,15 +26,11 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 50px;
 }
-
-.link:hover .imageDivArrowA {
-  transform: rotate(-45deg);
-}
-
-/* Cases */
 
 .wrapper {
   background-color: var(--bg-color);
@@ -60,17 +40,7 @@
   cursor: pointer;
 }
 
-.imageContainerCases {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
 .wrapper:hover {
   background-color: var(--bg-card-color);
   transition: background-color 0.3s ease-in-out;
-}
-
-.wrapper:hover .imageDivArrowA {
-  transform: rotate(-45deg);
 }

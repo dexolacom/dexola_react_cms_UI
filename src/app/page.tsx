@@ -1,4 +1,4 @@
-import CasesSection from '../../components/cases/casesSection';
+import CasesSection from '../../components/Cases/casesSection';
 import ContactButton from '../../components/ContactUs/ContactUs';
 import About from '../../components/about/about';
 import Footer from '../../components/footer/footer';
@@ -7,7 +7,6 @@ import Partnership from '../../components/partnership/partnership';
 import Services from '../../components/services/services';
 import TechStack from '../../components/techStack/techStack';
 import RootLayout from './layout';
-// import styles from './page.module.css';
 
 export default function Home() {
   return (
