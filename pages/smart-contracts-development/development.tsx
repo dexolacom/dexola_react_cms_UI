@@ -10,7 +10,10 @@ const DevelopContract = () => {
   const DEVELOPMENT_CONTENT_ARRAY =
     SERVICES_CONTENT_INF0['Smart Contracts Development'];
   return (
-    <PageContainer title={'Smart Contracts Development'} link={'/#Services'}>
+    <PageContainer
+      title={'Smart Contracts Development'}
+      link={'/#Services'}
+      isArrow={true}>
       <figure className={styles.imageWrapper}>
         <Image
           src={'/Img_1_1-3-768x768.png'}

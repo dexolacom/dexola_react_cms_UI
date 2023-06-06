@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 
 const About = () => {
   return (
-    <PageContainer title={'About'} id="About">
+    <PageContainer title={'About'} id="About" isArrow={false}>
       <p className={styles.aboutSubtitle}>About Dexola</p>
       <p className={styles.aboutText}>
         Dexola is an autonomous blockchain software development branch of
