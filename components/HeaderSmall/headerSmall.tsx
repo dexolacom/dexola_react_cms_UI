@@ -1,8 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useMyContext } from '../../context/AppContext';
 import styles from './styles.module.css';
 // --- - ---
 import Modal from 'react-modal';
@@ -20,9 +21,11 @@ const customStyles = {
 // --- / - ---
 
 const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
+  const { isForm, setData } = useMyContext();
+  const isHeaderWhite = isForm ? isForm : isWhite;
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const menuHandler = () => {
-    setIsMenu(prev => !prev);
+    isForm ? setData(false) : setIsMenu(prev => !prev);
   };
 
   useEffect(() => {
@@ -44,18 +47,23 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
   }
   Modal.setAppElement('#yourAppElement');
   // --- / - ---
-
-  const imgSrc = isMenu
-    ? '/close_black.svg'
-    : isWhite
-    ? '/menu_short_white.svg'
-    : '/menu_short_black.svg';
-
-  const imgSrcLogo = isMenu
+  const imgSrcLogo = isForm
+    ? '/logo-white.svg'
+    : isMenu
     ? '/logo.svg'
-    : isWhite
+    : // : isWhite
+    isHeaderWhite
     ? '/logo-white.svg'
     : '/logo.svg';
+
+  const imgSrc = isForm
+    ? '/close-white.svg'
+    : isMenu
+    ? '/close_black.svg'
+    : // : isWhite
+    isHeaderWhite
+    ? '/menu_short_white.svg'
+    : '/menu_short_black.svg';
 
   return (
     <>
@@ -86,7 +94,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
           </div>
         </Link>
         <div className={styles.imageBox} onClick={menuHandler}>
-          <Image src={imgSrc} alt="menu" width={18} height={14} priority />
+          <Image src={imgSrc} alt="menu" width={18} height={18} priority />
         </div>
       </div>
     </>

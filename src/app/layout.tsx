@@ -2,6 +2,7 @@ import './globals.css';
 import Head from 'next/head';
 
 import { Kanit, Roboto_Mono } from 'next/font/google';
+import { MyContextProvider } from '../../context/AppContext';
 
 export const metadata = {
   title: 'Dexola',
@@ -36,7 +37,9 @@ export default function RootLayout({
         <title>{metadata.title}</title>
       </Head>
 
-      <body>{children}</body>
+      <body>
+        <MyContextProvider>{children}</MyContextProvider>
+      </body>
     </html>
   );
 }

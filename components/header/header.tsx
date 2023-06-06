@@ -2,14 +2,12 @@
 
 import Image from 'next/image';
 import VideoBG from '../VideoBG/VideoBG';
-// import HeaderSmall from '../HeaderSmall/headerSmall';
 import styles from './styles.module.css';
 
 const Header = () => {
   return (
     <div className={styles.headerWrapper}>
       <VideoBG opacity={0.1} />
-      {/* <HeaderSmall isWhite={false} /> */}
       <div className={styles.description}>
         <p className={styles.headerTitle}>
           Cracking
