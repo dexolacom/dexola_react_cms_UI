@@ -14,7 +14,8 @@ const AnaliticsTools = () => {
   return (
     <PageContainer
       title={'Blockchain analytics and crypto trading automation tools'}
-      link={'/#Services'}>
+      link={'/#Services'}
+      isArrow={true}>
       <figure className={styles.imageWrapper}>
         <Image
           src={'/Img_3_1-3-768x768.png'}

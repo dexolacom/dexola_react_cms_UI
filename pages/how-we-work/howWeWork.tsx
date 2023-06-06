@@ -7,7 +7,7 @@ import styles2 from '../../components/PageContainer/pageContainer.module.css';
 
 const HowWeWork = () => {
   return (
-    <PageContainer title={'How we work'} link={'/#Services'}>
+    <PageContainer title={'How we work'} link={'/#Services'} isArrow={true}>
       <p className={styles2.contentText}>
         At Dexola, our approach to working with clients is rooted in
         collaboration, adaptability, and a dedication to delivering outstanding

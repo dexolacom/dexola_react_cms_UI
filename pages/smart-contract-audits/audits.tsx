@@ -10,7 +10,10 @@ import { SERVICES_CONTENT_INF0 } from '../../constants/textConstants';
 const Audits = () => {
   const AUDITS_CONTENT_ARRAY = SERVICES_CONTENT_INF0['Smart Contract Audits'];
   return (
-    <PageContainer title={'Smart contract audits'} link={'/#Services'}>
+    <PageContainer
+      title={'Smart contract audits'}
+      link={'/#Services'}
+      isArrow={true}>
       <figure className={styles.imageWrapper}>
         <Image
           src={'/Img_2_1-3-768x768.png'}

@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 const OurProcess = () => {
   return (
-    <PageContainer title={'Our Process'} link={'/#Services'}>
+    <PageContainer title={'Our Process'} link={'/#Services'} isArrow={true}>
       <p className={styles2.contentText}>
         Our approach to each project is unique and adaptable. We are flexible in
         pivoting, growing, or removing functionality as needed to hit the moving

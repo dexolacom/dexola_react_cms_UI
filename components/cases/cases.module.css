@@ -13,48 +13,68 @@
   font-family: var(--font-roboto-mono);
   font-size: 16px;
 }
-/*  test animation  */
+/*  animation link  */
 .button {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px 30px;
+  padding: 15px 25px;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 300px;
+  width: 320px;
   background: #272a2e;
   color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .button::before {
   content: "";
   transform: translateX(0);
   opacity: 1;
-  width: 24px;
+  width: 20px;
   height: 2px;
   background-color: #fff;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.2s, opacity 0.2s;
+  position: absolute;
+  left: 10px;
 }
 
 .button::after {
   content: url("/gorizont.svg");
   transform: translateX(100%);
   opacity: 0;
-  width: 31px;
+  width: 30px;
   height: 17px;
-
   background-repeat: no-repeat;
   background-position: center;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.2s, opacity 0.2s;
+  position: absolute;
+  right: 10px;
 }
 
 .button:hover::before {
-  transform: translateX(-100%);
+  transform: translateX(-30px);
   opacity: 0;
 }
 
 .button:hover::after {
   transform: translateX(0);
   opacity: 1;
+}
+
+.button:hover span {
+  transform: translateX(-10px);
+}
+
+.button span {
+  transition: transform 0.2s;
+  font-family: var(--font-roboto-mono);
+  font-size: 16px;
+}
+.svgContainer {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
 }

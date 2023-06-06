@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from 'next/image';
 import PageContainer from '../PageContainer/PageWrapper';
@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <>
       <RunningLine />
-      <PageContainer title={''}>
+      <PageContainer title={""} isArrow={false}>
         <div className={styles.footerRow}>
           <Image
             src="/logo-white.svg"
