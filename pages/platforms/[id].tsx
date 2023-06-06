@@ -3,7 +3,7 @@ import "../../src/app/globals.css";
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 
 import { getPlatform, getPlatformId } from "../../api/api";
 
@@ -14,7 +14,6 @@ import { getImageUrlFromMarkdown } from "../../lib/getImageUrlFromMarkdown";
 import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
 import RenderListTechnology from "../../lib/RenderListTechnology";
 
-import st from "./id.module.css";
 import style from "../../components/commonStyles/commonStyles.module.css";
 import markdownStyle from "../../components/CustomMarkdown/mardown.module.css";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
@@ -100,11 +99,7 @@ const PlatformDetails = ({
 
   return (
     <>
-      <PageContainer
-        isArrow={true}
-        title={paltformName}
-        
-      >
+      <PageContainer isArrow={true} title={paltformName}>
         <Suspense fallback={"Loading ... . . ."}>
           <CustomReactMarkdown
             technology={services}
@@ -161,12 +156,8 @@ const PlatformDetails = ({
               target="_blank"
               rel="noreferrer noopener"
             >
-              <div className={st.container}>
-                {platformLink}
-                <div className={style.imageContainerItem}>
-                  <div className={style.imageDivArrowA}></div>
-                </div>
-              </div>
+              {platformLink}
+              <div className={style.imageDivArrowA}></div>
             </Link>
           ) : (
             <></>

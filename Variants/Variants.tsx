@@ -24,7 +24,7 @@ export const svgVariant = {
   },
 };
 
-// goBack Arrow variants 
+// goBack Arrow variants
 
 export const svgWrapperBack = {
   initial: {

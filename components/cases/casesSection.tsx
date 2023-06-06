@@ -40,7 +40,7 @@ const CasesSection = () => {
   }, []);
 
   return (
-    <PageContainer title={"Case Studies"}>
+    <PageContainer title={"Case Studies"} isArrow={false}>
       <Suspense fallback={"Loading ......"}>
         <div className={st.container}>
           {platforms

@@ -1,7 +1,6 @@
 /* Base  */
-.imageContainer,
-.imageDivContain,
-.imageDivArrowTop {
+
+.imageDivArrowA {
   background-size: cover;
   background-position: center;
   width: 15px;
@@ -10,24 +9,11 @@
   transition: all 0.2s ease-in-out;
 }
 
-.imageDivContain {
+.imageDivArrowA {
   background-image: url("../../public/arrowTop.png");
-  width: 15px;
-  height: 15px;
-}
-
-.imageDivArrowTop {
-  background-image: url("../../public/arrowTop.png");
-  background-image: none;
 }
 
 /* Link */
-
-.imageContainerItem {
-  position: absolute;
-  right: 10px;
-  top: 23px;
-}
 
 .link {
   display: inline-block;
@@ -40,12 +26,10 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 50px;
-}
-
-.link:hover .imageDivArrowA {
-  transform: rotate(-45deg);
 }
 
 .wrapper {

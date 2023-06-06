@@ -11,7 +11,7 @@ const RandD = () => {
   const { typeStatus, clickHandler } = useTypeStatus(5);
 
   return (
-    <PageContainer title={"R&D"} link={"/#Services"} isArrow={false}>
+    <PageContainer title={"R&D"} link={"/#Services"} isArrow={true}>
       <p className={styles2.contentText}>
         Our Research and Development team constantly explores emerging
         technology areas and creates proof-of-concept projects to stay updated
