@@ -92,6 +92,15 @@ const PlatformDetails = ({
     videoLink,
   } = attributes;
 
+  const technologies = [
+    { arr: network, title: "Network" },
+    { arr: backEnd, title: "Back-End" },
+    { arr: database, title: "Database" },
+    { arr: blockchain, title: "Blockchain" },
+    { arr: frontEnd, title: "Front-End" },
+    { arr: infrastructure, title: "Infrastructure" },
+  ];
+
   // get Link Image
   const imageUrl = getImageUrlFromMarkdown(summary);
   // remove Link Image from text
@@ -123,28 +132,18 @@ const PlatformDetails = ({
             )}
           </div>
           <ul>
-            <h3 className={markdownStyle.headText}>Technology Stack</h3>
-            {network && network.length > 0 && (
-              <RenderListTechnology arr={network} title={"Network"} />
-            )}
-            {backEnd && backEnd.length > 0 && (
-              <RenderListTechnology arr={backEnd} title={"Back-End"} />
-            )}
-            {database && database.length > 0 && (
-              <RenderListTechnology arr={database} title={"Database"} />
-            )}
-            {blockchain && blockchain.length > 0 && (
-              <RenderListTechnology arr={blockchain} title={"Blockchain"} />
-            )}
-            {frontEnd && frontEnd.length > 0 && (
-              <RenderListTechnology arr={frontEnd} title={"Front-End"} />
-            )}
-            {infrastructure && infrastructure.length > 0 && (
-              <RenderListTechnology
-                arr={infrastructure}
-                title={"Infrastructure"}
-              />
-            )}
+            {technologies.map((tech, index) => {
+              if (tech.arr && tech.arr.length > 0) {
+                return (
+                  <RenderListTechnology
+                    key={index}
+                    arr={tech.arr}
+                    title={tech.title}
+                  />
+                );
+              }
+              return null;
+            })}
           </ul>
           <CustomMarkdown>{description}</CustomMarkdown>
           {videoLink !== null ? <VideoPlayer videoLink={videoLink} /> : <></>}
