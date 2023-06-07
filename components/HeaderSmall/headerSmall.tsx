@@ -12,8 +12,8 @@ import Menu from '../Menu/Menu';
 
 const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
   const { isFormOpen, setData, isHoveredLink } = useMyContext();
-  // const isHeaderWhite = isFormOpen ? isFormOpen : isWhite;
-  const isHeaderWhite = isFormOpen ? isFormOpen : isHoveredLink;
+  const isHeaderWhite = isFormOpen ? isFormOpen : isWhite;
+  // const isHeaderWhite = isFormOpen ? isFormOpen : isHoveredLink;
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const menuHandler = () => {
     isFormOpen ? setData(false) : setIsMenu(prev => !prev);
@@ -38,8 +38,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
     ? '/logo-white.svg'
     : isMenu
     ? '/logo.svg'
-    : // : isWhite
-    isHeaderWhite
+    : isHeaderWhite
     ? '/logo-white.svg'
     : '/logo.svg';
 
@@ -47,14 +46,12 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
     ? '/close-white-40.svg'
     : isMenu
     ? '/close-black-40.svg'
-    : // : isWhite
-    isHeaderWhite
-    ? '/menu-hover-black.png'
+    : isHeaderWhite
+    ? '/menu-white-40.svg'
     : '/menu-black-40.svg';
 
   return (
     <>
-      {/* --- - --- */}
       <div>
         <Modal
           isOpen={isMenu}
@@ -67,7 +64,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
           <Menu closeModal={closeModal} />
         </Modal>
       </div>
-      {/* --- / - --- */}
+
       <div className={styles.topBox} id="yourAppElement">
         <Link href={'/'}>
           <div className={styles.imageBox}>
@@ -81,7 +78,13 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
           </div>
         </Link>
         <div className={styles.imageBox} onClick={menuHandler}>
-          <Image src={imgSrc} alt="menu" width={40} height={40} priority />
+          <Image
+            src={isHoveredLink ? '/menu-hover-white.png' : imgSrc}
+            alt="menu"
+            width={40}
+            height={40}
+            priority
+          />
         </div>
       </div>
     </>
