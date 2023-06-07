@@ -1,5 +1,7 @@
 'use client';
 
+// import '../../src/app/globals.css'; ???
+
 import { useState } from 'react';
 import HeaderSmall from '../HeaderSmall/headerSmall';
 import ContactFormButton from './ContactFormButton';
@@ -42,7 +44,7 @@ const ContactForm = () => {
 
   return (
     <div className={styles.wrapper}>
-      <HeaderSmall isWhite={true} />
+      {/* <HeaderSmall isWhite={true} /> */}
       <div className={styles.leftBlock}>
         <figure className={styles.videoWrapper}>
           <video

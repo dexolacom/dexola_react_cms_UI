@@ -1,26 +1,25 @@
-"use client";
+// 'use client';
 
-import Image from "next/image";
-import PageContainer from "../../components/PageContainer/PageWrapper";
-import { SERVICES_CONTENT_INF0 } from "../../constants/textConstants";
-import AuditCardItem from "../smart-contract-audits/auditsCardItem";
-import styles from "../smart-contract-audits/styles.module.css";
+import Image from 'next/image';
+import PageContainer from '../../components/PageContainer/PageWrapper';
+import { SERVICES_CONTENT_INF0 } from '../../constants/textConstants';
+import AuditCardItem from '../smart-contract-audits/auditsCardItem';
+import styles from '../smart-contract-audits/styles.module.css';
 
 const Web3Solutions = () => {
   const WEB3SOLUTIONS_CONTENT_ARRAY =
-    SERVICES_CONTENT_INF0["Web3 White Label Solutions"];
+    SERVICES_CONTENT_INF0['White-label Web3 Solutions'];
   return (
     <PageContainer
-      title={"White-label Web3 Solutions"}
-      link={"/#Services"}
-      isArrow={true}
-    >
+      title={'White-label Web3 Solutions'}
+      link={'/#Services'}
+      isArrow={true}>
       <figure className={styles.imageWrapper}>
         <Image
-          src={"/Img_4_1-2-768x768.png"}
+          src={'/Img_4_1-2-768x768.png'}
           alt="Web3 Solutions"
           fill={true}
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: 'cover' }}
           priority
         />
       </figure>
@@ -33,7 +32,7 @@ const Web3Solutions = () => {
       <>
         {WEB3SOLUTIONS_CONTENT_ARRAY &&
           WEB3SOLUTIONS_CONTENT_ARRAY.length > 0 &&
-          WEB3SOLUTIONS_CONTENT_ARRAY.map((el) => (
+          WEB3SOLUTIONS_CONTENT_ARRAY.map(el => (
             <AuditCardItem content={el} key={el.title} />
           ))}
       </>

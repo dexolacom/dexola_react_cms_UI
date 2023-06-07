@@ -12,3 +12,8 @@
 .imageBox {
   cursor: pointer;
 }
+
+.contentClass {
+  composes: allToZero from '../ContactUs/styles.module.css';
+  z-index: 99;
+}
