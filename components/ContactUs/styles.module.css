@@ -34,21 +34,22 @@
   }
 }
 
-.overlayClass {
-  position: fixed;
+.allToZero {
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.overlayClass {
+  composes: allToZero;
+  position: fixed;
   background-color: rgba(255, 255, 255, 0.75);
   z-index: 3;
 }
 
 .contentClass {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  composes: allToZero;
   max-width: 100vw;
   padding: 0;
   border: none;

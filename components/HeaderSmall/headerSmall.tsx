@@ -4,20 +4,10 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './styles.module.css';
+import styles1 from '../ContactUs/styles.module.css';
 // --- - ---
 import Modal from 'react-modal';
 import Menu from '../Menu/Menu';
-
-const customStyles = {
-  content: {
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: 99,
-  },
-};
-// --- / - ---
 
 const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
   const [isMenu, setIsMenu] = useState<boolean>(false);
@@ -64,11 +54,11 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
         <Modal
           isOpen={isMenu}
           onRequestClose={closeModal}
-          style={customStyles}
+          className={styles.contentClass}
           contentLabel="Main Menu"
           shouldCloseOnEsc={true}
           preventScroll={true}
-          overlayClassName={styles.overlayClass}>
+          overlayClassName={styles1.overlayClass}>
           <Menu closeModal={closeModal} />
         </Modal>
       </div>

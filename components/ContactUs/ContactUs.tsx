@@ -6,22 +6,22 @@ import styles from './styles.module.css';
 import ContactForm from '../ContactForm/ContactForm';
 
 const ContactUs = () => {
-  const [isForm, setIsForm] = useState<boolean>(false);
-  const buttonClickHandler = () => {
-    setIsForm(true);
+  const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
+  const openModal = () => {
+    setIsFormOpen(true);
   };
 
   function closeModal() {
-    setIsForm(false);
+    setIsFormOpen(false);
   }
   Modal.setAppElement('#yourAppElement');
 
   return (
     <>
-      {isForm ? (
+      {isFormOpen ? (
         <>
           <Modal
-            isOpen={isForm}
+            isOpen={isFormOpen}
             onRequestClose={closeModal}
             className={styles.contentClass}
             contentLabel="Contact Form"
@@ -33,7 +33,7 @@ const ContactUs = () => {
         </>
       ) : (
         <button
-          onClick={buttonClickHandler}
+          onClick={openModal}
           className={styles.contactUs}
           id="yourAppElement">
           Contact us

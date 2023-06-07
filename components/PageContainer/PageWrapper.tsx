@@ -21,7 +21,6 @@ const PageContainer = ({
   isArrow: boolean;
   children: JSX.Element | JSX.Element[];
 }) => {
-  const isLink = true;
   const [isHovered, onHoverChange] = useState(false);
   const router = useRouter();
 
