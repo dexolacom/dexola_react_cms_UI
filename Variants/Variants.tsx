@@ -1,29 +1,3 @@
-export const svgWrapper = {
-  initial: {
-    rotate: 0,
-    transformOrigin: "left bottom",
-  },
-  hover: {
-    rotate: -45,
-    transformOrigin: "left bottom",
-  },
-};
-
-export const svgVariant = {
-  initial: {
-    strokeDasharray: "70%",
-    transition: { duration: 0.4 },
-  },
-  hover: {
-    strokeDasharray: "100%",
-    transition: { duration: 0.4 },
-  },
-  hoverEnd: {
-    strokeDasharray: "70%",
-    transition: { duration: 0.4 },
-  },
-};
-
 // goBack Arrow variants
 
 export const svgWrapperBack = {
@@ -52,5 +26,56 @@ export const svgVariantBack = {
   hoverEnd: {
     strokeDasharray: "70%",
     transition: { duration: 0.2 },
+  },
+};
+
+// ServiceCard variants
+
+export const variants = {
+  visible: {
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 27,
+      stiffness: 400,
+    },
+  },
+  hidden: {
+    y: -275,
+    transition: {
+      type: "spring",
+      damping: 27,
+      stiffness: 400,
+    },
+  },
+};
+
+export const variantsText = {
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
+export const variantsImage = {
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
   },
 };

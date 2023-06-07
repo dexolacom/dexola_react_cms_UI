@@ -1,20 +1,23 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import styles from './styles.module.css';
+import { useState } from "react";
+import Image from "next/image";
+import styles from "./styles.module.css";
 
 const AuditCardItem = ({ content }: { content: IAuditsContent }) => {
-  const { title, text, links } = content;
   const [showStatus, setShowStatus] = useState<boolean>(false);
+  if (!content) {
+    return null;
+  }
+  const { title, text, links } = content;
   const clickHandler = () => {
-    setShowStatus(prev => !prev);
+    setShowStatus((prev) => !prev);
   };
 
   const blockStyles = () => {
     const result = showStatus
-      ? { height: '100%', opacity: 1 }
-      : { height: '0', opacity: 0, padding: 0 };
+      ? { height: "100%", opacity: 1 }
+      : { height: "0", opacity: 0, padding: 0 };
     return result;
   };
 
@@ -28,23 +31,25 @@ const AuditCardItem = ({ content }: { content: IAuditsContent }) => {
         <div
           className={styles.auditsCardLinkItem}
           onClick={clickHandler}
-          style={{ paddingBottom: showStatus ? '0px' : '24px' }}>
+          style={{ paddingBottom: showStatus ? "0px" : "24px" }}
+        >
           <p className={styles.linkItemTitle}>Related cases</p>
           <div
             className={styles.signBlock}
-            style={{ height: showStatus ? '2px' : '16px' }}
+            style={{ height: showStatus ? "2px" : "16px" }}
           />
         </div>
         {links &&
           links.length > 0 &&
-          links.map(el => (
+          links.map((el) => (
             <div
               className={styles.linkItemBlock}
               key={el}
-              style={blockStyles()}>
+              style={blockStyles()}
+            >
               <p className={styles.linkItemText}>{el}</p>
               <Image
-                src={'/arrow_tr_8x8.svg'}
+                src={"/arrow_tr_8x8.svg"}
                 alt="Arrow"
                 width={8}
                 height={8}
