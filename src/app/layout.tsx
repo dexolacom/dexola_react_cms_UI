@@ -2,7 +2,7 @@ import "./globals.css";
 import Head from "next/head";
 // import type { Metadata } from "next"
 import { Kanit, Roboto_Mono } from "next/font/google";
-
+import { MyContextProvider } from "../../context/AppContext";
 interface IProps {
   title: string;
   description: string;
@@ -41,7 +41,10 @@ export default function RootLayout({
         <title>{metadata.title}</title>
       </Head>
 
-      <body>{children}</body>
+      <body>
+        {/* <MyContextProvider>{children}</MyContextProvider> */}
+        {children}
+      </body>
     </html>
   );
 }

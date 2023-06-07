@@ -1,7 +1,8 @@
-'use client';
+// 'use client';
 
 import '../../src/app/globals.css';
 
+import { MyContextProvider } from '../../context/AppContext';
 import ContactButton from '../../components/ContactUs/ContactUs';
 import Footer from '../../components/footer/footer';
 import VideoBG from '../../components/VideoBG/VideoBG';
@@ -14,12 +15,12 @@ export default function SmallContainer({
 }) {
   const isWhite = true; // TEMP!!
   return (
-    <>
+    <MyContextProvider>
       <HeaderSmall isWhite={isWhite} />
       <ContactButton />
-      <VideoBG opacity={0.1} isWhite={true} />
+      <VideoBG opacity={0.1} />
       {children}
       <Footer />
-    </>
+    </MyContextProvider>
   );
 }

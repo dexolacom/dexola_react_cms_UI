@@ -1,20 +1,24 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Modal from 'react-modal';
-import styles from './styles.module.css';
-import ContactForm from '../ContactForm/ContactForm';
+import { useState } from "react";
+import Modal from "react-modal";
+import styles from "./styles.module.css";
+import ContactForm from "../ContactForm/ContactForm";
+import { useMyContext } from "../../context/AppContext";
 
 const ContactUs = () => {
-  const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
+  // const { isFormOpen, setData } = useMyContext();
+  const [isFormOpen, setData] = useState<boolean>(false);
   const openModal = () => {
-    setIsFormOpen(true);
+    // setIsForm(true);
+    setData(true);
   };
 
   function closeModal() {
-    setIsFormOpen(false);
+    // setIsForm(false);
+    setData(false);
   }
-  Modal.setAppElement('#yourAppElement');
+  Modal.setAppElement("#yourAppElement");
 
   return (
     <>
@@ -27,7 +31,8 @@ const ContactUs = () => {
             contentLabel="Contact Form"
             shouldCloseOnEsc={true}
             preventScroll={true}
-            overlayClassName={styles.overlayClass}>
+            overlayClassName={styles.overlayClass}
+          >
             <ContactForm />
           </Modal>
         </>
@@ -35,7 +40,8 @@ const ContactUs = () => {
         <button
           onClick={openModal}
           className={styles.contactUs}
-          id="yourAppElement">
+          id="yourAppElement"
+        >
           Contact us
         </button>
       )}
