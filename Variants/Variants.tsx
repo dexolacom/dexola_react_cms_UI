@@ -79,3 +79,10 @@ export const variantsImage = {
     },
   },
 };
+
+// HomePage variants
+
+export const variantsHomePage = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { delay: 0.2, duration: 1 } },
+};

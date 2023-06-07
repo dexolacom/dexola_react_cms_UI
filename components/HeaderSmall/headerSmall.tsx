@@ -1,5 +1,7 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +11,7 @@ import styles1 from "../ContactUs/styles.module.css";
 // --- - ---
 import Modal from "react-modal";
 import Menu from "../Menu/Menu";
+import { variantsHomePage } from "../../Variants/Variants";
 
 const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
   // const { isFormOpen, setData, isHoveredLink } = useMyContext();
@@ -72,7 +75,12 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
 
       <div className={styles.topBox} id="yourAppElement">
         <Link href={"/"}>
-          <div className={styles.imageBox}>
+          <motion.div
+            className={styles.imageBox}
+            initial="hidden"
+            animate="visible"
+            variants={variantsHomePage}
+          >
             <Image
               src={imgSrcLogo}
               alt="Logo"
@@ -80,9 +88,15 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
               height={14}
               priority
             />
-          </div>
+          </motion.div>
         </Link>
-        <div className={styles.imageBox} onClick={menuHandler}>
+        <motion.div
+          className={styles.imageBox}
+          onClick={menuHandler}
+          initial="hidden"
+          variants={variantsHomePage}
+          animate="visible"
+        >
           <Image
             src={imgSrc}
             // src={isHoveredLink ? '/menu-hover-white.png' : imgSrc}
@@ -91,7 +105,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
             height={40}
             priority
           />
-        </div>
+        </motion.div>
       </div>
     </>
   );
