@@ -28,9 +28,13 @@
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: #171717;
-  cursor: pointer;
-
   overflow: hidden;
+}
+.menuListItem a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #171717;
 }
 
 .menuListItem:last-of-type {
@@ -47,6 +51,7 @@
 .menuListItem div div {
   right: -52px;
   transition: right 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .menuListItem div:hover div {

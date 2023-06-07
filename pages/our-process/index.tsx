@@ -1,19 +1,10 @@
-'use client';
-
-import "../../src/app/globals.css";
-
-import ContactButton from '../../components/ContactUs/ContactUs';
-import HeaderSmall from '../../components/HeaderSmall/headerSmall';
-import Footer from '../../components/footer/footer';
+import SmallContainer from '../../components/PageContainer/PageContainerSmall';
 import OurProcess from './ourProcess';
 
-export default function HowWork() {
+export default function Process() {
   return (
-    <>
-      <ContactButton />
-      <HeaderSmall isWhite={true} />
+    <SmallContainer>
       <OurProcess />
-      <Footer />
-    </>
+    </SmallContainer>
   );
 }

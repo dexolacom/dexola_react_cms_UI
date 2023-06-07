@@ -3,7 +3,13 @@
 import styles from './styles.module.css';
 import HeaderSmall from '../../components/HeaderSmall/headerSmall';
 
-const VideoBG = ({ opacity }: { opacity: number }) => {
+const VideoBG = ({
+  opacity,
+  isWhite = false,
+}: {
+  opacity: number;
+  isWhite?: boolean;
+}) => {
   return (
     <>
       <figure className={styles.videoWrapper}>
@@ -20,7 +26,7 @@ const VideoBG = ({ opacity }: { opacity: number }) => {
           Your browser does not support the video tag.
         </video>
       </figure>
-      <HeaderSmall isWhite={false} />
+      {/* <HeaderSmall isWhite={isWhite} /> */}
     </>
   );
 };

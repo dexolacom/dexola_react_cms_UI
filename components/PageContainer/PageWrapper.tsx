@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { AnimatePresence } from "framer-motion";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { AnimatePresence } from 'framer-motion';
 
-import ArrowGoBack from "../ArrowAnime/ArrowBack";
+import ArrowGoBack from '../ArrowAnime/ArrowBack';
 
-import styles from "./pageContainer.module.css";
+import styles from './pageContainer.module.css';
 
 const PageContainer = ({
   title,
@@ -21,7 +21,6 @@ const PageContainer = ({
   isArrow: boolean;
   children: JSX.Element | JSX.Element[];
 }) => {
-  const isLink = true;
   const [isHovered, onHoverChange] = useState(false);
   const router = useRouter();
 
@@ -46,8 +45,7 @@ const PageContainer = ({
               onClick={handleGoBack}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className={styles.btnGoBack}
-            >
+              className={styles.btnGoBack}>
               <div className={styles.imageContainer}>
                 <AnimatePresence initial={false}>
                   <ArrowGoBack isHovered={isHovered} />
