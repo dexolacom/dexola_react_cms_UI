@@ -58,7 +58,7 @@ const CasesSection = () => {
                   </CustomReactMarkdown>
                   <AnimatePresence>
                     <div className={st.svgContainer}>
-                      <Arrow hoveredId={hoveredId} elenId={el.id} />
+                      <Arrow hoveredId={hoveredId} elenId={el.id} duration={0.4}/>
                     </div>
                   </AnimatePresence>
                 </div>

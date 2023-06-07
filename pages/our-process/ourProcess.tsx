@@ -15,8 +15,8 @@ const OurProcess = () => {
         business target. Time and materials, fixed price, and dedicated team are
         core collaboration models we offer.
       </p>
-      <p className={styles2.contentText}>Here's an overview of our approach:</p>
-      {/* --- */}
+      <p className={styles2.contentText}>Heres an overview of our approach:</p>
+
       <div className={styles.itemWrapper}>
         {PROCESS_INFO &&
           PROCESS_INFO.length > 0 &&
