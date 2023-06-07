@@ -22,5 +22,9 @@
     "react-markdown": "^8.0.7",
     "react-youtube": "^10.1.0",
     "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
   }
 }
