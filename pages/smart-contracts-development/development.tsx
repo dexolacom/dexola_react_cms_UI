@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import Image from 'next/image';
 import PageContainer from '../../components/PageContainer/PageWrapper';

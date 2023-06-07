@@ -1,8 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useMyContext } from '../../context/AppContext';
 import styles from './styles.module.css';
 import styles1 from '../ContactUs/styles.module.css';
 // --- - ---
@@ -10,9 +11,12 @@ import Modal from 'react-modal';
 import Menu from '../Menu/Menu';
 
 const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
+  const { isFormOpen, setData, isHoveredLink } = useMyContext();
+  const isHeaderWhite = isFormOpen ? isFormOpen : isWhite;
+  // const isHeaderWhite = isFormOpen ? isFormOpen : isHoveredLink;
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const menuHandler = () => {
-    setIsMenu(prev => !prev);
+    isFormOpen ? setData(false) : setIsMenu(prev => !prev);
   };
 
   useEffect(() => {
@@ -25,31 +29,29 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
     };
   }, [isMenu]);
 
-  const logoHandler = () => {
-    console.log('Logo clicked!!!');
-  };
-
   function closeModal() {
     setIsMenu(false);
   }
   Modal.setAppElement('#yourAppElement');
   // --- / - ---
-
-  const imgSrc = isMenu
-    ? '/close_black.svg'
-    : isWhite
-    ? '/menu_short_white.svg'
-    : '/menu_short_black.svg';
-
-  const imgSrcLogo = isMenu
+  const imgSrcLogo = isFormOpen
+    ? '/logo-white.svg'
+    : isMenu
     ? '/logo.svg'
-    : isWhite
+    : isHeaderWhite
     ? '/logo-white.svg'
     : '/logo.svg';
 
+  const imgSrc = isFormOpen
+    ? '/close-white-40.svg'
+    : isMenu
+    ? '/close-black-40.svg'
+    : isHeaderWhite
+    ? '/menu-white-40.svg'
+    : '/menu-black-40.svg';
+
   return (
     <>
-      {/* --- - --- */}
       <div>
         <Modal
           isOpen={isMenu}
@@ -62,10 +64,10 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
           <Menu closeModal={closeModal} />
         </Modal>
       </div>
-      {/* --- / - --- */}
+
       <div className={styles.topBox} id="yourAppElement">
         <Link href={'/'}>
-          <div className={styles.imageBox} onClick={logoHandler}>
+          <div className={styles.imageBox}>
             <Image
               src={imgSrcLogo}
               alt="Logo"
@@ -76,7 +78,13 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
           </div>
         </Link>
         <div className={styles.imageBox} onClick={menuHandler}>
-          <Image src={imgSrc} alt="menu" width={18} height={14} priority />
+          <Image
+            src={isHoveredLink ? '/menu-hover-white.png' : imgSrc}
+            alt="menu"
+            width={40}
+            height={40}
+            priority
+          />
         </div>
       </div>
     </>

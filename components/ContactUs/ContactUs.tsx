@@ -4,15 +4,19 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import styles from './styles.module.css';
 import ContactForm from '../ContactForm/ContactForm';
+import { useMyContext } from '../../context/AppContext';
 
 const ContactUs = () => {
-  const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
+  const { isFormOpen, setData } = useMyContext();
+  // const [isFormOpen, setIsForm] = useState<boolean>(false);
   const openModal = () => {
-    setIsFormOpen(true);
+    // setIsForm(true);
+    setData(true);
   };
 
   function closeModal() {
-    setIsFormOpen(false);
+    // setIsForm(false);
+    setData(false);
   }
   Modal.setAppElement('#yourAppElement');
 

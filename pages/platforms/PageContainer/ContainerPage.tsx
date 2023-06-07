@@ -1,10 +1,7 @@
 // "use client";
 import { useRouter } from 'next/router';
-import Link from 'next/link';
-
-import HeaderSmall from '../../../components/HeaderSmall/headerSmall';
+// import Link from 'next/link';
 import ContactUs from '../../../components/ContactUs/ContactUs';
-
 import Footer from '../../../components/footer/footer';
 
 import st from './contain.module.css';
@@ -26,7 +23,6 @@ const PageContainerItem = ({
   return (
     <>
       <div className={st.container}>
-        {/* <HeaderSmall isWhite={true} /> */}
         <aside className={st.asideBar}>
           <button onClick={handleGoBack} className={st.btnGoBack}>
             <div className={st.imageContainer}>
