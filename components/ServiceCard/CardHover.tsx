@@ -9,6 +9,7 @@ import styles from "./serviceCard.module.css";
 
 const CardHover = ({ title, color, hoveredId, id }: ICardHover) => {
   const cardHoverInfo = SERVICES_CONTENT_INF0[title];
+
   return (
     <motion.div
       key="card"

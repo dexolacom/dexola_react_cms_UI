@@ -40,7 +40,7 @@ const CasesSection = () => {
   }, []);
 
   return (
-    <PageContainer title={"Case Studies"} isArrow={false}>
+    <PageContainer title={"Case Studies"} id="Cases" isArrow={false}>
       <Suspense fallback={"Loading ......"}>
         <div className={st.container}>
           {platforms
@@ -58,7 +58,11 @@ const CasesSection = () => {
                   </CustomReactMarkdown>
                   <AnimatePresence>
                     <div className={st.svgContainer}>
-                      <Arrow hoveredId={hoveredId} elenId={el.id} duration={0.4}/>
+                      <Arrow
+                        hoveredId={hoveredId}
+                        elenId={el.id}
+                        duration={0.4}
+                      />
                     </div>
                   </AnimatePresence>
                 </div>

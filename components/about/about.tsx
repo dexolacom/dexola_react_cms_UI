@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import PageContainer from '../PageContainer/PageWrapper';
 import { ADVERT_INFO } from '../../constants/textConstants';
@@ -6,10 +6,8 @@ import styles from './styles.module.css';
 
 const About = () => {
   return (
-    <PageContainer title={'About'} isArrow={false}>
-      <p className={styles.aboutSubtitle} id="About">
-        About Dexola
-      </p>
+    <PageContainer title={'About'} id="About" isArrow={false}>
+      <p className={styles.aboutSubtitle}>About Dexola</p>
       <p className={styles.aboutText}>
         Dexola is an autonomous blockchain software development branch of
         Trinetix, a globally trusted digital partner serving enterprise clients.

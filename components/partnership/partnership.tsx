@@ -10,7 +10,7 @@ const Partnership = () => {
   const { typeStatus, clickHandler } = useTypeStatus(7);
 
   return (
-    <PageContainer title={'Partnership'}>
+    <PageContainer title={'Partnership'} id="Partnership">
       <p className={styles.contentText}>
         By forging strategic partnerships, Dexola aims to create a robust
         network of industry-leading professionals committed to delivering the

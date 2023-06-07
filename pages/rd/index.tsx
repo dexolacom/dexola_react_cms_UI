@@ -1,19 +1,10 @@
-"use client";
-import "../../src/app/globals.css";
-
-import RootLayout from '../../src/app/layout';
-import ContactButton from '../../components/ContactUs/ContactUs';
-import HeaderSmall from '../../components/HeaderSmall/headerSmall';
-import Footer from '../../components/footer/footer';
+import SmallContainer from '../../components/PageContainer/PageContainerSmall';
 import RandD from './RandD';
 
-export default function HowWork() {
+export default function RD() {
   return (
-    <>
-      <ContactButton />
-      <HeaderSmall isWhite={true} />
+    <SmallContainer>
       <RandD />
-      <Footer />
-    </>
+    </SmallContainer>
   );
 }
