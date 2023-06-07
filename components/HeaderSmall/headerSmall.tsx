@@ -5,28 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useMyContext } from '../../context/AppContext';
 import styles from './styles.module.css';
+import styles1 from '../ContactUs/styles.module.css';
 // --- - ---
 import Modal from 'react-modal';
 import Menu from '../Menu/Menu';
 
-const customStyles = {
-  content: {
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: 99,
-  },
-};
-// --- / - ---
-
 const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
-  const { isForm, setData, isHoveredLink } = useMyContext();
-  // const isHeaderWhite = isForm ? isForm : isWhite;
-  const isHeaderWhite = isForm ? isForm : isHoveredLink;
+  const { isFormOpen, setData, isHoveredLink } = useMyContext();
+  // const isHeaderWhite = isFormOpen ? isFormOpen : isWhite;
+  const isHeaderWhite = isFormOpen ? isFormOpen : isHoveredLink;
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const menuHandler = () => {
-    isForm ? setData(false) : setIsMenu(prev => !prev);
+    isFormOpen ? setData(false) : setIsMenu(prev => !prev);
   };
 
   useEffect(() => {
@@ -44,7 +34,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
   }
   Modal.setAppElement('#yourAppElement');
   // --- / - ---
-  const imgSrcLogo = isForm
+  const imgSrcLogo = isFormOpen
     ? '/logo-white.svg'
     : isMenu
     ? '/logo.svg'
@@ -53,7 +43,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
     ? '/logo-white.svg'
     : '/logo.svg';
 
-  const imgSrc = isForm
+  const imgSrc = isFormOpen
     ? '/close-white-40.svg'
     : isMenu
     ? '/close-black-40.svg'
@@ -69,11 +59,11 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
         <Modal
           isOpen={isMenu}
           onRequestClose={closeModal}
-          style={customStyles}
+          className={styles.contentClass}
           contentLabel="Main Menu"
           shouldCloseOnEsc={true}
           preventScroll={true}
-          overlayClassName={styles.overlayClass}>
+          overlayClassName={styles1.overlayClass}>
           <Menu closeModal={closeModal} />
         </Modal>
       </div>

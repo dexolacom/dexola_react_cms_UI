@@ -7,9 +7,9 @@ import ContactForm from '../ContactForm/ContactForm';
 import { useMyContext } from '../../context/AppContext';
 
 const ContactUs = () => {
-  const { isForm, setData } = useMyContext();
-  // const [isForm, setIsForm] = useState<boolean>(false);
-  const buttonClickHandler = () => {
+  const { isFormOpen, setData } = useMyContext();
+  // const [isFormOpen, setIsForm] = useState<boolean>(false);
+  const openModal = () => {
     // setIsForm(true);
     setData(true);
   };
@@ -22,10 +22,10 @@ const ContactUs = () => {
 
   return (
     <>
-      {isForm ? (
+      {isFormOpen ? (
         <>
           <Modal
-            isOpen={isForm}
+            isOpen={isFormOpen}
             onRequestClose={closeModal}
             className={styles.contentClass}
             contentLabel="Contact Form"
@@ -37,7 +37,7 @@ const ContactUs = () => {
         </>
       ) : (
         <button
-          onClick={buttonClickHandler}
+          onClick={openModal}
           className={styles.contactUs}
           id="yourAppElement">
           Contact us

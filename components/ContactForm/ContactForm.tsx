@@ -7,7 +7,7 @@ import styles from './contactForm.module.css';
 
 const ContactForm = () => {
   const alarmText = 'Please complete this field';
-  const { isForm, setData } = useMyContext();
+  const { isFormOpen, setData } = useMyContext();
   const [isSended, setIsSended] = useState<boolean>(false);
   useEffect(() => {
     setData(true);
