@@ -9,14 +9,21 @@ import styles1 from '../ContactUs/styles.module.css';
 // --- - ---
 import Modal from 'react-modal';
 import Menu from '../Menu/Menu';
+import { useRouter } from 'next/navigation';
 
-const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
-  const { isFormOpen, setData, isHoveredLink } = useMyContext();
+const HeaderSmall = ({
+  isWhite,
+  isFormOpen,
+}: {
+  isWhite: boolean;
+  isFormOpen?: boolean;
+}) => {
+  const { isHoveredLink } = useMyContext();
+  const router = useRouter();
   const isHeaderWhite = isFormOpen ? isFormOpen : isWhite;
-  // const isHeaderWhite = isFormOpen ? isFormOpen : isHoveredLink;
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const menuHandler = () => {
-    isFormOpen ? setData(false) : setIsMenu(prev => !prev);
+    isFormOpen ? router.back() : setIsMenu(prev => !prev);
   };
 
   useEffect(() => {

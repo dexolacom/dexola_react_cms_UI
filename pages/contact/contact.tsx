@@ -1,25 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useMyContext } from '../../context/AppContext';
-import ContactFormButton from './ContactFormButton';
-import styles from './contactForm.module.css';
+import { useState } from 'react';
+import ContactFormButton from '../../components/ContactForm/ContactFormButton';
+import styles from '../../components/ContactForm/contactForm.module.css';
 
-const ContactFormNew = () => {
+const Contact = () => {
   const alarmText = 'Please complete this field';
-  const { isFormOpen, setData } = useMyContext();
   const [isSended, setIsSended] = useState<boolean>(false);
-  useEffect(() => {
-    setData(true);
-
-    return () => {
-      setData(false);
-    };
-  }, []);
 
   const sendClick = () => {
     // setIsSended(true);  !!! Temp comment
-    setData(true);
   };
   const telegramClick = () => {
     // setIsSended(true);  !!! Temp comment
@@ -51,7 +41,7 @@ const ContactFormNew = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="contact">
       <div className={styles.leftBlock}>
         <figure className={styles.videoWrapper}>
           <video
@@ -115,4 +105,4 @@ const ContactFormNew = () => {
   );
 };
 
-export default ContactFormNew;
+export default Contact;
