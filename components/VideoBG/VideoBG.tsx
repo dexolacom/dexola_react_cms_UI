@@ -2,13 +2,7 @@
 
 import styles from './styles.module.css';
 
-const VideoBG = ({
-  opacity,
-  isWhite = false,
-}: {
-  opacity: number;
-  isWhite?: boolean;
-}) => {
+const VideoBG = ({ opacity }: { opacity: number }) => {
   return (
     <>
       <figure className={styles.videoWrapper}>

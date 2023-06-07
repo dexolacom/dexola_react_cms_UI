@@ -21,8 +21,9 @@ const customStyles = {
 // --- / - ---
 
 const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
-  const { isForm, setData } = useMyContext();
-  const isHeaderWhite = isForm ? isForm : isWhite;
+  const { isForm, setData, isHoveredLink } = useMyContext();
+  // const isHeaderWhite = isForm ? isForm : isWhite;
+  const isHeaderWhite = isForm ? isForm : isHoveredLink;
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const menuHandler = () => {
     isForm ? setData(false) : setIsMenu(prev => !prev);
@@ -37,10 +38,6 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
       window.document.body.classList.remove('modal-open');
     };
   }, [isMenu]);
-
-  const logoHandler = () => {
-    console.log('Logo clicked!!!');
-  };
 
   function closeModal() {
     setIsMenu(false);
@@ -57,13 +54,13 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
     : '/logo.svg';
 
   const imgSrc = isForm
-    ? '/close-white.svg'
+    ? '/close-white-40.svg'
     : isMenu
-    ? '/close_black.svg'
+    ? '/close-black-40.svg'
     : // : isWhite
     isHeaderWhite
-    ? '/menu_short_white.svg'
-    : '/menu_short_black.svg';
+    ? '/menu-hover-black.png'
+    : '/menu-black-40.svg';
 
   return (
     <>
@@ -83,7 +80,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
       {/* --- / - --- */}
       <div className={styles.topBox} id="yourAppElement">
         <Link href={'/'}>
-          <div className={styles.imageBox} onClick={logoHandler}>
+          <div className={styles.imageBox}>
             <Image
               src={imgSrcLogo}
               alt="Logo"
@@ -94,7 +91,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
           </div>
         </Link>
         <div className={styles.imageBox} onClick={menuHandler}>
-          <Image src={imgSrc} alt="menu" width={18} height={18} priority />
+          <Image src={imgSrc} alt="menu" width={40} height={40} priority />
         </div>
       </div>
     </>
