@@ -1,15 +1,15 @@
 // " use client";
-import "../../src/app/globals.css";
+import '../../src/app/globals.css';
 
-import { getPlatform } from "../../api/api";
+import { getPlatform } from '../../Api/api';
 
-import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
+import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
 
-import PageContainer from "../../components/PageContainer/PageWrapper";
-import CustomPlatfromsMarkdown from "../../components/CustomMarkdown/CustomPlatfromsMarkdown";
-import Footer from "../../components/footer/footer";
+import PageContainer from '../../components/PageContainer/PageWrapper';
+import CustomPlatfromsMarkdown from '../../components/CustomMarkdown/CustomPlatfromsMarkdown';
+import Footer from '../../components/footer/footer';
 
-import st from "./index.module.css";
+import st from './index.module.css';
 
 export async function getStaticProps() {
   try {
@@ -28,7 +28,7 @@ export async function getStaticProps() {
       },
     };
   } catch (error) {
-    console.error("getStaticProps ERROR", error);
+    console.error('getStaticProps ERROR', error);
     return {
       props: {
         platforms: [],
@@ -40,7 +40,7 @@ export async function getStaticProps() {
 const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
   return (
     <>
-      <PageContainer title={"All Case Studies"} isArrow={true}>
+      <PageContainer title={'All Case Studies'} isArrow={true}>
         <p className={st.desc}>
           Discover how we develop sophisticated, user-friendly blockchain
           solutions for clients in various industries. These projects showcase

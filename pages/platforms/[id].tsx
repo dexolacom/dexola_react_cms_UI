@@ -1,24 +1,24 @@
-import "../../src/app/globals.css";
+import '../../src/app/globals.css';
 
-import { GetStaticProps } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import React, { Suspense } from "react";
+import { GetStaticProps } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { Suspense } from 'react';
 
-import { getPlatform, getPlatformId } from "../../api/api";
+import { getPlatform, getPlatformId } from '../../Api/api';
 
-import CustomReactMarkdown from "../../components/CustomMarkdown/CustomReactMarkdown";
-import CustomMarkdown from "../../components/CustomMarkdown/CustomIDMarkdown";
+import CustomReactMarkdown from '../../components/CustomMarkdown/CustomReactMarkdown';
+import CustomMarkdown from '../../components/CustomMarkdown/CustomIDMarkdown';
 
-import { getImageUrlFromMarkdown } from "../../lib/getImageUrlFromMarkdown";
-import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
-import RenderListTechnology from "../../lib/RenderListTechnology";
+import { getImageUrlFromMarkdown } from '../../lib/getImageUrlFromMarkdown';
+import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
+import RenderListTechnology from '../../lib/RenderListTechnology';
 
-import style from "../../components/commonStyles/commonStyles.module.css";
-import markdownStyle from "../../components/CustomMarkdown/mardown.module.css";
-import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
-import PageContainer from "../../components/PageContainer/PageWrapper";
-import Footer from "../../components/footer/footer";
+import style from '../../components/commonStyles/commonStyles.module.css';
+import markdownStyle from '../../components/CustomMarkdown/mardown.module.css';
+import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
+import PageContainer from '../../components/PageContainer/PageWrapper';
+import Footer from '../../components/footer/footer';
 
 export const getStaticPaths = async () => {
   try {
@@ -37,8 +37,8 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    if (!params || typeof params.id !== "string") {
-      console.error("Invalid params ID getStaticProps");
+    if (!params || typeof params.id !== 'string') {
+      console.error('Invalid params ID getStaticProps');
       return {
         props: {
           platformDetails: [],
@@ -93,12 +93,12 @@ const PlatformDetails = ({
   } = attributes;
 
   const technologies = [
-    { arr: network, title: "Network" },
-    { arr: backEnd, title: "Back-End" },
-    { arr: database, title: "Database" },
-    { arr: blockchain, title: "Blockchain" },
-    { arr: frontEnd, title: "Front-End" },
-    { arr: infrastructure, title: "Infrastructure" },
+    { arr: network, title: 'Network' },
+    { arr: backEnd, title: 'Back-End' },
+    { arr: database, title: 'Database' },
+    { arr: blockchain, title: 'Blockchain' },
+    { arr: frontEnd, title: 'Front-End' },
+    { arr: infrastructure, title: 'Infrastructure' },
   ];
 
   // get Link Image
@@ -109,15 +109,15 @@ const PlatformDetails = ({
   return (
     <>
       <PageContainer isArrow={true} title={paltformName}>
-        <Suspense fallback={"Loading ... . . ."}>
+        <Suspense fallback={'Loading ... . . .'}>
           <CustomReactMarkdown
             technology={services}
-            heading={"Services"}
-            subHeading={"Summary"}
+            heading={'Services'}
+            subHeading={'Summary'}
           >
             {removeLinlImage}
           </CustomReactMarkdown>
-          <div style={{ width: "100%", marginTop: "30px" }}>
+          <div style={{ width: '100%', marginTop: '30px' }}>
             {imageUrl && (
               <Image
                 src={`${process.env.BASE_URL + imageUrl}`}
@@ -126,7 +126,7 @@ const PlatformDetails = ({
                 width={825}
                 height={525}
                 sizes="100vw"
-                style={{ maxWidth: "100%", height: "auto" }}
+                style={{ maxWidth: '100%', height: 'auto' }}
                 priority
               />
             )}

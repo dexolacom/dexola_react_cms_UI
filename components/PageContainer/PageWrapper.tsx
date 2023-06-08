@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import ArrowGoBack from "../ArrowAnime/ArrowBack";
+import ArrowGoBack from '../ArrowAnime/ArrowBack';
 
-import styles from "./pageContainer.module.css";
+import styles from './pageContainer.module.css';
 // import { useMyContext } from '../../context/AppContext';
 
 const PageContainer = ({
@@ -40,13 +40,12 @@ const PageContainer = ({
     // setIsHoveredLink(false);
   };
 
-
   const variants = {
     hidden: {
       y: 500,
       opacity: 0,
       transition: {
-        type: "tween",
+        type: 'tween',
       },
     },
 
@@ -54,7 +53,7 @@ const PageContainer = ({
       y: 0,
       opacity: 1,
       transition: {
-        type: "tween",
+        type: 'tween',
         delay: custom * 0.2,
       },
     }),
@@ -62,12 +61,12 @@ const PageContainer = ({
 
   const custom2Variants = {
     hidden: {
-      x: "100%",
+      x: '100%',
     },
     visible: {
       x: 0,
       transition: {
-        type: "tween",
+        type: 'tween',
         duration: 0.2,
       },
     },
@@ -75,7 +74,7 @@ const PageContainer = ({
 
   return (
     // initial={false}
-    <AnimatePresence >
+    <AnimatePresence>
       <motion.div
         className={styles.blockWrapper}
         id={id}

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import PageContainer from "../PageContainer/PageWrapper";
-import { ADVERT_INFO } from "../../constants/textConstants";
-import styles from "./styles.module.css";
+import PageContainer from '../PageContainer/PageWrapper';
+import { ADVERT_INFO } from '../../constants/textConstants';
+import styles from './styles.module.css';
 
 const About = () => {
   return (
-    <PageContainer title={"About"} id="About" isArrow={false}>
+    <PageContainer title={'About'} id="About" isArrow={false}>
       <div>
         <p className={styles.aboutSubtitle}>About Dexola</p>
         <p className={styles.aboutText}>

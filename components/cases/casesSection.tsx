@@ -5,7 +5,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 
 import { AnimatePresence } from 'framer-motion';
 
-import { getPlatform } from '../../api/api';
+import { getPlatform } from '../../Api/api';
 
 import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
 
@@ -31,7 +31,7 @@ const CasesSection = () => {
       }));
 
       const filteredPlatforms = transformData?.filter((platform: IPlatfrom) =>
-        [1, 2, 3].includes(platform.id),
+        [1, 2, 3].includes(platform.id)
       );
       setPlatforms(filteredPlatforms);
     };
@@ -45,13 +45,14 @@ const CasesSection = () => {
         <div className={st.container}>
           {platforms
             ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
-            .map(el => (
+            .map((el) => (
               <Link href={`/platforms/${el.id}`} key={el.id}>
                 <div
                   className={style.wrapper}
                   key={el.id}
                   onMouseEnter={() => setHoveredId(el.id)}
-                  onMouseLeave={() => setHoveredId(null)}>
+                  onMouseLeave={() => setHoveredId(null)}
+                >
                   <CustomReactMarkdown technology={el?.services}>
                     {el?.summary}
                   </CustomReactMarkdown>
