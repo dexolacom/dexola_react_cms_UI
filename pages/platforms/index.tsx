@@ -1,7 +1,7 @@
 // " use client";
 import "../../src/app/globals.css";
 
-import { getPlatform } from "../../api/api";
+import { getPlatform } from "../../Api/api";
 
 import { removeImageLinksFromMarkdown } from "../../lib/removeImageLinksFromMarkdown";
 

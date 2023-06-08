@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { Suspense } from "react";
 
-import { getPlatform, getPlatformId } from "../../api/api";
+import { getPlatform, getPlatformId } from "../../Api/api";
 
 import CustomReactMarkdown from "../../components/CustomMarkdown/CustomReactMarkdown";
 import CustomMarkdown from "../../components/CustomMarkdown/CustomIDMarkdown";

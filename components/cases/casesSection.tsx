@@ -5,7 +5,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 
 import { AnimatePresence } from 'framer-motion';
 
-import { getPlatform } from '../../api/api';
+import { getPlatform } from '../../Api/api';
 
 import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
 
