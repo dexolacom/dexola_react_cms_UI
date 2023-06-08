@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useMyContext } from '../../context/AppContext';
+// import { useMyContext } from '../../context/AppContext';
 import styles from './styles.module.css';
 import styles1 from '../ContactUs/styles.module.css';
 // --- - ---
@@ -18,10 +18,11 @@ const HeaderSmall = ({
   isWhite: boolean;
   isFormOpen?: boolean;
 }) => {
-  const { isHoveredLink } = useMyContext();
+  // const { isHoveredLink } = useMyContext();
   const router = useRouter();
   const isHeaderWhite = isFormOpen ? isFormOpen : isWhite;
   const [isMenu, setIsMenu] = useState<boolean>(false);
+
   const menuHandler = () => {
     isFormOpen ? router.back() : setIsMenu(prev => !prev);
   };
@@ -86,7 +87,8 @@ const HeaderSmall = ({
         </Link>
         <div className={styles.imageBox} onClick={menuHandler}>
           <Image
-            src={isHoveredLink ? '/menu-hover-white.png' : imgSrc}
+            src={imgSrc}
+            // src={isHoveredLink ? '/menu-hover-white.png' : imgSrc}
             alt="menu"
             width={40}
             height={40}

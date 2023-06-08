@@ -1,28 +1,61 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import CardHover from './CardHover';
-import styles from './serviceCard.module.css';
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 
-const ServiceCard = ({
-  imgPath,
-  title,
-  color,
-}: {
-  imgPath: string;
-  title: string;
-  color: string;
-}) => {
-  const convertTitleToLink = () => title.toLowerCase().replaceAll(' ', '-');
+import Arrow from "../ArrowAnime/Arrow";
+import CardHover from "./CardHover";
+import { variants, variantsImage } from "../../Variants/Variants";
+
+import styles from "./serviceCard.module.css";
+
+const ServiceCard = ({ imgPath, title, color, id }: IServiceCard) => {
+  const [hoveredId, setHoveredId] = useState<number | null>();
+
+  const convertTitleToLink = () => title.toLowerCase().replaceAll(" ", "-");
+
   return (
-    <div className={styles.imageItem}>
-      <Image src={imgPath} alt="Service1" width={275} height={275} priority />
+    <motion.div
+      className={styles.imageItem}
+      onMouseEnter={() => setHoveredId(id)}
+      onMouseLeave={() => setHoveredId(null)}
+    >
       <Link href={`/${convertTitleToLink()}`}>
-        <CardHover title={title} color={color} />
-        <div className={styles.arrowBlock}></div>
+        <AnimatePresence initial={false}>
+          <motion.div
+            key="image"
+            initial="visible"
+            animate={hoveredId === id ? "hidden" : "visible"}
+            exit="visible"
+            variants={variants}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.img
+              key="image"
+              src={imgPath}
+              alt="Service1"
+              width={275}
+              height={275}
+              variants={variantsImage}
+              initial="visible"
+              animate={hoveredId === id ? "hidden" : "visible"}
+              exit="visible"
+            />
+          </motion.div>
+          <CardHover
+            title={title}
+            color={color}
+            hoveredId={hoveredId}
+            id={id}
+          />
+        </AnimatePresence>
+        <div className={styles.svgContainer}>
+          <Arrow hoveredId={hoveredId} elenId={id} duration={0.2} />
+        </div>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

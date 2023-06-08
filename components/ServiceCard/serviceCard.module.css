@@ -1,8 +1,7 @@
 .imageItem {
-  composes: flexColumnBlock from '../PageContainer/pageContainer.module.css';
+  composes: flexColumnBlock from "../PageContainer/pageContainer.module.css";
   position: relative;
   width: 275px;
-  /* height: 355px; */
   height: 380px;
   margin-bottom: 24px;
   background: #272a2e;
@@ -10,35 +9,9 @@
   cursor: pointer;
 }
 
-.imageItem:hover .cardWrapper {
-  top: 0px;
-  padding-top: 32px;
-}
-
-.imageItem:hover .cardWrapper ul {
-  opacity: 1;
-}
-
-.imageItem:hover .arrowBlock {
-  transform: rotate(-45deg);
-}
-
-.arrowBlock {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 13px;
-  height: 13px;
-  background-image: url(../../public/arrow_rb.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform 0.2s linear;
-  transform: rotate(0deg);
-}
-
 /* --- for CardHover --- */
 .cardWrapper {
-  composes: flexColumnBlock from '../PageContainer/pageContainer.module.css';
+  composes: flexColumnBlock from "../PageContainer/pageContainer.module.css";
   position: absolute;
   top: 275px;
   width: 275px;
@@ -47,23 +20,6 @@
   padding: 17px 40px 8px 26px;
   background: #272a2e;
   transition: top 0.3s linear 0s, padding-top 0.03s linear 0s;
-}
-
-.cardWrapper ul {
-  padding: 0 0 0 16px;
-  font-family: var(--font-roboto-mono);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.02em;
-  list-style: disc;
-  color: #c0c0c0;
-  opacity: 0;
-}
-
-.cardWrapper li {
-  margin-bottom: 4px;
 }
 
 .descriptionBlock {
@@ -90,4 +46,30 @@
   width: 8px;
   height: 8px;
   background-color: white;
+}
+
+/* SVG animation */
+
+.svgContainer {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.list {
+  padding: 15px 25px;
+  line-height: 24px;
+}
+
+.listTitle {
+  color: #c0c0c0;
+  list-style-type: disc;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 27px;
+  margin-left: 13px;
+  font-family: var(--font-roboto-mono);
 }

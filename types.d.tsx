@@ -72,3 +72,17 @@ interface IContactButton {
 interface IServicesContent {
   [key: string]: IAuditsContent[];
 }
+
+interface ICardHover {
+  title: string;
+  color: string;
+  hoveredId: number | null | undefined;
+  id: number;
+}
+
+interface IServiceCard {
+  imgPath: string;
+  title: string;
+  color: string;
+  id: number;
+}

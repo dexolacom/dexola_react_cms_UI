@@ -1,12 +1,40 @@
 import { motion } from "framer-motion";
-import { svgVariant, svgWrapper } from "../../Variants/Variants";
+// import { svgVariant, svgWrapper } from "../../Variants/Variants";
 
 interface IProps {
   hoveredId: number | null | undefined;
   elenId: number;
+  duration: number;
 }
 
-const Arrow = ({ hoveredId, elenId }: IProps) => {
+const Arrow = ({ hoveredId, elenId, duration = 0.4 }: IProps) => {
+  
+  const svgWrapper = {
+    initial: {
+      rotate: 0,
+      transformOrigin: "left bottom",
+    },
+    hover: {
+      rotate: -45,
+      transformOrigin: "left bottom",
+    },
+  };
+
+  const svgVariant = {
+    initial: {
+      strokeDasharray: "70%",
+      transition: { duration: duration },
+    },
+    hover: {
+      strokeDasharray: "100%",
+      transition: { duration: duration },
+    },
+    hoverEnd: {
+      strokeDasharray: "70%",
+      transition: { duration: duration },
+    },
+  };
+
   return (
     <motion.svg
       width="28"
@@ -18,7 +46,7 @@ const Arrow = ({ hoveredId, elenId }: IProps) => {
       animate={{
         rotate: hoveredId === elenId ? -45 : 1,
         transition: {
-          duration: 0.4,
+          duration: duration,
           type: "tween",
           ease: "easeOut",
         },
