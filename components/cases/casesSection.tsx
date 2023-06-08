@@ -8,13 +8,13 @@ import { AnimatePresence } from 'framer-motion';
 import { getPlatform } from '../../Api/api';
 
 import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
-
-import PageContainer from '../PageContainer/PageWrapper';
 import CustomReactMarkdown from '../CustomMarkdown/CustomReactMarkdown';
+
+import Arrow from '../ArrowAnime/Arrow';
+import AnimePageWrapper from '../AnimePageContainer/AnimePageWrapper';
 
 import st from './cases.module.css';
 import style from '../commonStyles/commonStyles.module.css';
-import Arrow from '../ArrowAnime/Arrow';
 
 const CasesSection = () => {
   const [platforms, setPlatforms] = useState<IPlatfrom[]>();
@@ -40,7 +40,7 @@ const CasesSection = () => {
   }, []);
 
   return (
-    <PageContainer title={'Case Studies'} id="Cases" isArrow={false}>
+    <AnimePageWrapper title={'Case Studies'} id="Cases">
       <Suspense fallback={'Loading ......'}>
         <div className={st.container}>
           {platforms
@@ -73,7 +73,7 @@ const CasesSection = () => {
       <Link href="/platforms" className={st.button}>
         <span>Browse All Case Studies</span>
       </Link>
-    </PageContainer>
+    </AnimePageWrapper>
   );
 };
 

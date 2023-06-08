@@ -1,16 +1,18 @@
 'use client';
 
-import PageContainer from '../PageContainer/PageWrapper';
+import AnimePageWrapper from '../AnimePageContainer/AnimePageWrapper';
 import TypeItem from './typeItem';
+
 import { TYPE_COMPANIES_INFO } from '../../constants/textConstants';
-import styles from '../../components/PageContainer/pageContainer.module.css';
 import { useTypeStatus } from '../../utils/utils';
+
+import styles from '../../components/PageContainer/pageContainer.module.css';
 
 const Partnership = () => {
   const { typeStatus, clickHandler } = useTypeStatus(7);
 
   return (
-    <PageContainer title={'Partnership'} id="Partnership">
+    <AnimePageWrapper title={'Partnership'} id="Partnership">
       <p className={styles.contentText}>
         By forging strategic partnerships, Dexola aims to create a robust
         network of industry-leading professionals committed to delivering the
@@ -40,7 +42,7 @@ const Partnership = () => {
             />
           ))}
       </>
-    </PageContainer>
+    </AnimePageWrapper>
   );
 };
 

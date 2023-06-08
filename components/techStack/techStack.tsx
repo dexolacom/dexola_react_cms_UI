@@ -1,15 +1,13 @@
 'use client';
 
-import PageContainer from '../PageContainer/PageWrapper';
-import styles from './styles.module.css';
 import styles1 from '../../components/PageContainer/pageContainer.module.css';
+import AnimePageWrapper from '../AnimePageContainer/AnimePageWrapper';
+
+import styles from './styles.module.css';
 
 const TechStack = () => {
   return (
-    <PageContainer
-      title={'Technology Stack'}
-      id="Technology Stack"
-      isArrow={false}>
+    <AnimePageWrapper title={'Technology Stack'} id="Technology Stack">
       <div className={styles1.flexColumnBlock}>
         <div className={styles.techItem}>
           <div className={styles.techItemColumn}>
@@ -74,7 +72,7 @@ const TechStack = () => {
           </div>
         </div>
       </div>
-    </PageContainer>
+    </AnimePageWrapper>
   );
 };
 

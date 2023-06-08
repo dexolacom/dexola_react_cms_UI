@@ -3,10 +3,11 @@
 import PageContainer from '../PageContainer/PageWrapper';
 import { ADVERT_INFO } from '../../constants/textConstants';
 import styles from './styles.module.css';
+import AnimePageWrapper from '../AnimePageContainer/AnimePageWrapper';
 
 const About = () => {
   return (
-    <PageContainer title={'About'} id="About" isArrow={false}>
+    <AnimePageWrapper title={'About'} id="About">
       <div>
         <p className={styles.aboutSubtitle}>About Dexola</p>
         <p className={styles.aboutText}>
@@ -52,7 +53,7 @@ const About = () => {
           enabling us to consistently deliver a world-class user experience.
         </p>
       </div>
-    </PageContainer>
+    </AnimePageWrapper>
   );
 };
 

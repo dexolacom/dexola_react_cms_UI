@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { AnimatePresence, motion } from 'framer-motion';
-
+import { AnimatePresence } from 'framer-motion';
 import ArrowGoBack from '../ArrowAnime/ArrowBack';
 
 import styles from './pageContainer.module.css';
@@ -40,82 +39,33 @@ const PageContainer = ({
     // setIsHoveredLink(false);
   };
 
-  const variants = {
-    hidden: {
-      y: 500,
-      opacity: 0,
-      transition: {
-        type: 'tween',
-      },
-    },
-
-    visible: (custom: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'tween',
-        delay: custom * 0.2,
-      },
-    }),
-  };
-
-  const custom2Variants = {
-    hidden: {
-      x: '100%',
-    },
-    visible: {
-      x: 0,
-      transition: {
-        type: 'tween',
-        duration: 0.2,
-      },
-    },
-  };
-
   return (
-    // initial={false}
-    <AnimatePresence>
-      <motion.div
-        className={styles.blockWrapper}
-        id={id}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.1, once: true }}
-      >
-        <div className={styles.sidebar}>
-          <div className={styles.titleBlock}>
-            {isArrow && (
-              <button
-                onClick={handleGoBack}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className={styles.btnGoBack}
-              >
-                <div className={styles.imageContainer}>
-                  <AnimatePresence initial={false}>
-                    <ArrowGoBack isHovered={isHovered} />
-                  </AnimatePresence>
-                </div>
-              </button>
-            )}
+    <div className={styles.blockWrapper} id={id}>
+      <div className={styles.sidebar}>
+        <div className={styles.titleBlock}>
+          {isArrow && (
+            <button
+              onClick={handleGoBack}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className={styles.btnGoBack}
+            >
+              <div className={styles.imageContainer}>
+                <AnimatePresence initial={false}>
+                  <ArrowGoBack isHovered={isHovered} />
+                </AnimatePresence>
+              </div>
+            </button>
+          )}
 
-            <motion.p className={styles.title} variants={variants} custom={2}>
-              {title}
-            </motion.p>
-          </div>
+          <p className={styles.title}>{title}</p>
         </div>
+      </div>
 
-        <motion.div
-          custom={1}
-          variants={custom2Variants}
-          className={isHovered ? styles.contentBoxHover : styles.contentBox}
-        >
-          <motion.div variants={variants} custom={2}>
-            {children}
-          </motion.div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+      <div className={isHovered ? styles.contentBoxHover : styles.contentBox}>
+        {children}
+      </div>
+    </div>
   );
 };
 

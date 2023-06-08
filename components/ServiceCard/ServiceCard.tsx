@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import Arrow from "../ArrowAnime/Arrow";
-import CardHover from "./CardHover";
-import { variants, variantsImage } from "../../Variants/Variants";
+import Arrow from '../ArrowAnime/Arrow';
+import CardHover from './CardHover';
+import { variants, variantsImage } from '../../Variants/Variants';
 
-import styles from "./serviceCard.module.css";
+import styles from './serviceCard.module.css';
 
 const ServiceCard = ({ imgPath, title, color, id }: IServiceCard) => {
   const [hoveredId, setHoveredId] = useState<number | null>();
 
-  const convertTitleToLink = () => title.toLowerCase().replaceAll(" ", "-");
+  const convertTitleToLink = () => title.toLowerCase().replaceAll(' ', '-');
 
   return (
     <motion.div
@@ -27,22 +27,25 @@ const ServiceCard = ({ imgPath, title, color, id }: IServiceCard) => {
           <motion.div
             key="image"
             initial="visible"
-            animate={hoveredId === id ? "hidden" : "visible"}
+            animate={hoveredId === id ? 'hidden' : 'visible'}
             exit="visible"
             variants={variants}
             transition={{ duration: 0.2 }}
           >
-            <motion.img
-              key="image"
-              src={imgPath}
-              alt="Service1"
-              width={275}
-              height={275}
+            <motion.div
               variants={variantsImage}
               initial="visible"
-              animate={hoveredId === id ? "hidden" : "visible"}
+              animate={hoveredId === id ? 'hidden' : 'visible'}
               exit="visible"
-            />
+            >
+              <Image
+                key="image"
+                src={imgPath}
+                alt="Service1"
+                width={275}
+                height={275}
+              />
+            </motion.div>
           </motion.div>
           <CardHover
             title={title}
