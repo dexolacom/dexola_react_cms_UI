@@ -40,7 +40,7 @@ const HeaderSmall = ({
   function closeModal() {
     setIsMenu(false);
   }
-  Modal.setAppElement('#yourAppElement');
+  // Modal.setAppElement('#yourAppElement');
   // --- / - ---
   const imgSrcLogo = isFormOpen
     ? '/logo-white.svg'

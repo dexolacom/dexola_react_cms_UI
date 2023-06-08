@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
 
-import Image from "next/image";
-import VideoBG from "../VideoBG/VideoBG";
-import HeaderSmall from "../HeaderSmall/headerSmall";
-import styles from "./styles.module.css";
+import Image from 'next/image';
+import VideoBG from '../VideoBG/VideoBG';
+import HeaderSmall from '../HeaderSmall/headerSmall';
+import styles from './styles.module.css';
 
 const variants = {
   hidden: {
@@ -24,8 +24,7 @@ const Header = () => {
       <motion.div
         className={styles.headerWrapper}
         initial="hidden"
-        whileInView="visible"
-      >
+        whileInView="visible">
         <VideoBG opacity={0.1} />
 
         <motion.div className={styles.description} variants={variants}>
