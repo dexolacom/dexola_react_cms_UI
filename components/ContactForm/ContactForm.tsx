@@ -7,19 +7,19 @@ import styles from './contactForm.module.css';
 
 const ContactForm = () => {
   const alarmText = 'Please complete this field';
-  const { isFormOpen, setData } = useMyContext();
+  // const { isFormOpen, setData } = useMyContext();
   const [isSended, setIsSended] = useState<boolean>(false);
   useEffect(() => {
-    setData(true);
+    // setData(true);
 
     return () => {
-      setData(false);
+      // setData(false);
     };
   }, []);
 
   const sendClick = () => {
     // setIsSended(true);  !!! Temp comment
-    setData(true);
+    // setData(true);
   };
   const telegramClick = () => {
     // setIsSended(true);  !!! Temp comment

@@ -7,7 +7,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 
   background-color: aliceblue;
   z-index: 7;
@@ -70,7 +70,7 @@
   left: -40px;
   width: 40px;
   height: 3px;
-  content: '';
+  content: "";
   background: #17191d;
   transition: width 0.3s ease-in-out;
 }

@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 const ProcessItem = ({ title, text }: { title: string; text: string }) => {
   const textDevider = () => {
-    if (text.includes('<br>')) {
-      const textArr = text.split('<br>');
+    if (text && text.includes("<br>")) {
+      const textArr = text.split("<br>");
       return (
         <>
-          <p className={styles.itemText} style={{ marginBottom: '16px' }}>
+          <p className={styles.itemText} style={{ marginBottom: "16px" }}>
             {textArr[0]}
           </p>
           <p className={styles.itemText}>{textArr[1]}</p>

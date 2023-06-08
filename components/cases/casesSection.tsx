@@ -5,7 +5,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 
 import { AnimatePresence } from 'framer-motion';
 
-import { getPlatform } from '../../Api/api';
+import { getPlatform } from '../../api/api';
 
 import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
 
@@ -57,7 +57,11 @@ const CasesSection = () => {
                   </CustomReactMarkdown>
                   <AnimatePresence>
                     <div className={st.svgContainer}>
-                      <Arrow hoveredId={hoveredId} elenId={el.id} />
+                      <Arrow
+                        hoveredId={hoveredId}
+                        elenId={el.id}
+                        duration={0.4}
+                      />
                     </div>
                   </AnimatePresence>
                 </div>
