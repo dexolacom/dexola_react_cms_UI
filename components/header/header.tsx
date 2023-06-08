@@ -41,7 +41,7 @@ const Header = () => {
             <div className={styles.logoTrinetix} />
           </div>
           <Image
-            src="/line_63.svg"
+            src="/line-63.svg"
             alt="Line"
             width={12}
             height={80}
