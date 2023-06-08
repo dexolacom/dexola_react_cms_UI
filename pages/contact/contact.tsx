@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import ContactFormButton from './ContactFormButton';
-import styles from './contactForm.module.css';
+import ContactFormButton from '../../components/ContactForm/ContactFormButton';
+import styles from '../../components/ContactForm/contactForm.module.css';
 
-const ContactForm = () => {
+const Contact = () => {
   const alarmText = 'Please complete this field';
   const [isSended, setIsSended] = useState<boolean>(false);
 
@@ -41,7 +41,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="contact">
       <div className={styles.leftBlock}>
         <figure className={styles.videoWrapper}>
           <video
@@ -105,4 +105,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default Contact;
