@@ -6,9 +6,7 @@ import styles from './styles.module.css';
 const ContactUs = () => {
   return (
     <Link href={'contact'}>
-      <button className={styles.contactUs} id="yourAppElement">
-        Contact us
-      </button>
+      <button className={styles.contactUs}>Contact us</button>
     </Link>
   );
 };

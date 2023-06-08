@@ -1,25 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useMyContext } from '../../context/AppContext';
+import { useState } from 'react';
 import ContactFormButton from './ContactFormButton';
 import styles from './contactForm.module.css';
 
 const ContactForm = () => {
   const alarmText = 'Please complete this field';
-  const { isFormOpen, setData } = useMyContext();
   const [isSended, setIsSended] = useState<boolean>(false);
-  useEffect(() => {
-    setData(true);
-
-    return () => {
-      setData(false);
-    };
-  }, []);
 
   const sendClick = () => {
     // setIsSended(true);  !!! Temp comment
-    setData(true);
   };
   const telegramClick = () => {
     // setIsSended(true);  !!! Temp comment
