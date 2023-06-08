@@ -43,7 +43,7 @@
 }
 
 .sidebar::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   top: 0;
@@ -137,6 +137,9 @@
 }
 
 .btnGoBack {
+  position: absolute;
+  top: 6px;
+  left: -56px;
   width: 32px;
   height: 32px;
   border: none;
