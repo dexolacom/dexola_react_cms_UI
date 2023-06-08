@@ -134,6 +134,9 @@
 }
 
 .btnGoBack {
+  position: absolute;
+  top: 6px;
+  left: -56px;
   width: 32px;
   height: 32px;
   border: none;

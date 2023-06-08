@@ -42,13 +42,13 @@ const Services = () => {
       <div className={styles.imagesWrapper}>
         <div className={styles.imagesColumn}>
           <ServiceCard
-            imgPath={'/img_1_1_3.png'}
+            imgPath={'/Img_1_1_3.png'}
             title={'Smart Contracts Development'}
             color={'#EB3795'}
             id={1}
           />
           <ServiceCard
-            imgPath={'/img_3_1_3.png'}
+            imgPath={'/Img_3_1_3.png'}
             title={'Blockchain analytics and crypto trading automation tools'}
             color={'#269EC1'}
             id={2}
@@ -56,13 +56,13 @@ const Services = () => {
         </div>
         <div className={styles.imagesColumn}>
           <ServiceCard
-            imgPath={'/img_2_1_3.png'}
+            imgPath={'/Img_2_1_3.png'}
             title={'Smart Contract Audits'}
             color={'#8642CA'}
             id={3}
           />
           <ServiceCard
-            imgPath={'/img_4_1_3.png'}
+            imgPath={'/Img_4_1_3.png'}
             title={'White-label Web3 Solutions'}
             color={'#2CC0A6'}
             id={4}

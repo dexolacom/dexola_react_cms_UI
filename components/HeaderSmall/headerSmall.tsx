@@ -1,61 +1,64 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "framer-motion";
-
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 // import { useMyContext } from '../../context/AppContext';
-import styles from "./styles.module.css";
-import styles1 from "../ContactUs/styles.module.css";
+import styles from './styles.module.css';
+import styles1 from '../ContactUs/styles.module.css';
 // --- - ---
-import Modal from "react-modal";
-import Menu from "../Menu/Menu";
-import { variantsHomePage } from "../../Variants/Variants";
+import Modal from 'react-modal';
+import Menu from '../Menu/Menu';
+import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
+import { variantsHomePage } from '../../Variants/Variants';
 
-const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
-  // const { isFormOpen, setData, isHoveredLink } = useMyContext();
-  // const isHeaderWhite = isFormOpen ? isFormOpen : isHoveredLink;
-  const isFormOpen = false;
+const HeaderSmall = ({
+  isWhite,
+  isFormOpen,
+}: {
+  isWhite: boolean;
+  isFormOpen?: boolean;
+}) => {
+  // const { isHoveredLink } = useMyContext();
+  const router = useRouter();
   const isHeaderWhite = isFormOpen ? isFormOpen : isWhite;
-
   const [isMenu, setIsMenu] = useState<boolean>(false);
 
   const menuHandler = () => {
-    // isFormOpen ? setData(false) : setIsMenu((prev) => !prev);
-    setIsMenu((prev) => !prev);
+    isFormOpen ? router.back() : setIsMenu((prev) => !prev);
   };
 
   useEffect(() => {
     isMenu
-      ? window.document.body.classList.add("modal-open")
-      : window.document.body.classList.remove("modal-open");
+      ? window.document.body.classList.add('modal-open')
+      : window.document.body.classList.remove('modal-open');
 
     return () => {
-      window.document.body.classList.remove("modal-open");
+      window.document.body.classList.remove('modal-open');
     };
   }, [isMenu]);
 
   function closeModal() {
     setIsMenu(false);
   }
-  Modal.setAppElement("#yourAppElement");
+  Modal.setAppElement('#yourAppElement');
   // --- / - ---
   const imgSrcLogo = isFormOpen
-    ? "/logo-white.svg"
+    ? '/logo-white.svg'
     : isMenu
-    ? "/logo.svg"
+    ? '/logo.svg'
     : isHeaderWhite
-    ? "/logo-white.svg"
-    : "/logo.svg";
+    ? '/logo-white.svg'
+    : '/logo.svg';
 
   const imgSrc = isFormOpen
-    ? "/close-white-40.svg"
+    ? '/close-white-40.svg'
     : isMenu
-    ? "/close-black-40.svg"
+    ? '/close-black-40.svg'
     : isHeaderWhite
-    ? "/menu-white-40.svg"
-    : "/menu-black-40.svg";
+    ? '/menu-white-40.svg'
+    : '/menu-black-40.svg';
 
   return (
     <>
@@ -74,7 +77,7 @@ const HeaderSmall = ({ isWhite }: { isWhite: boolean }) => {
       </div>
 
       <div className={styles.topBox} id="yourAppElement">
-        <Link href={"/"}>
+        <Link href={'/'}>
           <motion.div
             className={styles.imageBox}
             initial="hidden"
