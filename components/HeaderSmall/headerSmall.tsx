@@ -10,6 +10,8 @@ import styles1 from '../ContactUs/styles.module.css';
 import Modal from 'react-modal';
 import Menu from '../Menu/Menu';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
+import { variantsHomePage } from '../../Variants/Variants';
 
 const HeaderSmall = ({
   isWhite,
@@ -24,7 +26,7 @@ const HeaderSmall = ({
   const [isMenu, setIsMenu] = useState<boolean>(false);
 
   const menuHandler = () => {
-    isFormOpen ? router.back() : setIsMenu(prev => !prev);
+    isFormOpen ? router.back() : setIsMenu((prev) => !prev);
   };
 
   useEffect(() => {
@@ -68,14 +70,20 @@ const HeaderSmall = ({
           contentLabel="Main Menu"
           shouldCloseOnEsc={true}
           preventScroll={true}
-          overlayClassName={styles1.overlayClass}>
+          overlayClassName={styles1.overlayClass}
+        >
           <Menu closeModal={closeModal} />
         </Modal>
       </div>
 
       <div className={styles.topBox} id="yourAppElement">
         <Link href={'/'}>
-          <div className={styles.imageBox}>
+          <motion.div
+            className={styles.imageBox}
+            initial="hidden"
+            animate="visible"
+            variants={variantsHomePage}
+          >
             <Image
               src={imgSrcLogo}
               alt="Logo"
@@ -83,9 +91,15 @@ const HeaderSmall = ({
               height={14}
               priority
             />
-          </div>
+          </motion.div>
         </Link>
-        <div className={styles.imageBox} onClick={menuHandler}>
+        <motion.div
+          className={styles.imageBox}
+          onClick={menuHandler}
+          initial="hidden"
+          variants={variantsHomePage}
+          animate="visible"
+        >
           <Image
             src={imgSrc}
             // src={isHoveredLink ? '/menu-hover-white.png' : imgSrc}
@@ -94,7 +108,7 @@ const HeaderSmall = ({
             height={40}
             priority
           />
-        </div>
+        </motion.div>
       </div>
     </>
   );

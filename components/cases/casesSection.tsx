@@ -8,13 +8,13 @@ import { AnimatePresence } from 'framer-motion';
 import { getPlatform } from '../../Api/api';
 
 import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
-
-import PageContainer from '../PageContainer/PageWrapper';
 import CustomReactMarkdown from '../CustomMarkdown/CustomReactMarkdown';
+
+import Arrow from '../ArrowAnime/Arrow';
+import AnimePageWrapper from '../AnimePageContainer/AnimePageWrapper';
 
 import st from './cases.module.css';
 import style from '../commonStyles/commonStyles.module.css';
-import Arrow from '../ArrowAnime/Arrow';
 
 const CasesSection = () => {
   const [platforms, setPlatforms] = useState<IPlatfrom[]>();
@@ -31,7 +31,7 @@ const CasesSection = () => {
       }));
 
       const filteredPlatforms = transformData?.filter((platform: IPlatfrom) =>
-        [1, 2, 3].includes(platform.id),
+        [1, 2, 3].includes(platform.id)
       );
       setPlatforms(filteredPlatforms);
     };
@@ -40,18 +40,19 @@ const CasesSection = () => {
   }, []);
 
   return (
-    <PageContainer title={'Case Studies'} id="Cases" isArrow={false}>
+    <AnimePageWrapper title={'Case Studies'} id="Cases">
       <Suspense fallback={'Loading ......'}>
         <div className={st.container}>
           {platforms
             ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
-            .map(el => (
+            .map((el) => (
               <Link href={`/platforms/${el.id}`} key={el.id}>
                 <div
                   className={style.wrapper}
                   key={el.id}
                   onMouseEnter={() => setHoveredId(el.id)}
-                  onMouseLeave={() => setHoveredId(null)}>
+                  onMouseLeave={() => setHoveredId(null)}
+                >
                   <CustomReactMarkdown technology={el?.services}>
                     {el?.summary}
                   </CustomReactMarkdown>
@@ -72,7 +73,7 @@ const CasesSection = () => {
       <Link href="/platforms" className={st.button}>
         <span>Browse All Case Studies</span>
       </Link>
-    </PageContainer>
+    </AnimePageWrapper>
   );
 };
 

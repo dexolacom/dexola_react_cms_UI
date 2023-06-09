@@ -8,6 +8,7 @@ import Services from "../../components/services/services";
 import TechStack from "../../components/techStack/techStack";
 import RootLayout from "./layout";
 import HeaderSmall from "../../components/HeaderSmall/headerSmall";
+// import App from "../../components/App";
 
 export default function Home() {
   return (
