@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 
 export default function Landing() {
   const [isWhite, setIsWhite] = useState<boolean>(false);
-  const { innerHeight } = window;
+  const [innerHeight, setInnerHeight] = useState<number>(0);
   const [scrollPosition, setScrollPosition] = useState<number>(0);
 
   const handleScroll = () => {
@@ -22,6 +22,8 @@ export default function Landing() {
   };
 
   useEffect(() => {
+    const { innerHeight } = window;
+    setInnerHeight(innerHeight);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
