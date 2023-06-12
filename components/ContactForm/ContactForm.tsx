@@ -6,7 +6,10 @@ import styles from './contactForm.module.css';
 
 const ContactForm = () => {
   const alarmText = 'Please complete this field';
+  const [name, setName] = useState<string>('');
   const [isSended, setIsSended] = useState<boolean>(false);
+
+  const nameHandler = (e: React.SyntheticEvent) => {};
 
   const sendClick = () => {
     // setIsSended(true);  !!! Temp comment
@@ -25,6 +28,7 @@ const ContactForm = () => {
     height: 1.5,
     clickHandler: sendClick,
   };
+
   const telegramProps: IContactButton = {
     name: 'Telegram',
     image_src: '/telegram.svg',
@@ -71,7 +75,12 @@ const ContactForm = () => {
             </p>
           ) : (
             <div className={styles.rightSubBlock}>
-              <input className={styles.contactInput} placeholder="Your name" />
+              <input
+                className={styles.contactInput}
+                placeholder="Your name"
+                // value={name}
+                onChange={e => nameHandler(e)}
+              />
               <p className={styles.alarmMessage}>{alarmText}</p>
               <input
                 className={styles.contactInput}
