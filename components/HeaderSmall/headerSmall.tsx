@@ -26,7 +26,7 @@ const HeaderSmall = ({
   const [isMenu, setIsMenu] = useState<boolean>(false);
 
   const menuHandler = () => {
-    isFormOpen ? router.back() : setIsMenu((prev) => !prev);
+    isFormOpen ? router.back() : setIsMenu(prev => !prev);
   };
 
   useEffect(() => {
@@ -42,23 +42,28 @@ const HeaderSmall = ({
   function closeModal() {
     setIsMenu(false);
   }
-  Modal.setAppElement('#yourAppElement');
-  // --- / - ---
-  const imgSrcLogo = isFormOpen
-    ? '/logo-white.svg'
-    : isMenu
-    ? '/logo.svg'
-    : isHeaderWhite
-    ? '/logo-white.svg'
-    : '/logo.svg';
+  // Modal.setAppElement('#yourAppElement');
 
-  const imgSrc = isFormOpen
-    ? '/close-white-40.svg'
-    : isMenu
-    ? '/close-black-40.svg'
-    : isHeaderWhite
-    ? '/menu-white-40.svg'
-    : '/menu-black-40.svg';
+  const imgSrcLogo = () => {
+    if (isFormOpen || (!isMenu && isHeaderWhite)) {
+      return '/logo-white.svg';
+    } else {
+      return '/logo.svg';
+    }
+  };
+
+  const imgSrc = () => {
+    if (isFormOpen) {
+      return '/close-white-40.svg';
+    } else if (isMenu) {
+      return '/close-black-40.svg';
+    }
+    if (isHeaderWhite) {
+      return '/menu-white-40.svg';
+    } else {
+      return '/menu-black-40.svg';
+    }
+  };
 
   return (
     <>
@@ -70,8 +75,7 @@ const HeaderSmall = ({
           contentLabel="Main Menu"
           shouldCloseOnEsc={true}
           preventScroll={true}
-          overlayClassName={styles1.overlayClass}
-        >
+          overlayClassName={styles1.overlayClass}>
           <Menu closeModal={closeModal} />
         </Modal>
       </div>
@@ -82,10 +86,9 @@ const HeaderSmall = ({
             className={styles.imageBox}
             initial="hidden"
             animate="visible"
-            variants={variantsHomePage}
-          >
+            variants={variantsHomePage}>
             <Image
-              src={imgSrcLogo}
+              src={imgSrcLogo()}
               alt="Logo"
               width={64}
               height={14}
@@ -98,10 +101,9 @@ const HeaderSmall = ({
           onClick={menuHandler}
           initial="hidden"
           variants={variantsHomePage}
-          animate="visible"
-        >
+          animate="visible">
           <Image
-            src={imgSrc}
+            src={imgSrc()}
             // src={isHoveredLink ? '/menu-hover-white.png' : imgSrc}
             alt="menu"
             width={40}

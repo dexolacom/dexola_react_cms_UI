@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
 
-import Image from "next/image";
-import VideoBG from "../VideoBG/VideoBG";
-import HeaderSmall from "../HeaderSmall/headerSmall";
-import styles from "./styles.module.css";
-import { variantsHomePage } from "../../Variants/Variants";
+import Image from 'next/image';
+import VideoBG from '../VideoBG/VideoBG';
+import HeaderSmall from '../HeaderSmall/headerSmall';
+import styles from './styles.module.css';
+import { variantsHomePage } from '../../Variants/Variants';
 
 const Header = () => {
   return (
