@@ -1,10 +1,12 @@
 'use client';
 
-import ServiceCard from '../ServiceCard/ServiceCard';
-import PageContainer from '../PageContainer/PageWrapper';
-import styles from './styles.module.css';
-import styles2 from '../../components/PageContainer/pageContainer.module.css';
 import Link from 'next/link';
+
+import ServiceCard from '../ServiceCard/ServiceCard';
+import styles2 from '../../components/PageContainer/pageContainer.module.css';
+import AnimePageWrapper from '../AnimePageContainer/AnimePageWrapper';
+
+import styles from './styles.module.css';
 
 const SERVICES_TITLES: ITypeItem[] = [
   {
@@ -23,7 +25,7 @@ const SERVICES_TITLES: ITypeItem[] = [
 
 const Services = () => {
   return (
-    <PageContainer title={'Services'} id="Services" isArrow={false}>
+    <AnimePageWrapper title={'Services'} id="Services">
       <p className={styles2.contentText}>
         Our expertise covers key blockchain areas, including DeFi, NFT, and
         GameFi solutions development. We specialize in EVM-compatible
@@ -81,7 +83,7 @@ const Services = () => {
             ))}
         </>
       </div>
-    </PageContainer>
+    </AnimePageWrapper>
   );
 };
 

@@ -7,7 +7,7 @@ const RunningLine = () => {
   return (
     <div className={styles1.blockWrapper}>
       <div className={styles.transparentBlock} />
-      <div className={styles.colorfulBlock}>Drop us a line</div>
+      <div className={styles.colorfulBlock}></div>
     </div>
   );
 };

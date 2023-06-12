@@ -6,17 +6,7 @@ import Image from 'next/image';
 import VideoBG from '../VideoBG/VideoBG';
 import HeaderSmall from '../HeaderSmall/headerSmall';
 import styles from './styles.module.css';
-
-const variants = {
-  hidden: {
-    y: 50,
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
+import { variantsHomePage } from '../../Variants/Variants';
 
 const Header = () => {
   return (
@@ -24,10 +14,12 @@ const Header = () => {
       <motion.div
         className={styles.headerWrapper}
         initial="hidden"
-        whileInView="visible">
+        animate="visible"
+        // whileInView="visible"
+      >
         <VideoBG opacity={0.1} />
 
-        <motion.div className={styles.description} variants={variants}>
+        <motion.div className={styles.description} variants={variantsHomePage}>
           <p className={styles.headerTitle}>
             Cracking
             <br /> the Innovation Code<span className={styles.blank}>_</span>
@@ -48,9 +40,9 @@ const Header = () => {
           />
         </motion.div>
 
-        <p className={styles.ourAddress}>
+        <motion.p className={styles.ourAddress} variants={variantsHomePage}>
           210 Middleton st, Nashville Tennessee 37210, US
-        </p>
+        </motion.p>
       </motion.div>
     </AnimatePresence>
   );

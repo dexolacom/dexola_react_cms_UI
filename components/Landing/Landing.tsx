@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 
 export default function Landing() {
   const [isWhite, setIsWhite] = useState<boolean>(false);
-  const [innerHeight, setInnerHeight] = useState<number>(0);
+  const [innerHeight, setInnerHeight] = useState<number>(400);
   const [scrollPosition, setScrollPosition] = useState<number>(0);
 
   const handleScroll = () => {

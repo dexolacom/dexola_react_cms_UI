@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
-
 import ArrowGoBack from '../ArrowAnime/ArrowBack';
 
 import styles from './pageContainer.module.css';
@@ -41,7 +40,6 @@ const PageContainer = ({
   };
 
   return (
-    
     <div className={styles.blockWrapper} id={id}>
       <div className={styles.sidebar}>
         <div className={styles.titleBlock}>
@@ -50,7 +48,8 @@ const PageContainer = ({
               onClick={handleGoBack}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className={styles.btnGoBack}>
+              className={styles.btnGoBack}
+            >
               <div className={styles.imageContainer}>
                 <AnimatePresence initial={false}>
                   <ArrowGoBack isHovered={isHovered} />
@@ -58,9 +57,11 @@ const PageContainer = ({
               </div>
             </button>
           )}
+
           <p className={styles.title}>{title}</p>
         </div>
       </div>
+
       <div className={isHovered ? styles.contentBoxHover : styles.contentBox}>
         {children}
       </div>
