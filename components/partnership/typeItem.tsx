@@ -1,6 +1,8 @@
 'use client';
 
 import styles from './styles.module.css';
+// ---
+import { motion } from 'framer-motion';
 
 const TypeItem = ({
   index,
@@ -15,11 +17,25 @@ const TypeItem = ({
   clickHandler: (e: React.SyntheticEvent) => void;
   showStatus: boolean;
 }) => {
-  const textStyles = () => {
-    const result = showStatus
-      ? { marginBottom: '16px', height: '100%', opacity: 1 }
-      : { margiBottom: '0', height: '0', opacity: 0 };
-    return result;
+  const variants = {
+    open: {
+      height: '100%',
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0,
+        duration: 0.5,
+      },
+    },
+    closed: {
+      height: '0',
+      opacity: 0,
+      transition: {
+        type: 'spring',
+        bounce: 0,
+        duration: 0.5,
+      },
+    },
   };
 
   return (
@@ -34,9 +50,12 @@ const TypeItem = ({
           style={{ height: showStatus ? '2px' : '16px' }}
         />
       </div>
-      <p className={styles.typesText} style={textStyles()}>
+      <motion.p
+        animate={showStatus ? 'open' : 'closed'}
+        variants={variants}
+        className={styles.typesText}>
         {text}
-      </p>
+      </motion.p>
     </div>
   );
 };

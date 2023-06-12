@@ -1,6 +1,8 @@
 .typesItemWrapper {
   composes: flexColumnBlock from '../../components/PageContainer/pageContainer.module.css';
   border-bottom: 1px solid #36383c;
+  /* --- - --- */
+  padding-bottom: 16px;
 }
 
 .typesItemWrapper:last-of-type {
@@ -31,6 +33,4 @@
 
 .typesText {
   composes: mainRobotoParagraph from '../../components/PageContainer/pageContainer.module.css';
-  transition: opacity 0.2s ease-out, height 0.15s ease-out,
-    margin-bottom 0.25s ease-out;
 }
