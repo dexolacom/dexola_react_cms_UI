@@ -10,7 +10,16 @@
   font-family: var(--font-kanit);
   color: var(--white);
   font-size: 20px;
-  margin: 25px 0;
+  margin: 25px 5px 25px 0;
+  transition: all 0.3s ease;
+}
+
+.noverHeadText {
+  font-family: var(--font-kanit);
+  color: var(--white);
+  font-size: 16px;
+  margin: 25px 5px 25px 0;
+  transition: all 0.3s ease;
 }
 
 /* CustomReactMarkdownProps  Action list */
@@ -59,4 +68,10 @@
   width: 5px;
   height: 5px;
   background-color: var(--bg-marker);
+}
+/* All Cases Animation Aroow Container */
+
+.arrowContainer {
+  display: flex;
+  align-items: center;
 }

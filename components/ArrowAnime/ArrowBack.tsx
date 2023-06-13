@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { svgWrapperBack, svgVariantBack } from "../../Variants/Variants";
 
 const ArrowGoBack = ({ isHovered }: { isHovered: boolean }) => {
+
   return (
     <motion.svg
       width="40"
