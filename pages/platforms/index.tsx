@@ -60,7 +60,7 @@ const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
             .map((el) => (
               <Link href={`/platforms/${el?.id}`} key={el.id}>
                 <div
-                  key={el.id}
+                  key={el?.id}
                   className={`${st.content} ${
                     hoveredId === el.id ? st.hovered : ''
                   }`}
@@ -77,7 +77,7 @@ const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
                     <CustomPlatformsMarkdown
                       hoveredCard={hoveredId}
                       technology={el?.services}
-                      platformId={el.id}
+                      platformId={el?.id}
                     >
                       {el?.summary}
                     </CustomPlatformsMarkdown>
