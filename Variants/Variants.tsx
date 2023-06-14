@@ -118,3 +118,29 @@ export const custom2Variants = {
     },
   },
 };
+// All Cases Svg
+
+export const svgVariantAllCases = {
+  initial: {
+    strokeDasharray: '50%',
+    transition: { duration: 0.2 },
+  },
+  hover: {
+    strokeDasharray: '90%',
+    transition: { duration: 0.2 },
+  },
+  hoverEnd: {
+    strokeDasharray: '50%',
+    transition: { duration: 0.2 },
+  },
+
+  separateVariant: {
+    rotate: 45,
+    x: 5,
+    transition: {
+      duration: 0.2,
+      type: 'tween',
+      ease: 'easeOut',
+    },
+  },
+};

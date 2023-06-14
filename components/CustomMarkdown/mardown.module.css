@@ -10,7 +10,14 @@
   font-family: var(--font-kanit);
   color: var(--white);
   font-size: 20px;
-  margin: 25px 0;
+  margin: 25px 5px 25px 0;
+}
+
+.noverHeadText {
+  font-family: var(--font-kanit);
+  color: var(--white);
+  font-size: 16px;
+  margin: 25px 5px 25px 0;
 }
 
 /* CustomReactMarkdownProps  Action list */
@@ -59,4 +66,40 @@
   width: 5px;
   height: 5px;
   background-color: var(--bg-marker);
+}
+/* All Cases Animation Aroow Container */
+
+.arrowContainer {
+  display: flex;
+  align-items: center;
+}
+
+/* colors animation */
+
+.listItemHover {
+  color: var(--white);
+  padding: 7px 12px;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-roboto-mono);
+  font-size: 16px;
+
+}
+
+.descr {
+  color: var(--preset-color);
+  margin: 0 0 30px 0;
+  font-family: var(--font-roboto-mono);
+  line-height: 1.6;
+  transition: font-size 0.2s ease;
+}
+
+.descrHover {
+  color: var(--white);
+  margin: 0 0 30px 0;
+  font-family: var(--font-roboto-mono);
+  line-height: 1.6;
+  transition: font-size 0.2s ease;
 }

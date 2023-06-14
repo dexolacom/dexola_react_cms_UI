@@ -37,7 +37,16 @@ interface CustomReactMarkdownProps {
   children: React.ReactNode;
   heading?: string;
   subHeading?: string;
-  platfromId?: number;
+  platformId?: number;
+}
+
+interface CustomCasesReactMarkdownProps {
+  technology: string[];
+  children: React.ReactNode;
+  heading?: string;
+  subHeading?: string;
+  platformId?: number;
+  hoveredCard: number | null | undefined;
 }
 
 interface CustomIDMarkdownProps {
@@ -85,4 +94,11 @@ interface IServiceCard {
   title: string;
   color: string;
   id: number;
+}
+
+// Variants SVG animation
+
+interface IArrowAllCases {
+  hoveredCard: number | null | undefined;
+  platformId: number | null | undefined;
 }

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 // import { svgVariant, svgWrapper } from "../../Variants/Variants";
 
 interface IProps {
@@ -8,29 +8,28 @@ interface IProps {
 }
 
 const Arrow = ({ hoveredId, elenId, duration = 0.4 }: IProps) => {
-  
   const svgWrapper = {
     initial: {
       rotate: 0,
-      transformOrigin: "left bottom",
+      transformOrigin: 'left bottom',
     },
     hover: {
       rotate: -45,
-      transformOrigin: "left bottom",
+      transformOrigin: 'left bottom',
     },
   };
 
   const svgVariant = {
     initial: {
-      strokeDasharray: "70%",
+      strokeDasharray: '70%',
       transition: { duration: duration },
     },
     hover: {
-      strokeDasharray: "100%",
+      strokeDasharray: '100%',
       transition: { duration: duration },
     },
     hoverEnd: {
-      strokeDasharray: "70%",
+      strokeDasharray: '70%',
       transition: { duration: duration },
     },
   };
@@ -47,8 +46,8 @@ const Arrow = ({ hoveredId, elenId, duration = 0.4 }: IProps) => {
         rotate: hoveredId === elenId ? -45 : 1,
         transition: {
           duration: duration,
-          type: "tween",
-          ease: "easeOut",
+          type: 'tween',
+          ease: 'easeOut',
         },
       }}
     >

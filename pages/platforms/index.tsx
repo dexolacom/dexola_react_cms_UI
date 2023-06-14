@@ -1,15 +1,20 @@
 // " use client";
 import '../../src/app/globals.css';
+import Link from 'next/link';
 
 import { getPlatform } from '../../Api/api';
 
 import { removeImageLinksFromMarkdown } from '../../lib/removeImageLinksFromMarkdown';
 
 import PageContainer from '../../components/PageContainer/PageWrapper';
-import CustomPlatfromsMarkdown from '../../components/CustomMarkdown/CustomPlatfromsMarkdown';
 import Footer from '../../components/footer/footer';
 
 import st from './index.module.css';
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+
+import CustomPlatformsMarkdown from '../../components/CustomMarkdown/CustomPlatfromsMarkdown';
+// import ArrowAllCases from '../../components/ArrowAnime/ArrowAllCases';
 
 export async function getStaticProps() {
   try {
@@ -38,6 +43,8 @@ export async function getStaticProps() {
 }
 
 const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
+  const [hoveredId, setHoveredId] = useState<number | null>();
+
   return (
     <>
       <PageContainer title={'All Case Studies'} isArrow={true}>
@@ -51,14 +58,32 @@ const AllPlatforms = ({ platforms }: { platforms: IPlatfrom[] }) => {
           {platforms
             ?.sort((a: IPlatfrom, b: IPlatfrom) => a.id - b.id)
             .map((el) => (
-              <div key={el?.id} className={st.content}>
-                <CustomPlatfromsMarkdown
-                  technology={el?.services}
-                  platfromId={el?.id}
+              <Link href={`/platforms/${el?.id}`} key={el.id}>
+                <div
+                  key={el?.id}
+                  className={`${st.content} ${
+                    hoveredId === el.id ? st.hovered : ''
+                  }`}
+                  onMouseEnter={() => setHoveredId(el.id)}
+                  onMouseLeave={() => setHoveredId(null)}
                 >
-                  {el?.summary}
-                </CustomPlatfromsMarkdown>
-              </div>
+                  <AnimatePresence>
+                    {/* <ArrowAllCases
+                      hoveredCard={hoveredId}
+                      platformId={el?.id}
+                      key={el?.id}
+                    /> */}
+
+                    <CustomPlatformsMarkdown
+                      hoveredCard={hoveredId}
+                      technology={el?.services}
+                      platformId={el?.id}
+                    >
+                      {el?.summary}
+                    </CustomPlatformsMarkdown>
+                  </AnimatePresence>
+                </div>
+              </Link>
             ))}
         </div>
       </PageContainer>
